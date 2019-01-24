@@ -267,11 +267,6 @@ namespace FileContextSearch
 
         }
 
-        private void button10_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("假装这个模块已经做好了");
-        }
-
 
         //private void button5_Click(object sender, EventArgs e)
         //{

@@ -58,12 +58,10 @@
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.Research = new System.Windows.Forms.TabPage();
-            this.button10 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.DateLog.SuspendLayout();
             this.Test.SuspendLayout();
-            this.Research.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
@@ -372,7 +370,6 @@
             // 
             // Research
             // 
-            this.Research.Controls.Add(this.button10);
             this.Research.Location = new System.Drawing.Point(4, 22);
             this.Research.Name = "Research";
             this.Research.Padding = new System.Windows.Forms.Padding(3);
@@ -380,18 +377,6 @@
             this.Research.TabIndex = 2;
             this.Research.Text = "Research";
             this.Research.UseVisualStyleBackColor = true;
-            // 
-            // button10
-            // 
-            this.button10.Font = new System.Drawing.Font("Buxton Sketch", 18F, System.Drawing.FontStyle.Bold);
-            this.button10.Location = new System.Drawing.Point(21, 21);
-            this.button10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(122, 73);
-            this.button10.TabIndex = 16;
-            this.button10.Text = "Start Research";
-            this.button10.UseVisualStyleBackColor = true;
-            this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
             // Form1
             // 
@@ -417,7 +402,6 @@
             this.DateLog.PerformLayout();
             this.Test.ResumeLayout(false);
             this.Test.PerformLayout();
-            this.Research.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -454,7 +438,6 @@
         private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.TabPage Research;
-        private System.Windows.Forms.Button button10;
     }
 }
 

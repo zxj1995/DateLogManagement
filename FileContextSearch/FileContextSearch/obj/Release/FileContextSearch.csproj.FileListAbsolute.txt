@@ -1,8 +1,0 @@
-C:\ZXJ\WORK\demo\FileContextSearch\FileContextSearch\bin\Release\FileContextSearch.exe
-C:\ZXJ\WORK\demo\FileContextSearch\FileContextSearch\bin\Release\FileContextSearch.pdb
-C:\ZXJ\WORK\demo\FileContextSearch\FileContextSearch\obj\Release\FileContextSearch.Form1.resources
-C:\ZXJ\WORK\demo\FileContextSearch\FileContextSearch\obj\Release\FileContextSearch.Properties.Resources.resources
-C:\ZXJ\WORK\demo\FileContextSearch\FileContextSearch\obj\Release\FileContextSearch.TimerShow.resources
-C:\ZXJ\WORK\demo\FileContextSearch\FileContextSearch\obj\Release\FileContextSearch.csproj.GenerateResource.Cache
-C:\ZXJ\WORK\demo\FileContextSearch\FileContextSearch\obj\Release\FileContextSearch.exe
-C:\ZXJ\WORK\demo\FileContextSearch\FileContextSearch\obj\Release\FileContextSearch.pdb
