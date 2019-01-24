@@ -1,0 +1,14 @@
+C:\ZXJ\WORK\demo\FileContextSearch\FileContextSearch\bin\Debug\FileContextSearch.exe.config
+C:\ZXJ\WORK\demo\FileContextSearch\FileContextSearch\bin\Debug\FileContextSearch.exe
+C:\ZXJ\WORK\demo\FileContextSearch\FileContextSearch\bin\Debug\FileContextSearch.pdb
+C:\ZXJ\WORK\demo\FileContextSearch\FileContextSearch\obj\Debug\FileContextSearch.Form1.resources
+C:\ZXJ\WORK\demo\FileContextSearch\FileContextSearch\obj\Debug\FileContextSearch.Properties.Resources.resources
+C:\ZXJ\WORK\demo\FileContextSearch\FileContextSearch\obj\Debug\FileContextSearch.setForm.resources
+C:\ZXJ\WORK\demo\FileContextSearch\FileContextSearch\obj\Debug\FileContextSearch.TimerShow.resources
+C:\ZXJ\WORK\demo\FileContextSearch\FileContextSearch\obj\Debug\FileContextSearch.csproj.GenerateResource.Cache
+C:\ZXJ\WORK\demo\FileContextSearch\FileContextSearch\obj\Debug\FileContextSearch.exe
+C:\ZXJ\WORK\demo\FileContextSearch\FileContextSearch\obj\Debug\FileContextSearch.pdb
+C:\ZXJ\WORK\demo\FileContextSearch\FileContextSearch\obj\Debug\FileContextSearch.csprojResolveAssemblyReference.cache
+C:\ZXJ\GitRepository\DateLogManagement\FileContextSearch\FileContextSearch\bin\Debug\FileContextSearch.exe.config
+C:\ZXJ\GitRepository\DateLogManagement\FileContextSearch\FileContextSearch\obj\Debug\FileContextSearch.exe
+C:\ZXJ\GitRepository\DateLogManagement\FileContextSearch\FileContextSearch\obj\Debug\FileContextSearch.pdb
