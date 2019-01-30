@@ -11,6 +11,11 @@ using System.Configuration;
 using System.Diagnostics;
 using System.Management;
 using System.Threading;
+using FileOperator;
+using FileContextSearch.ResearchList;
+using Newtonsoft.Json;
+
+
 namespace FileContextSearch
 {
     public partial class Form1 : Form
@@ -193,14 +198,19 @@ namespace FileContextSearch
             form2.EventTemp += new ChangeTextBoxValue(ChangeTextBoxText);
             form2.ShowDialog();
         }
-
+        public static string ResearchPathDir="";
         private void Form1_Load(object sender, EventArgs e)
         {
             var str = System.Configuration.ConfigurationManager.AppSettings["fileDir"];
             FileSearchHelper.GetInstance().DateLogDir = str;
+            str = System.Configuration.ConfigurationManager.AppSettings["fileDirResearch"];
+            FileSearchHelper.GetInstance().ResearchDir = str;
+            ResearchPathDir = str;
             InitialDir();
             InitialUI();
+            //加载treeview
         }
+
         private void InitialUI()
         {
             var dt1 = DateTime.Now.AddDays(-1).ToString("yyyy-MM-dd");
@@ -209,6 +219,14 @@ namespace FileContextSearch
             textBox4.Text = dt1;
             textBox3.Text = dt3;
             textBox2.Text = dt2;
+            ResearchTreeView.Nodes.Clear();
+            var strArr = new string[] { "Conquering", "Conquered", "Abandoned", "Urgent"};
+            NodeState.Items.Clear();
+            foreach (var item in strArr)
+            {
+                NodeState.Items.Add(item);
+            }
+            NodeState.SelectedIndex=0;
         }
         private void button7_Click(object sender, EventArgs e)
         {
@@ -226,6 +244,11 @@ namespace FileContextSearch
                 if (!Directory.Exists(tempDir))
                 {
                     Directory.CreateDirectory(tempDir);
+                }
+                if (!Directory.Exists(FileSearchHelper.GetInstance().ResearchDir))
+                {
+                    Directory.CreateDirectory(FileSearchHelper.GetInstance().ResearchDir);
+                    ResearchPathDir = FileSearchHelper.GetInstance().ResearchDir;
                 }
             }
             catch (Exception ex)
@@ -269,13 +292,171 @@ namespace FileContextSearch
 
         private void button10_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("假装这个模块已经做好了test");
+            var strArr = new List<string>();
+            var ResearchList = Path.Combine(FileSearchHelper.GetInstance().ResearchDir, "MainList.txt");
+            if (!File.Exists(ResearchList))
+            {
+                using (var fs = new FileStream(ResearchList, FileMode.OpenOrCreate))
+                {
+
+                }
+                MessageBox.Show("ResearchList doesn't exist!", "Error", MessageBoxButtons.OK);
+            }
+            else
+            {
+                System.Diagnostics.Process.Start(ResearchList);
+            }
+
+        }
+        public void OpenResearchList()
+        {
+            //MessageBox.Show("假装这个模块已经做好了test");
+            var strArr = new List<string>();
+            var ResearchList = Path.Combine(FileSearchHelper.GetInstance().ResearchDir, "MainList.txt");
+            if (!File.Exists(ResearchList))
+            {
+                using (var fs = new FileStream(ResearchList, FileMode.OpenOrCreate))
+                {
+
+                }
+                MessageBox.Show("ResearchList doesn't exist!", "Error", MessageBoxButtons.OK);
+            }
+            else
+            {
+                var strtemp = "";
+                strtemp = FileOperator.FileOperator.GetInstance().ReadFile(ResearchList);
+                if (!string.IsNullOrEmpty(strtemp))
+                {
+                    strArr = strtemp.Split(';').ToList();
+                }
+                foreach (var item in strArr)
+                {
+                    flowLayoutPanel1.Controls.Clear();
+                    var itemsub = new FlowLayoutPanel();
+                    var txtitem = new TextBox();
+                    txtitem.Text = item;
+                    itemsub.Controls.Add(txtitem);
+                    flowLayoutPanel1.Controls.Add(itemsub);
+                }
+            }
+
         }
 
+        private void button11_Click(object sender, EventArgs e)
+        {
+            var MainResearch = new ResearchItem();
+            for (int i = 0; i < 4; i++)
+            {
+                var SubItem = new IssueItem();
+                SubItem.Content = "测试"+i.ToString();
+                SubItem.Name = "测试问题" + i.ToString();
+                MainResearch.SubList.Add(SubItem);
+            }
+            var str=JsonConvert.SerializeObject(MainResearch);
+            MessageBox.Show(str);
+        }
 
+        private void button12_Click(object sender, EventArgs e)
+        {
+            
+            var FLOP_Item = new FlowLayoutPanel();
+            FLOP_Item.Size = new Size(140, 82);
+            FLOP_Item.BackColor = Color.Red;
+            FLOP_Item.Margin = new Padding(10,10,10,0);
+            flowLayoutPanel1.Controls.Add(FLOP_Item);
+        }
+
+        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (tabControl1.SelectedIndex==2)
+            {
+                LoadTreeView();
+            }
+        }
+        private void LoadTreeView()
+        {
+            ResearchTreeView.Nodes.Clear();
+            foreach (var itemstr in Directory.GetDirectories(ResearchPathDir))
+            {
+                var item = new DirectoryInfo(itemstr);
+                var TN = new TreeNode();
+                TN.Name = itemstr;
+                TN.Text = item.Name ;
+                TN=SearchSubItem(TN.Name,TN);
+                ResearchTreeView.Nodes.Add(TN);
+            }
+        }
+        public TreeNode SearchSubItem(string DirPath,TreeNode TN)
+        {
+            if (Directory.Exists(DirPath))
+            {
+                var subItemArr = Directory.GetDirectories(DirPath);
+                foreach (var Diritem in subItemArr)
+                {
+                    var DI = new DirectoryInfo(Diritem);
+                    if (DI.Name == "SubNodes" && DI.GetDirectories().Length > 0)
+                    {
+                        foreach (var item in DI.GetDirectories())
+                        {
+                            var tntemp = new TreeNode();
+                            tntemp.Name = item.ToString();
+                            tntemp.Text = item.Name;
+                            TN.Nodes.Add(tntemp);
+                            SearchSubItem(tntemp.Name, TN);
+                        }
+                    }
+                }
+            }
+            return TN;
+        }
+
+        private void button17_Click(object sender, EventArgs e)
+        {
+            var state = NodeState.SelectedItem.ToString();
+            var fileItemArr = Directory.GetFiles(ResearchPathDir);
+            foreach (var item in fileItemArr)
+            {
+                var content = "";
+                using (var fs = new StreamReader(item, Encoding.Default, false))
+                {
+                    content = fs.ReadToEnd();
+                }
+                var booltemp =FileSearchHelper.GetInstance().SearchContentFromStr(content,"CurrentState:"+ state);
+                if (booltemp)
+                {
+
+                }
+            }
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            Directory.CreateDirectory(Path.Combine(ResearchPathDir, ""));
+            //ResearchTreeView.Nodes.Add(itemstr, item.Name);
+            var strTemp = "";
+            if (ResearchTreeView.SelectedNode is null)
+            {
+                strTemp = "";
+            }
+            else
+            {
+                strTemp = ResearchTreeView.SelectedNode.Text;
+            }
+            var NodeSettingTemp = new NodeSetting(strTemp);
+            NodeSettingTemp.ShowDialog();
+        }
+
+        private void ResearchTreeView_DoubleClick(object sender, EventArgs e)
+        {
+            if (!(ResearchTreeView.SelectedNode is null))
+            {
+                System.Diagnostics.Process.Start(ResearchTreeView.SelectedNode.Name);
+            }
+        }
         //private void button5_Click(object sender, EventArgs e)
         //{
         //    MessageBox.Show("aaa");
         //}
+
     }
 }

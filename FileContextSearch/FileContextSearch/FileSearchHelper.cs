@@ -16,12 +16,33 @@ namespace FileContextSearch
         }
         private static FileSearchHelper Instance;
         private  static readonly object locker=new object();
-        public string DateLogDir = "";
-        //public string DateLogDir
-        //{
-        //    get;
-        //    set;
-        //}
+        public string _DateLogDir = "";
+        public string _ResearchDir = "";
+
+        public string DateLogDir
+        {
+            get
+            {
+                return _DateLogDir;
+            }
+            set
+            {
+                _DateLogDir = value;
+            }
+        }
+
+        public string ResearchDir
+        {
+            get
+            {
+                return _ResearchDir;
+            }
+            set
+            {
+                _ResearchDir = value;
+            }
+        }
+
 
         public static FileSearchHelper GetInstance()
         {
