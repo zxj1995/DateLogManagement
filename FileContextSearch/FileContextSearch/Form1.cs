@@ -226,6 +226,28 @@ namespace FileContextSearch
                 NodeState.Items.Add(item);
             }
             NodeState.SelectedIndex=0;
+            {
+                TV = new TreeView();
+                TV.Name = "SearchTV";
+                TV.Nodes.Clear();
+                TV.Size = new Size(SearchName.Size.Width, SearchName.Size.Height - label6.Height);
+                TV.Dock = DockStyle.Bottom;
+                TV.DoubleClick += TreeNode_DoubleClick;
+                ResearchTreeView.Nodes.Clear();
+                ResearchTreeView.Name = "ResearchTreeView";
+                ResearchTreeView.DoubleClick += TreeNode_DoubleClick;
+                ResearchTreeView.Size = new Size(Research.Size.Width, Research.Size.Height - label1.Height - 10);
+                ResearchTreeView.Dock = DockStyle.Bottom;
+                TV.Font = new Font("微软雅黑", 12, FontStyle.Bold);
+                ResearchTreeView.Font = new Font("微软雅黑", 12, FontStyle.Bold);
+                TV.MouseDown += MouseDown;
+                ResearchTreeView.MouseDown += MouseDown;
+                TV.BeforeCollapse += BeforeCollapse;
+                ResearchTreeView.BeforeCollapse += BeforeCollapse;
+                TV.BeforeExpand += BeforeExpand;
+                ResearchTreeView.BeforeExpand += BeforeExpand;
+
+            }
         }
         private void button7_Click(object sender, EventArgs e)
         {
@@ -371,24 +393,30 @@ namespace FileContextSearch
         public void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
             //添加两个TreeView控件
-            TV = new TreeView();
-            TV.Nodes.Clear();
-            TV.Size = new Size(SearchName.Size.Width, SearchName.Size.Height - label6.Height);
-            TV.Dock = DockStyle.Bottom;
-            TV.DoubleClick += TreeNode_DoubleClick;
-
-            SearchName.Controls.Add(TV);
-            ResearchTreeView.Nodes.Clear();
-            ResearchTreeView.DoubleClick += TreeNode_DoubleClick;
-            ResearchTreeView.Size = new Size(Research.Size.Width, Research.Size.Height - label1.Height - 10);
-            ResearchTreeView.Dock = DockStyle.Bottom;
-            TV.Font = new Font("微软雅黑", 12, FontStyle.Bold);
-            ResearchTreeView.Font = new Font("微软雅黑", 12, FontStyle.Bold);
             if (tabControl1.SelectedIndex==2)
             {
+                foreach (Control item in panel2.Controls)
+                {
+                    if (item.Name == "ResearchTreeView")
+                    {
+                        panel2.Controls.Remove(item);
+                        break;
+                    }
+                }
+                foreach (Control item in SearchName.Controls)
+                {
+                    if (item.Name == "SearchTV")
+                    {
+                        SearchName.Controls.Remove(item);
+                        break;
+                    }
+                }
+                panel2.Controls.Add(ResearchTreeView);
+                SearchName.Controls.Add(TV);
                 LoadTreeView(ResearchTreeView, "");
             }
-            panel2.Controls.Add(ResearchTreeView);
+
+
         }
 
         private void ResearchTreeView_DoubleClick(object sender, EventArgs e)
@@ -585,6 +613,34 @@ namespace FileContextSearch
         //{
         //    MessageBox.Show("aaa");
         //}
+        public int m_MouseClicks = 0;
+        private void MouseDown(object sender, MouseEventArgs e)
+        {
+            this.m_MouseClicks = e.Clicks;
+        }
+        private void BeforeCollapse(object sender, TreeViewCancelEventArgs e)
+        {
+            if (this.m_MouseClicks > 1)
+            { //如果是鼠标双击则禁止结点折叠 
+                e.Cancel = true;
+            }
+            else
+            { //如果是鼠标单击则允许结点折叠 
+                e.Cancel = false;
+            }
+        }
+        //myTreeView控件节点展开之前判断鼠标按下的次数，并进行控制 
+        private void BeforeExpand(object sender, TreeViewCancelEventArgs e)
+        {
+            if (this.m_MouseClicks > 1)
+            { //如果是鼠标双击则禁止结点展开 
+                e.Cancel = true;
+            }
+            else
+            { //如果是鼠标单击则允许结点展开 
+                e.Cancel = false;
+            }
+        }
 
     }
 }
