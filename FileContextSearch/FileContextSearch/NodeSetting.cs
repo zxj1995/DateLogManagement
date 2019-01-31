@@ -10,10 +10,11 @@ using System.IO;
 
 namespace FileContextSearch
 {
-    public partial class NodeSetting : Form
+    public partial class NodeSetting : Form 
     {
         public string ParentPath = "";
-        public NodeSetting(string parentNode)
+        private Form1 FM = new Form1();
+        public NodeSetting(string parentNode,Form1 FM1)
         {
             if (string.IsNullOrEmpty(parentNode))
             {
@@ -27,11 +28,17 @@ namespace FileContextSearch
                 }
                 ParentPath = Path.Combine(Form1.ResearchPathDir, parentNode, "SubNodes");
             }
+            FM = FM1;
             InitializeComponent();
         }
         
         private void button13_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(NodeName.Text))
+            {
+                MessageBox.Show("请先填写添加节点名称！", "ERROR", MessageBoxButtons.OK);
+                return;
+            }
             var dirArr = new string[]{"Issues","Progress","Summary","Demo","SubNodes"};
             var dirtemp = Path.Combine(ParentPath, NodeName.Text);
             if (!Directory.Exists(dirtemp))
@@ -69,6 +76,12 @@ namespace FileContextSearch
             System.Diagnostics.Process.Start(dirtemp);
             System.Diagnostics.Process.Start(filePath);
             this.Close();
+
+        }
+
+        private void NodeSetting_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            FM.tabControl1_SelectedIndexChanged(sender,e);
         }
     }
 }

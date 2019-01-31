@@ -29,46 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("节点8");
-            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("节点9");
-            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("节点10");
-            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("节点0", new System.Windows.Forms.TreeNode[] {
-            treeNode1,
-            treeNode2,
-            treeNode3});
-            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("节点11");
-            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("节点12");
-            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("节点13");
-            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("节点1", new System.Windows.Forms.TreeNode[] {
-            treeNode5,
-            treeNode6,
-            treeNode7});
-            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("节点2");
-            System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("节点3");
-            System.Windows.Forms.TreeNode treeNode11 = new System.Windows.Forms.TreeNode("节点4");
-            System.Windows.Forms.TreeNode treeNode12 = new System.Windows.Forms.TreeNode("节点5");
-            System.Windows.Forms.TreeNode treeNode13 = new System.Windows.Forms.TreeNode("节点6");
-            System.Windows.Forms.TreeNode treeNode14 = new System.Windows.Forms.TreeNode("节点7");
-            System.Windows.Forms.TreeNode treeNode15 = new System.Windows.Forms.TreeNode("节点8");
-            System.Windows.Forms.TreeNode treeNode16 = new System.Windows.Forms.TreeNode("节点9");
-            System.Windows.Forms.TreeNode treeNode17 = new System.Windows.Forms.TreeNode("节点10");
-            System.Windows.Forms.TreeNode treeNode18 = new System.Windows.Forms.TreeNode("节点0", new System.Windows.Forms.TreeNode[] {
-            treeNode15,
-            treeNode16,
-            treeNode17});
-            System.Windows.Forms.TreeNode treeNode19 = new System.Windows.Forms.TreeNode("节点11");
-            System.Windows.Forms.TreeNode treeNode20 = new System.Windows.Forms.TreeNode("节点12");
-            System.Windows.Forms.TreeNode treeNode21 = new System.Windows.Forms.TreeNode("节点13");
-            System.Windows.Forms.TreeNode treeNode22 = new System.Windows.Forms.TreeNode("节点1", new System.Windows.Forms.TreeNode[] {
-            treeNode19,
-            treeNode20,
-            treeNode21});
-            System.Windows.Forms.TreeNode treeNode23 = new System.Windows.Forms.TreeNode("节点2");
-            System.Windows.Forms.TreeNode treeNode24 = new System.Windows.Forms.TreeNode("节点3");
-            System.Windows.Forms.TreeNode treeNode25 = new System.Windows.Forms.TreeNode("节点4");
-            System.Windows.Forms.TreeNode treeNode26 = new System.Windows.Forms.TreeNode("节点5");
-            System.Windows.Forms.TreeNode treeNode27 = new System.Windows.Forms.TreeNode("节点6");
-            System.Windows.Forms.TreeNode treeNode28 = new System.Windows.Forms.TreeNode("节点7");
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.button1 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -102,16 +62,13 @@
             this.Research = new System.Windows.Forms.TabPage();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.button13 = new System.Windows.Forms.Button();
-            this.button12 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button18 = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.button17 = new System.Windows.Forms.Button();
-            this.ResearchTreeView = new System.Windows.Forms.TreeView();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.styleManager1 = new DevComponents.DotNetBar.StyleManager(this.components);
             this.NodeState = new System.Windows.Forms.ComboBox();
-            this.treeView1 = new System.Windows.Forms.TreeView();
+            this.button17 = new System.Windows.Forms.Button();
+            this.SearchName = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.styleManager1 = new DevComponents.DotNetBar.StyleManager(this.components);
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.DateLog.SuspendLayout();
@@ -121,8 +78,8 @@
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.flowLayoutPanel1.SuspendLayout();
+            this.SearchName.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
@@ -462,15 +419,13 @@
             // splitContainer1.Panel1
             // 
             this.splitContainer1.Panel1.Controls.Add(this.button13);
-            this.splitContainer1.Panel1.Controls.Add(this.button12);
-            this.splitContainer1.Panel1.Controls.Add(this.button10);
-            this.splitContainer1.Panel1.Controls.Add(this.button18);
+            this.splitContainer1.Panel1.Controls.Add(this.NodeState);
+            this.splitContainer1.Panel1.Controls.Add(this.button17);
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.panel1);
-            this.splitContainer1.Panel2.Controls.Add(this.ResearchTreeView);
-            this.splitContainer1.Panel2.Controls.Add(this.flowLayoutPanel1);
+            this.splitContainer1.Panel2.Controls.Add(this.SearchName);
+            this.splitContainer1.Panel2.Controls.Add(this.panel2);
             this.splitContainer1.Size = new System.Drawing.Size(829, 454);
             this.splitContainer1.SplitterDistance = 276;
             this.splitContainer1.TabIndex = 17;
@@ -478,129 +433,14 @@
             // button13
             // 
             this.button13.Font = new System.Drawing.Font("Buxton Sketch", 18F, System.Drawing.FontStyle.Bold);
-            this.button13.Location = new System.Drawing.Point(27, 220);
+            this.button13.Location = new System.Drawing.Point(16, 116);
             this.button13.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button13.Name = "button13";
             this.button13.Size = new System.Drawing.Size(220, 35);
             this.button13.TabIndex = 18;
-            this.button13.Text = "创建父节点";
+            this.button13.Text = "Node Create";
             this.button13.UseVisualStyleBackColor = true;
             this.button13.Click += new System.EventHandler(this.button13_Click);
-            // 
-            // button12
-            // 
-            this.button12.Font = new System.Drawing.Font("Buxton Sketch", 18F, System.Drawing.FontStyle.Bold);
-            this.button12.Location = new System.Drawing.Point(20, 99);
-            this.button12.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(248, 73);
-            this.button12.TabIndex = 17;
-            this.button12.Text = "Add Research Item";
-            this.button12.UseVisualStyleBackColor = true;
-            this.button12.Click += new System.EventHandler(this.button12_Click);
-            // 
-            // button10
-            // 
-            this.button10.Font = new System.Drawing.Font("Buxton Sketch", 18F, System.Drawing.FontStyle.Bold);
-            this.button10.Location = new System.Drawing.Point(20, 22);
-            this.button10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(214, 73);
-            this.button10.TabIndex = 16;
-            this.button10.Text = "Start Research";
-            this.button10.UseVisualStyleBackColor = true;
-            this.button10.Click += new System.EventHandler(this.button10_Click);
-            // 
-            // button18
-            // 
-            this.button18.Font = new System.Drawing.Font("Buxton Sketch", 18F, System.Drawing.FontStyle.Bold);
-            this.button18.Location = new System.Drawing.Point(27, 259);
-            this.button18.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button18.Name = "button18";
-            this.button18.Size = new System.Drawing.Size(196, 41);
-            this.button18.TabIndex = 23;
-            this.button18.Text = "Details";
-            this.button18.UseVisualStyleBackColor = true;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.NodeState);
-            this.panel1.Controls.Add(this.button17);
-            this.panel1.Location = new System.Drawing.Point(3, 238);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(217, 215);
-            this.panel1.TabIndex = 3;
-            // 
-            // button17
-            // 
-            this.button17.Font = new System.Drawing.Font("Buxton Sketch", 18F, System.Drawing.FontStyle.Bold);
-            this.button17.Location = new System.Drawing.Point(6, 2);
-            this.button17.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button17.Name = "button17";
-            this.button17.Size = new System.Drawing.Size(196, 47);
-            this.button17.TabIndex = 22;
-            this.button17.Text = "Conquer now";
-            this.button17.UseVisualStyleBackColor = true;
-            this.button17.Click += new System.EventHandler(this.button17_Click);
-            // 
-            // ResearchTreeView
-            // 
-            this.ResearchTreeView.Location = new System.Drawing.Point(3, 3);
-            this.ResearchTreeView.Name = "ResearchTreeView";
-            treeNode1.Name = "节点8";
-            treeNode1.Text = "节点8";
-            treeNode2.Name = "节点9";
-            treeNode2.Text = "节点9";
-            treeNode3.Name = "节点10";
-            treeNode3.Text = "节点10";
-            treeNode4.Name = "节点0";
-            treeNode4.Text = "节点0";
-            treeNode5.Name = "节点11";
-            treeNode5.Text = "节点11";
-            treeNode6.Name = "节点12";
-            treeNode6.Text = "节点12";
-            treeNode7.Name = "节点13";
-            treeNode7.Text = "节点13";
-            treeNode8.Name = "节点1";
-            treeNode8.Text = "节点1";
-            treeNode9.Name = "节点2";
-            treeNode9.Text = "节点2";
-            treeNode10.Name = "节点3";
-            treeNode10.Text = "节点3";
-            treeNode11.Name = "节点4";
-            treeNode11.Text = "节点4";
-            treeNode12.Name = "节点5";
-            treeNode12.Text = "节点5";
-            treeNode13.Name = "节点6";
-            treeNode13.Text = "节点6";
-            treeNode14.Name = "节点7";
-            treeNode14.Text = "节点7";
-            this.ResearchTreeView.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode4,
-            treeNode8,
-            treeNode9,
-            treeNode10,
-            treeNode11,
-            treeNode12,
-            treeNode13,
-            treeNode14});
-            this.ResearchTreeView.Size = new System.Drawing.Size(217, 229);
-            this.ResearchTreeView.TabIndex = 2;
-            this.ResearchTreeView.DoubleClick += new System.EventHandler(this.ResearchTreeView_DoubleClick);
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Controls.Add(this.treeView1);
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(226, 0);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(323, 454);
-            this.flowLayoutPanel1.TabIndex = 0;
-            // 
-            // styleManager1
-            // 
-            this.styleManager1.ManagerStyle = DevComponents.DotNetBar.eStyle.Metro;
-            this.styleManager1.MetroColorParameters = new DevComponents.DotNetBar.Metro.ColorTables.MetroColorGeneratorParameters(System.Drawing.Color.White, System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(87)))), ((int)(((byte)(154))))));
             // 
             // NodeState
             // 
@@ -609,54 +449,65 @@
             "1",
             "2",
             "3"});
-            this.NodeState.Location = new System.Drawing.Point(6, 54);
+            this.NodeState.Location = new System.Drawing.Point(16, 76);
             this.NodeState.Name = "NodeState";
-            this.NodeState.Size = new System.Drawing.Size(121, 20);
+            this.NodeState.Size = new System.Drawing.Size(196, 20);
             this.NodeState.TabIndex = 24;
             // 
-            // treeView1
+            // button17
             // 
-            this.treeView1.Location = new System.Drawing.Point(3, 3);
-            this.treeView1.Name = "treeView1";
-            treeNode15.Name = "节点8";
-            treeNode15.Text = "节点8";
-            treeNode16.Name = "节点9";
-            treeNode16.Text = "节点9";
-            treeNode17.Name = "节点10";
-            treeNode17.Text = "节点10";
-            treeNode18.Name = "节点0";
-            treeNode18.Text = "节点0";
-            treeNode19.Name = "节点11";
-            treeNode19.Text = "节点11";
-            treeNode20.Name = "节点12";
-            treeNode20.Text = "节点12";
-            treeNode21.Name = "节点13";
-            treeNode21.Text = "节点13";
-            treeNode22.Name = "节点1";
-            treeNode22.Text = "节点1";
-            treeNode23.Name = "节点2";
-            treeNode23.Text = "节点2";
-            treeNode24.Name = "节点3";
-            treeNode24.Text = "节点3";
-            treeNode25.Name = "节点4";
-            treeNode25.Text = "节点4";
-            treeNode26.Name = "节点5";
-            treeNode26.Text = "节点5";
-            treeNode27.Name = "节点6";
-            treeNode27.Text = "节点6";
-            treeNode28.Name = "节点7";
-            treeNode28.Text = "节点7";
-            this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode18,
-            treeNode22,
-            treeNode23,
-            treeNode24,
-            treeNode25,
-            treeNode26,
-            treeNode27,
-            treeNode28});
-            this.treeView1.Size = new System.Drawing.Size(217, 229);
-            this.treeView1.TabIndex = 4;
+            this.button17.Font = new System.Drawing.Font("Buxton Sketch", 18F, System.Drawing.FontStyle.Bold);
+            this.button17.Location = new System.Drawing.Point(16, 24);
+            this.button17.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button17.Name = "button17";
+            this.button17.Size = new System.Drawing.Size(196, 47);
+            this.button17.TabIndex = 22;
+            this.button17.Text = "Conquer now";
+            this.button17.UseVisualStyleBackColor = true;
+            this.button17.Click += new System.EventHandler(this.button17_Click);
+            // 
+            // SearchName
+            // 
+            this.SearchName.Controls.Add(this.label6);
+            this.SearchName.Location = new System.Drawing.Point(241, 3);
+            this.SearchName.Name = "SearchName";
+            this.SearchName.Size = new System.Drawing.Size(218, 451);
+            this.SearchName.TabIndex = 5;
+            // 
+            // label6
+            // 
+            this.label6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label6.Font = new System.Drawing.Font("Buxton Sketch", 18F, System.Drawing.FontStyle.Bold);
+            this.label6.Location = new System.Drawing.Point(0, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(218, 49);
+            this.label6.TabIndex = 4;
+            this.label6.Text = "Search Result";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Location = new System.Drawing.Point(3, 3);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(232, 451);
+            this.panel2.TabIndex = 4;
+            // 
+            // label1
+            // 
+            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label1.Font = new System.Drawing.Font("Buxton Sketch", 18F, System.Drawing.FontStyle.Bold);
+            this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(232, 49);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Research List";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // styleManager1
+            // 
+            this.styleManager1.ManagerStyle = DevComponents.DotNetBar.eStyle.Metro;
+            this.styleManager1.MetroColorParameters = new DevComponents.DotNetBar.Metro.ColorTables.MetroColorGeneratorParameters(System.Drawing.Color.White, System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(87)))), ((int)(((byte)(154))))));
             // 
             // Form1
             // 
@@ -686,8 +537,8 @@
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.flowLayoutPanel1.ResumeLayout(false);
+            this.SearchName.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -723,20 +574,17 @@
         private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.TabPage Research;
-        private System.Windows.Forms.Button button10;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Button button11;
         private DevComponents.DotNetBar.StyleManager styleManager1;
         private System.Windows.Forms.SplitContainer splitContainer1;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.Button button12;
-        private System.Windows.Forms.TreeView ResearchTreeView;
         private System.Windows.Forms.Button button13;
-        private System.Windows.Forms.Button button18;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button17;
         public System.Windows.Forms.ComboBox NodeState;
-        private System.Windows.Forms.TreeView treeView1;
+        private System.Windows.Forms.Panel SearchName;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label1;
     }
 }
 
