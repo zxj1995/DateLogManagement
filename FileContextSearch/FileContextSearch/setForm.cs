@@ -24,6 +24,7 @@ namespace FileContextSearch
             var config = ConfigurationManager.OpenExeConfiguration(Application.ExecutablePath);
             config.AppSettings.Settings["fileDir"].Value = textBox4.Text;
             config.Save(ConfigurationSaveMode.Modified);
+            
             FileSearchHelper.GetInstance().DateLogDir = textBox4.Text;
         }
 
