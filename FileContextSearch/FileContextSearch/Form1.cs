@@ -213,6 +213,7 @@ namespace FileContextSearch
 
         private void InitialUI()
         {
+            this.Text += Application.ProductVersion.ToString();
             var dt1 = DateTime.Now.AddDays(-1).ToString("yyyy-MM-dd");
             var dt2 = DateTime.Now.AddDays(-7).ToString("yyyy-MM-dd");
             var dt3 = DateTime.Now.AddDays(-1).ToString("yyyy-MM-dd");

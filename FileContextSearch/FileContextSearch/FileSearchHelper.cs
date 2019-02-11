@@ -201,6 +201,10 @@ namespace FileContextSearch
             {
                 lineEx[i] = "--";
             }
+            if (!Directory.Exists(dirPath))
+            {
+                Directory.CreateDirectory(dirPath);
+            }
             for (int i = 0; i < 3; i++)
             {
                 var filePathTemp = Path.Combine(FileSearchHelper.GetInstance().DateLogDir, "temp", fileNames[i]);
