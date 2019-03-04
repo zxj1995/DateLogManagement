@@ -300,7 +300,7 @@ namespace FileContextSearch
             {
                 var fsh = FileSearchHelper.GetInstance();
                 var dttemp = DateTime.Parse(this.textBox4.Text.ToString());
-                //1var filePath = Path.Combine(FileSearchHelper.GetInstance().DateLogDir, dttemp.Year.ToString(), dttemp.Month.ToString() + "月", dttemp.ToString("MM.dd") + ".txt");
+                //var filePath = Path.Combine(FileSearchHelper.GetInstance().DateLogDir, dttemp.Year.ToString(), dttemp.Month.ToString() + "月", dttemp.ToString("MM.dd") + ".txt");
                 FileSearchHelper.GetInstance().GenerateFile(dttemp);
             }
             else
