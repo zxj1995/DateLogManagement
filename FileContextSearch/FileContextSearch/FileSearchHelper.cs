@@ -174,13 +174,13 @@ namespace FileContextSearch
         }
 
 
-            //foreach (var item in fileNames)
-            //{
-                
-            //    //OpenAndSetWindow(item,win)
-            //}
-        
-        public void GenerateFile()
+        //foreach (var item in fileNames)
+        //{
+
+        //    //OpenAndSetWindow(item,win)
+        //}
+
+        public void GenerateFile(DateTime dtTemp)
         {
 
             //1.检测日志是否存在
@@ -188,22 +188,24 @@ namespace FileContextSearch
             var sb = new StringBuilder();
             var lineEx = new string[50];
             sb.Clear();
-            var dt = DateTime.Now;
+            var dt = dtTemp;
             var yearID = dt.Year.ToString();
             var monthID = dt.Month.ToString();
             var dayID = dt.Day.ToString();
-            var filePath = Path.Combine(FileSearchHelper.GetInstance().DateLogDir, yearID, monthID + "月", dt.ToString("MM.dd") + ".txt");
-            var dirPath = Path.Combine(FileSearchHelper.GetInstance().DateLogDir, yearID, monthID + "月");
-            string[] fileNames = new string[] {"DailyMission.txt", "Idea.txt" ,"Draft.txt" };
+            var filePath = "";
+            var dirPath = "";
+            filePath = Path.Combine(FileSearchHelper.GetInstance().DateLogDir, yearID, monthID + "月", dt.ToString("MM.dd") + ".txt");
+            dirPath = Path.Combine(FileSearchHelper.GetInstance().DateLogDir, yearID, monthID + "月");
+            if (!Directory.Exists(dirPath))
+            {
+                Directory.CreateDirectory(dirPath);
+            }
+            string[] fileNames = new string[] { "DailyMission.txt", "Idea.txt", "Draft.txt" };
             int itemp = 0;
             bool[] booltemp = new bool[] { false, false, false };
             for (int i = 0; i < lineEx.Length; i++)
             {
                 lineEx[i] = "--";
-            }
-            if (!Directory.Exists(dirPath))
-            {
-                Directory.CreateDirectory(dirPath);
             }
             for (int i = 0; i < 3; i++)
             {

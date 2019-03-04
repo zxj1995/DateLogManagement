@@ -199,6 +199,7 @@ namespace FileContextSearch
             form2.ShowDialog();
         }
         public static string ResearchPathDir="";
+        public System.Threading.Timer Tc;
         private void Form1_Load(object sender, EventArgs e)
         {
             var str = System.Configuration.ConfigurationManager.AppSettings["fileDir"];
@@ -208,9 +209,14 @@ namespace FileContextSearch
             ResearchPathDir = str;
             InitialDir();
             InitialUI();
+            Tc = new System.Threading.Timer(new TimerCallback(autoSave), null, Timeout.Infinite, 3600000);
+            Tc.Change(3600000, 3600000);
             //加载treeview
         }
-
+        public void autoSave(object obj)
+        {
+            FileSearchHelper.GetInstance().GenerateFile(DateTime.Now);
+        }
         private void InitialUI()
         {
             this.Text += Application.ProductVersion.ToString();
@@ -285,17 +291,27 @@ namespace FileContextSearch
 
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {
-            FileSearchHelper.GetInstance().GenerateFile();
+            FileSearchHelper.GetInstance().GenerateFile(DateTime.Now);
         }
 
         private void button8_Click(object sender, EventArgs e)
         {
-            FileSearchHelper.GetInstance().GenerateFile();
+            if (IsByDateTime.Checked)
+            {
+                var fsh = FileSearchHelper.GetInstance();
+                var dttemp = DateTime.Parse(this.textBox4.Text.ToString());
+                //var filePath = Path.Combine(FileSearchHelper.GetInstance().DateLogDir, dttemp.Year.ToString(), dttemp.Month.ToString() + "月", dttemp.ToString("MM.dd") + ".txt");
+                FileSearchHelper.GetInstance().GenerateFile(dttemp);
+            }
+            else
+            {
+                FileSearchHelper.GetInstance().GenerateFile(DateTime.Now);
+            }
         }
 
         private void button7_Click_1(object sender, EventArgs e)
         {
-            FileSearchHelper.GetInstance().GenerateFile();
+            FileSearchHelper.GetInstance().GenerateFile(DateTime.Now);
             var dttemp = DateTime.Parse(this.textBox4.Text.ToString());
             FileSearchHelper.GetInstance().CreateNewDatelogByDate(dttemp);
         }
