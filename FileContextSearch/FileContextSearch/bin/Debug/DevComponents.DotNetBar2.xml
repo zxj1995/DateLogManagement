@@ -2227,11 +2227,6 @@
             Gets or sets whether multiple nodes drag &amp; drop is enabled. Default value is true.
             </summary>
         </member>
-        <member name="P:DevComponents.AdvTree.AdvTree.ResetAutoScrollPositionOnClearedNodes">
-            <summary>
-            Indicates whether AutoScrollPosition is reset to 0,0 when all nodes are cleared from the tree. Default value is true.
-            </summary>
-        </member>
         <member name="P:DevComponents.AdvTree.AdvTree.DisplayMembers">
             <summary>
             Gets or sets the comma separated list of property or column names to display on popup tree control.
@@ -2313,12 +2308,6 @@
             <summary>
             Gets or sets whether tree control is scrolled horizontally so selected node is brought into the view. Default value is false.
             You can set this property to false to disable the horizontal scrolling of tree control when selected node has changed.
-            </summary>
-        </member>
-        <member name="F:DevComponents.AdvTree.AdvTreeSettings.UseSortAlphaComparer">
-            <summary>
-            Gets or sets whether AdvTree node comparer that provides column sorting uses standard text comparer instead of default
-            hybrid alpha-numeric comparer. Default value is false.
             </summary>
         </member>
         <member name="T:DevComponents.AdvTree.ICellEditControl">
@@ -2970,11 +2959,6 @@
         <member name="P:DevComponents.AdvTree.Cell.CanSelect">
             <summary>
             Gets whether cell can be selected. Cell must be Visible, Enabled and Selectable in order for it to be selected.
-            </summary>
-        </member>
-        <member name="P:DevComponents.AdvTree.Cell.ColumnHeader">
-            <summary>
-            Returns ColumnHeader cell is under if one is defined and cell is already parented to the tree. Otherwise it returns null/nothing.
             </summary>
         </member>
         <member name="P:DevComponents.AdvTree.Cell.TextMarkupBody">
@@ -5065,13 +5049,6 @@
             <param name="oldValue">Old property value</param>
             <param name="newValue">New property value</param>
         </member>
-        <member name="M:DevComponents.Editors.DateTimeAdv.DateTimeInput.OnTimeSelectorTypeChanged(DevComponents.Editors.DateTimeAdv.eTimeSelectorType,DevComponents.Editors.DateTimeAdv.eTimeSelectorType)">
-            <summary>
-            Called when TimeSelectorType property has changed.
-            </summary>
-            <param name="oldValue">Old property value</param>
-            <param name="newValue">New property value</param>
-        </member>
         <member name="M:DevComponents.Editors.DateTimeAdv.DateTimeInput.OnCommandChanged">
             <summary>
             Called when Command property value changes.
@@ -5390,11 +5367,6 @@
         <member name="P:DevComponents.Editors.DateTimeAdv.DateTimeInput.TimeSelectorTimeFormat">
             <summary>
             Gets or sets the popup time selector time format used to present time by the selector i.e. 12H or 24H format.
-            </summary>
-        </member>
-        <member name="P:DevComponents.Editors.DateTimeAdv.DateTimeInput.TimeSelectorType">
-            <summary>
-            Indicates the type of popup time selector used.
             </summary>
         </member>
         <member name="P:DevComponents.Editors.DateTimeAdv.DateTimeInput.Command">
@@ -11973,13 +11945,6 @@
             Initializes a new instance of the Bar class.
             </summary>
         </member>
-        <member name="M:DevComponents.DotNetBar.Bar.StyleManagerStyleChanged(DevComponents.DotNetBar.eDotNetBarStyle)">
-            <summary>
-            Called by StyleManager to notify control that style on manager has changed and that control should refresh its appearance if
-            its style is controlled by StyleManager.
-            </summary>
-            <param name="newStyle">New active style.</param>
-        </member>
         <member name="M:DevComponents.DotNetBar.Bar.#ctor(System.String)">
             <summary>
             Initializes a new instance of the Control class.
@@ -12445,11 +12410,6 @@
             Returns the reference to the control that last had input focus. This property should be used to
             determine which control had input focus before bar gained the focus. Use it to apply
             the menu command to active control.
-            </summary>
-        </member>
-        <member name="P:DevComponents.DotNetBar.Bar.BorderColors">
-            <summary>
-            Indicates the array of colors that when set are used to draw the border of the item.
             </summary>
         </member>
         <member name="P:DevComponents.DotNetBar.Bar.RenderMode">
@@ -13290,11 +13250,6 @@
         <member name="F:DevComponents.DotNetBar.eBarStateChange.AutoHideChanged">
             <summary>
             Indicates that bar AutoHide property has changed meaning that bar has been either placed in auto-hide mode or taken out of auto-hide mode.
-            </summary>
-        </member>
-        <member name="F:DevComponents.DotNetBar.eBarStateChange.DockTabMoved">
-            <summary>
-            Indicates that tab has been moved within a bar tab-strip by end user.
             </summary>
         </member>
         <member name="T:DevComponents.DotNetBar.eDoubleClickBarBehavior">
@@ -16965,13 +16920,6 @@
             <param name="oldValue">Old property value</param>
             <param name="newValue">New property value</param>
         </member>
-        <member name="M:DevComponents.DotNetBar.ButtonItem.OnSymbolSetChanged(DevComponents.DotNetBar.eSymbolSet,DevComponents.DotNetBar.eSymbolSet)">
-            <summary>
-            Called when SymbolSet property value changes.
-            </summary>
-            <param name="oldValue">Indciates old value</param>
-            <param name="newValue">Indicates new value</param>
-        </member>
         <member name="M:DevComponents.DotNetBar.ButtonItem.OnSymbolSizeChanged(System.Single,System.Single)">
             <summary>
             Called when SymbolSize property has changed.
@@ -17187,19 +17135,9 @@
             Gets or sets the color of the Symbol.
             </summary>
         </member>
-        <member name="P:DevComponents.DotNetBar.ButtonItem.SymbolRealized">
-            <summary>
-            Gets the realized symbol string.
-            </summary>
-        </member>
         <member name="P:DevComponents.DotNetBar.ButtonItem.Symbol">
             <summary>
             Indicates the symbol displayed on face of the button instead of the image. Setting the symbol overrides the image setting.
-            </summary>
-        </member>
-        <member name="P:DevComponents.DotNetBar.ButtonItem.SymbolSet">
-            <summary>
-            Gets or sets the symbol set used to represent the Symbol.
             </summary>
         </member>
         <member name="P:DevComponents.DotNetBar.ButtonItem.SymbolSize">
@@ -17726,11 +17664,6 @@
         <member name="P:DevComponents.DotNetBar.ButtonX.Symbol">
             <summary>
             Indicates the symbol displayed on face of the button instead of the image. Setting the symbol overrides the image setting.
-            </summary>
-        </member>
-        <member name="P:DevComponents.DotNetBar.ButtonX.SymbolSet">
-            <summary>
-            Gets or sets the symbol set used to represent the Symbol.
             </summary>
         </member>
         <member name="P:DevComponents.DotNetBar.ButtonX.SymbolSize">
@@ -20615,13 +20548,6 @@
             Creates new instance of ComboBoxEx.
             </summary>
         </member>
-        <member name="M:DevComponents.DotNetBar.Controls.ComboBoxEx.StyleManagerStyleChanged(DevComponents.DotNetBar.eDotNetBarStyle)">
-            <summary>
-            Called by StyleManager to notify control that style on manager has changed and that control should refresh its appearance if
-            its style is controlled by StyleManager.
-            </summary>
-            <param name="newStyle">New active style.</param>
-        </member>
         <member name="M:DevComponents.DotNetBar.Controls.ComboBoxEx.ShouldSerializeWatermarkColor">
             <summary>
             Indicates whether property should be serialized by Windows Forms designer.
@@ -20983,11 +20909,6 @@
         <member name="P:DevComponents.DotNetBar.ComboBoxItem.ComboWidth">
             <summary>
             Indicates the Width of the combo box part of the item.
-            </summary>
-        </member>
-        <member name="P:DevComponents.DotNetBar.ComboBoxItem.AutoReleaseFocus">
-            <summary>
-            Indicates whether control automatically releases its input focus when selection is made using keyboard.
             </summary>
         </member>
         <member name="P:DevComponents.DotNetBar.ComboBoxItem.ComboBoxEx">
@@ -28717,429 +28638,6 @@
             Gets whether to RepositionEditingControlOnValueChange
             </summary>
         </member>
-        <member name="T:DevComponents.DotNetBar.Controls.Flyout">
-            <summary>
-            Component to display flyout popup.
-            </summary>
-        </member>
-        <member name="F:DevComponents.DotNetBar.Controls.Flyout.components">
-            <summary>
-            Required designer variable.
-            </summary>
-        </member>
-        <member name="M:DevComponents.DotNetBar.Controls.Flyout.Dispose(System.Boolean)">
-            <summary> 
-            Clean up any resources being used.
-            </summary>
-            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        </member>
-        <member name="M:DevComponents.DotNetBar.Controls.Flyout.InitializeComponent">
-            <summary>
-            Required method for Designer support - do not modify
-            the contents of this method with the code editor.
-            </summary>
-        </member>
-        <member name="M:DevComponents.DotNetBar.Controls.Flyout.OnContentChanged(System.Windows.Forms.Control,System.Windows.Forms.Control)">
-            <summary>
-            Called when Content property has changed.
-            </summary>
-            <param name="oldValue">Old property value</param>
-            <param name="newValue">New property value</param>
-        </member>
-        <member name="M:DevComponents.DotNetBar.Controls.Flyout.OnPointerSideChanged(DevComponents.DotNetBar.Controls.ePointerSide,DevComponents.DotNetBar.Controls.ePointerSide)">
-            <summary>
-            Called when PointerSide property has changed.
-            </summary>
-            <param name="oldValue">Old property value</param>
-            <param name="newValue">New property value</param>
-        </member>
-        <member name="M:DevComponents.DotNetBar.Controls.Flyout.OnTargetControlChanged(System.Windows.Forms.Control,System.Windows.Forms.Control)">
-            <summary>
-            Called when TargetControl property has changed.
-            </summary>
-            <param name="oldValue">Old property value</param>
-            <param name="newValue">New property value</param>
-        </member>
-        <member name="M:DevComponents.DotNetBar.Controls.Flyout.OnDeepControlIntegrationChanged(System.Boolean,System.Boolean)">
-            <summary>
-            Called when DeepControlIntegration property has changed.
-            </summary>
-            <param name="oldValue">Old property value</param>
-            <param name="newValue">New property value</param>
-        </member>
-        <member name="M:DevComponents.DotNetBar.Controls.Flyout.OnDisplayModeChanged(DevComponents.DotNetBar.Controls.eFlyoutDisplayMode,DevComponents.DotNetBar.Controls.eFlyoutDisplayMode)">
-            <summary>
-            Called when DisplayMode property has changed.
-            </summary>
-            <param name="oldValue">Old property value</param>
-            <param name="newValue">New property value</param>
-        </member>
-        <member name="M:DevComponents.DotNetBar.Controls.Flyout.OnCloseModeChanged(DevComponents.DotNetBar.Controls.eFlyoutCloseMode,DevComponents.DotNetBar.Controls.eFlyoutCloseMode)">
-            <summary>
-            Called when CloseMode property has changed.
-            </summary>
-            <param name="oldValue">Old property value</param>
-            <param name="newValue">New property value</param>
-        </member>
-        <member name="M:DevComponents.DotNetBar.Controls.Flyout.OnPrepareContent(System.Object,System.EventArgs)">
-            <summary>
-            Raises PrepareContent event.
-            </summary>
-            <param name="e">Provides event arguments.</param>
-        </member>
-        <member name="M:DevComponents.DotNetBar.Controls.Flyout.Show">
-            <summary>
-            Shows flyout with the Content. 
-            </summary>
-        </member>
-        <member name="M:DevComponents.DotNetBar.Controls.Flyout.GetFlyoutFormSize">
-            <summary>
-            Returns the flyout size based on Content size.
-            </summary>
-            <returns>Proposed flyout size.</returns>
-        </member>
-        <member name="M:DevComponents.DotNetBar.Controls.Flyout.Show(System.Drawing.Rectangle)">
-            <summary>
-            Shows flyout at specified location and with specified size. Size can be empty (0,0) and flyout will be automatically sized based on the content.
-            </summary>
-            <param name="screenFlyoutBounds"></param>
-        </member>
-        <member name="M:DevComponents.DotNetBar.Controls.Flyout.OnFlyoutShowing(DevComponents.DotNetBar.Controls.FlyoutShowingEventArgs)">
-            <summary>
-            Raises FlyoutShowing event.
-            </summary>
-            <param name="e">Provides event arguments.</param>
-        </member>
-        <member name="M:DevComponents.DotNetBar.Controls.Flyout.OnFlyoutShown(System.EventArgs)">
-            <summary>
-            Raises FlyoutShown event.
-            </summary>
-            <param name="e">Provides event arguments.</param>
-        </member>
-        <member name="M:DevComponents.DotNetBar.Controls.Flyout.Show(System.Drawing.Rectangle,DevComponents.DotNetBar.Controls.ePointerSide,System.Int32,System.Object)">
-            <summary>
-            Shows flyout at specified location and with specified size. Size can be empty (0,0) and flyout will be automatically sized based on the content.
-            </summary>
-            <param name="screenFlyoutBounds">Screen bounds to display flyout at.</param>
-            <param name="pointerSide">Side of the flyout which will have pointer triangle</param>
-            <param name="pointerOffset">Pointer position either x or y depending on which side pointer is displayed on.</param>
-            <param name="targetItem">Target item for the flyout.</param>
-        </member>
-        <member name="M:DevComponents.DotNetBar.Controls.Flyout.OnFlyoutClosing(System.Windows.Forms.FormClosingEventArgs)">
-            <summary>
-            Raises FlyoutClosing event.
-            </summary>
-            <param name="e">Provides event arguments.</param>
-        </member>
-        <member name="M:DevComponents.DotNetBar.Controls.Flyout.OnFlyoutClosed(System.Windows.Forms.FormClosedEventArgs)">
-            <summary>
-            Raises FlyoutClosed event.
-            </summary>
-            <param name="e">Provides event arguments.</param>
-        </member>
-        <member name="M:DevComponents.DotNetBar.Controls.Flyout.Close">
-            <summary>
-            Closes the flyout form if it was open.
-            </summary>
-        </member>
-        <member name="M:DevComponents.DotNetBar.Controls.Flyout.OnActivateOnShowChanged(System.Boolean,System.Boolean)">
-            <summary>
-            Called when ActivateOnShow property has changed.
-            </summary>
-            <param name="oldValue">Old property value</param>
-            <param name="newValue">New property value</param>
-        </member>
-        <member name="M:DevComponents.DotNetBar.Controls.Flyout.OnTopMostChanged(System.Boolean,System.Boolean)">
-            <summary>
-            Called when TopMost property has changed.
-            </summary>
-            <param name="oldValue">Old property value</param>
-            <param name="newValue">New property value</param>
-        </member>
-        <member name="M:DevComponents.DotNetBar.Controls.Flyout.ShouldSerializeBackColor">
-            <summary>
-            Gets whether property should be serialized.
-            </summary>
-        </member>
-        <member name="M:DevComponents.DotNetBar.Controls.Flyout.ResetBackColor">
-            <summary>
-            Resets property to its default value.
-            </summary>
-        </member>
-        <member name="M:DevComponents.DotNetBar.Controls.Flyout.ShouldSerializeBorderColor">
-            <summary>
-            Gets whether property should be serialized.
-            </summary>
-        </member>
-        <member name="M:DevComponents.DotNetBar.Controls.Flyout.ResetBorderColor">
-            <summary>
-            Resets property to its default value.
-            </summary>
-        </member>
-        <member name="M:DevComponents.DotNetBar.Controls.Flyout.OnDropShadowChanged(System.Boolean,System.Boolean)">
-            <summary>
-            Called when DropShadow property has changed.
-            </summary>
-            <param name="oldValue">Old property value</param>
-            <param name="newValue">New property value</param>
-        </member>
-        <member name="M:DevComponents.DotNetBar.Controls.Flyout.OnParentChanged(System.Windows.Forms.Control,System.Windows.Forms.Control)">
-            <summary>
-            Called when Parent property has changed.
-            </summary>
-            <param name="oldValue">Old property value</param>
-            <param name="newValue">New property value</param>
-        </member>
-        <member name="P:DevComponents.DotNetBar.Controls.Flyout.Content">
-            <summary>
-            Indicates a control, usually panel with other controls inside of it, that is displayed on the flyout popup.
-            </summary>
-        </member>
-        <member name="P:DevComponents.DotNetBar.Controls.Flyout.PointerSide">
-            <summary>
-            Indicates the side of the flyout triangle pointer is displayed on.
-            </summary>
-        </member>
-        <member name="P:DevComponents.DotNetBar.Controls.Flyout.TargetControl">
-            <summary>
-            Indicates the target control for the flyout display and positioning.
-            </summary>
-        </member>
-        <member name="P:DevComponents.DotNetBar.Controls.Flyout.DeepIntegration">
-            <summary>
-            Indicates whether Flyout integrates on item level with DotNetBar controls it recognizes like SuperTabControl, AdvTree etc.
-            </summary>
-        </member>
-        <member name="P:DevComponents.DotNetBar.Controls.Flyout.DisplayMode">
-            <summary>
-            Specifies when the flyout is displayed.
-            </summary>
-        </member>
-        <member name="P:DevComponents.DotNetBar.Controls.Flyout.CloseMode">
-            <summary>
-            Indicates when Flyout is automatically closed.
-            </summary>
-        </member>
-        <member name="E:DevComponents.DotNetBar.Controls.Flyout.PrepareContent">
-            <summary>
-            Occurs before the flyout is shown for specific target and allows you to prepare Content for it. Sender of event will be the targeted control or item.
-            </summary>
-        </member>
-        <member name="E:DevComponents.DotNetBar.Controls.Flyout.FlyoutShown">
-            <summary>
-            Occurs after flyout has been shown.
-            </summary>
-        </member>
-        <member name="E:DevComponents.DotNetBar.Controls.Flyout.FlyoutClosing">
-            <summary>
-            Occurs before flyout is closed and allows you to cancel the closing.
-            </summary>
-        </member>
-        <member name="E:DevComponents.DotNetBar.Controls.Flyout.FlyoutClosed">
-            <summary>
-            Occurs after flyout is closed.
-            </summary>
-        </member>
-        <member name="P:DevComponents.DotNetBar.Controls.Flyout.ActivateOnShow">
-            <summary>
-            Indicates whether flyout is active/focused when its shown, default value is false.
-            </summary>
-        </member>
-        <member name="P:DevComponents.DotNetBar.Controls.Flyout.TopMost">
-            <summary>
-            Indicates whether flyout is made top-most window when shown
-            </summary>
-        </member>
-        <member name="P:DevComponents.DotNetBar.Controls.Flyout.BackColor">
-            <summary>
-            Gets or sets the background flyout color. Default value is Color.Empty which indicates that current color scheme will be used.
-            </summary>
-        </member>
-        <member name="P:DevComponents.DotNetBar.Controls.Flyout.BorderColor">
-            <summary>
-            Gets or sets the flyout border color. Default value of Color.Empty indicates that color scheme will be used.
-            </summary>
-        </member>
-        <member name="P:DevComponents.DotNetBar.Controls.Flyout.DropShadow">
-            <summary>
-            Indicates whether flyout displays drop shadow.
-            </summary>
-        </member>
-        <member name="P:DevComponents.DotNetBar.Controls.Flyout.Parent">
-            <summary>
-            Gets or sets the parent control for the Flyout. Parent is used to find the parent form so flyout can be closed when form is de-activated.
-            </summary>
-        </member>
-        <member name="T:DevComponents.DotNetBar.Controls.FlyoutShowingEventHandler">
-            <summary>
-            Defines delegate for the FlyoutShowing event.
-            </summary>
-            <param name="sender"></param>
-            <param name="ea"></param>
-        </member>
-        <member name="F:DevComponents.DotNetBar.Controls.FlyoutShowingEventArgs.Flyout">
-            <summary>
-            Gets the reference to the flyout form.
-            </summary>
-        </member>
-        <member name="F:DevComponents.DotNetBar.Controls.FlyoutShowingEventArgs.Target">
-            <summary>
-            Gets the reference to the flyout target usually TargetControl.
-            </summary>
-        </member>
-        <member name="F:DevComponents.DotNetBar.Controls.FlyoutShowingEventArgs.Cancel">
-            <summary>
-            Allows you to cancel showing of the flyout by setting this value to true.
-            </summary>
-        </member>
-        <member name="M:DevComponents.DotNetBar.Controls.FlyoutShowingEventArgs.#ctor(DevComponents.DotNetBar.Controls.FlyoutForm,System.Object)">
-            <summary>
-            Initializes a new instance of the FlyoutShowingEventArgs class.
-            </summary>
-            <param name="flyout"></param>
-            <param name="target"></param>
-        </member>
-        <member name="T:DevComponents.DotNetBar.Controls.eFlyoutDisplayMode">
-            <summary>
-            Defines the modes for Flyout display.
-            </summary>
-        </member>
-        <member name="F:DevComponents.DotNetBar.Controls.eFlyoutDisplayMode.Manual">
-            <summary>
-            Flyout is displayed manually using flyout.Show() method.
-            </summary>
-        </member>
-        <member name="F:DevComponents.DotNetBar.Controls.eFlyoutDisplayMode.MouseOver">
-            <summary>
-            Flyout is displayed when mouse is over TargetControl.
-            </summary>
-        </member>
-        <member name="F:DevComponents.DotNetBar.Controls.eFlyoutDisplayMode.MouseHover">
-            <summary>
-            Flyout is displayed when mouse is hovering over TargetControl.
-            </summary>
-        </member>
-        <member name="F:DevComponents.DotNetBar.Controls.eFlyoutDisplayMode.MouseClick">
-            <summary>
-            Flyout is displayed when left mouse button is clicked on TargetControl.
-            </summary>
-        </member>
-        <member name="T:DevComponents.DotNetBar.Controls.eFlyoutCloseMode">
-            <summary>
-            Defines Flyout closing condition.
-            </summary>
-        </member>
-        <member name="F:DevComponents.DotNetBar.Controls.eFlyoutCloseMode.Manual">
-            <summary>
-            Flyout is closed manually using flyout.Close() method.
-            </summary>
-        </member>
-        <member name="F:DevComponents.DotNetBar.Controls.eFlyoutCloseMode.ClickOutside">
-            <summary>
-            Flyout is closed when user clicks outside of flyout bounds.
-            </summary>
-        </member>
-        <member name="F:DevComponents.DotNetBar.Controls.eFlyoutCloseMode.TargetControlHidden">
-            <summary>
-            Flyout is closed when TargetControl is hidden.
-            </summary>
-        </member>
-        <member name="F:DevComponents.DotNetBar.Controls.eFlyoutCloseMode.TargetControlLostFocus">
-            <summary>
-            Flyout is closed when TargetControl loses focus.
-            </summary>
-        </member>
-        <member name="F:DevComponents.DotNetBar.Controls.eFlyoutCloseMode.ParentFormDeactivate">
-            <summary>
-            Flyout is closed when parent forms deactivates.
-            </summary>
-        </member>
-        <member name="T:DevComponents.DotNetBar.Rendering.FlyoutColorTable">
-            <summary>
-            Defines colors for the Flyout control.
-            </summary>
-        </member>
-        <member name="F:DevComponents.DotNetBar.Rendering.FlyoutColorTable.BackColor">
-            <summary>
-            Specifies Flyout background color.
-            </summary>
-        </member>
-        <member name="F:DevComponents.DotNetBar.Rendering.FlyoutColorTable.BorderColor">
-            <summary>
-            Specifies Flyout border color.
-            </summary>
-        </member>
-        <member name="M:DevComponents.DotNetBar.Controls.FlyoutForm.OnPointerOffsetChanged(System.Int32,System.Int32)">
-            <summary>
-            Called when PointerOffset property has changed.
-            </summary>
-            <param name="oldValue">Old property value</param>
-            <param name="newValue">New property value</param>
-        </member>
-        <member name="M:DevComponents.DotNetBar.Controls.FlyoutForm.OnPointerSideChanged(DevComponents.DotNetBar.Controls.ePointerSide,DevComponents.DotNetBar.Controls.ePointerSide)">
-            <summary>
-            Called when PointerSide property has changed.
-            </summary>
-            <param name="oldValue">Old property value</param>
-            <param name="newValue">New property value</param>
-        </member>
-        <member name="M:DevComponents.DotNetBar.Controls.FlyoutForm.ShouldSerializeBorderColor">
-            <summary>
-            Gets whether property should be serialized.
-            </summary>
-        </member>
-        <member name="M:DevComponents.DotNetBar.Controls.FlyoutForm.ResetBorderColor">
-            <summary>
-            Resets property to its default value.
-            </summary>
-        </member>
-        <member name="F:DevComponents.DotNetBar.Controls.FlyoutForm.components">
-            <summary>
-            Required designer variable.
-            </summary>
-        </member>
-        <member name="M:DevComponents.DotNetBar.Controls.FlyoutForm.Dispose(System.Boolean)">
-            <summary>
-            Clean up any resources being used.
-            </summary>
-            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        </member>
-        <member name="M:DevComponents.DotNetBar.Controls.FlyoutForm.InitializeComponent">
-            <summary>
-            Required method for Designer support - do not modify
-            the contents of this method with the code editor.
-            </summary>
-        </member>
-        <member name="P:DevComponents.DotNetBar.Controls.FlyoutForm.DropShadow">
-            <summary>
-            Indicates whether flyout displays a drop shadow.
-            </summary>
-        </member>
-        <member name="P:DevComponents.DotNetBar.Controls.FlyoutForm.ActivateOnShow">
-            <summary>
-            Gets or sets whether form is made active/focused when shown.
-            </summary>
-        </member>
-        <member name="P:DevComponents.DotNetBar.Controls.FlyoutForm.PointerOffset">
-            <summary>
-            Gets or sets the pointer offset from the top-left corner
-            </summary>
-        </member>
-        <member name="P:DevComponents.DotNetBar.Controls.FlyoutForm.PointerSide">
-            <summary>
-            Gets or sets the side pointer triangle is displayed on.
-            </summary>
-        </member>
-        <member name="P:DevComponents.DotNetBar.Controls.FlyoutForm.BorderColor">
-            <summary>
-            Gets or sets the flyout border color. Default value of Color.Empty indicates that color scheme will be used.
-            </summary>
-        </member>
-        <member name="T:DevComponents.DotNetBar.Controls.ePointerSide">
-            <summary>
-            Defines the side of triangle pointer displayed on flyout popup.
-            </summary>
-        </member>
         <member name="T:DevComponents.DotNetBar.PanelControl">
             <summary>
             Represents graphical panel control with support for different visual styles and gradients.
@@ -29716,11 +29214,6 @@
             Gets or sets the color of the symbol.
             </summary>
         </member>
-        <member name="P:DevComponents.DotNetBar.LabelX.FontBold">
-            <summary>
-            Indicates whether label text is rendered using bold font unless the Font property is specifically set to different font.
-            </summary>
-        </member>
         <member name="P:DevComponents.DotNetBar.LabelX.Command">
             <summary>
             Gets or sets the command assigned to the item. Default value is null.
@@ -29968,12 +29461,6 @@
             Returns automatically calculated height of the control given current content.
             </summary>
             <returns>Height in pixels.</returns>
-        </member>
-        <member name="M:DevComponents.DotNetBar.ItemControl.GetAutoSizeWidth">
-            <summary>
-            Returns automatically calculated width of the control given current content.
-            </summary>
-            <returns>Width in pixels.</returns>
         </member>
         <member name="M:DevComponents.DotNetBar.ItemControl.Dispose(System.Boolean)">
             <summary> 
@@ -30641,23 +30128,6 @@
             <param name="value">true to select the specified item; otherwise, false.</param>
             <param name="source">Indicates the source of the change.</param>
         </member>
-        <member name="M:DevComponents.DotNetBar.ListBoxAdv.SelectNextItem">
-            <summary>
-            Selects next visible list box item.
-            </summary>
-        </member>
-        <member name="M:DevComponents.DotNetBar.ListBoxAdv.SelectPreviousItem">
-            <summary>
-            Selects previous visible list box item.
-            </summary>
-        </member>
-        <member name="M:DevComponents.DotNetBar.ListBoxAdv.FindListBoxItem(System.Object)">
-            <summary>
-            Gets ListBoxItem which represents an object value from Items collection when Items collection contains non ListBoxItem objects.
-            </summary>
-            <param name="value">Value to get ListBoxItem for.</param>
-            <returns></returns>
-        </member>
         <member name="M:DevComponents.DotNetBar.ListBoxAdv.OnDisplayMemberChanged(System.String,System.String)">
             <summary>
             Called when DisplayMember property has changed.
@@ -30929,13 +30399,6 @@
             <param name="oldValue">Old property value</param>
             <param name="newValue">New property value</param>
         </member>
-        <member name="M:DevComponents.DotNetBar.ListBoxItem.OnSymbolSetChanged(DevComponents.DotNetBar.eSymbolSet,DevComponents.DotNetBar.eSymbolSet)">
-            <summary>
-            Called when SymbolSet property value changes.
-            </summary>
-            <param name="oldValue">Indciates old value</param>
-            <param name="newValue">Indicates new value</param>
-        </member>
         <member name="M:DevComponents.DotNetBar.ListBoxItem.OnSymbolSizeChanged(System.Single,System.Single)">
             <summary>
             Called when SymbolSize property has changed.
@@ -30988,19 +30451,9 @@
             Gets or sets the color of the Symbol.
             </summary>
         </member>
-        <member name="P:DevComponents.DotNetBar.ListBoxItem.SymbolRealized">
-            <summary>
-            Gets the realized symbol string.
-            </summary>
-        </member>
         <member name="P:DevComponents.DotNetBar.ListBoxItem.Symbol">
             <summary>
             Indicates the symbol displayed on face of the button instead of the image. Setting the symbol overrides the image setting.
-            </summary>
-        </member>
-        <member name="P:DevComponents.DotNetBar.ListBoxItem.SymbolSet">
-            <summary>
-            Gets or sets the symbol set used to represent the Symbol.
             </summary>
         </member>
         <member name="P:DevComponents.DotNetBar.ListBoxItem.SymbolSize">
@@ -31778,11 +31231,6 @@
             Indicates selected page.
             </summary>
         </member>
-        <member name="P:DevComponents.DotNetBar.Controls.PageSlider.AnimationTime">
-            <summary>
-            Indicates the animation time in milliseconds for operations that perform visual animation of transition. Set to zero to disable animation.
-            </summary>
-        </member>
         <member name="P:DevComponents.DotNetBar.Controls.PageSlider.SelectedPageIndex">
             <summary>
             Gets or sets zero based selected page index. If there is no page selected returns -1.
@@ -32366,13 +31814,6 @@
             <param name="oldValue">Old property value</param>
             <param name="newValue">New property value</param>
         </member>
-        <member name="M:DevComponents.DotNetBar.StepItem.OnSymbolSetChanged(DevComponents.DotNetBar.eSymbolSet,DevComponents.DotNetBar.eSymbolSet)">
-            <summary>
-            Called when SymbolSet property value changes.
-            </summary>
-            <param name="oldValue">Indciates old value</param>
-            <param name="newValue">Indicates new value</param>
-        </member>
         <member name="M:DevComponents.DotNetBar.StepItem.OnSymbolSizeChanged(System.Single,System.Single)">
             <summary>
             Called when SymbolSize property has changed.
@@ -32433,19 +31874,9 @@
             Gets or sets the color of the Symbol.
             </summary>
         </member>
-        <member name="P:DevComponents.DotNetBar.StepItem.SymbolRealized">
-            <summary>
-            Gets the realized symbol string.
-            </summary>
-        </member>
         <member name="P:DevComponents.DotNetBar.StepItem.Symbol">
             <summary>
             Indicates the symbol displayed on face of the button instead of the image. Setting the symbol overrides the image setting.
-            </summary>
-        </member>
-        <member name="P:DevComponents.DotNetBar.StepItem.SymbolSet">
-            <summary>
-            Gets or sets the symbol set used to represent the Symbol.
             </summary>
         </member>
         <member name="P:DevComponents.DotNetBar.StepItem.SymbolSize">
@@ -32612,12 +32043,6 @@
             </summary>
             <param name="e">Provides event arguments.</param>
         </member>
-        <member name="M:DevComponents.DotNetBar.Controls.RangeSlider.OnRangeTooltipText(DevComponents.DotNetBar.RangeTooltipEventArgs)">
-            <summary>
-            Raises GetRangeTooltipText event.
-            </summary>
-            <param name="e">Provides event arguments.</param>
-        </member>
         <member name="M:DevComponents.DotNetBar.Controls.RangeSlider.RecalcLayout">
             <summary>
             Forces the button to perform internal layout.
@@ -32641,11 +32066,6 @@
         <member name="E:DevComponents.DotNetBar.Controls.RangeSlider.ValueChanged">
             <summary>
             Occurs after Value property has changed
-            </summary>
-        </member>
-        <member name="E:DevComponents.DotNetBar.Controls.RangeSlider.RangeTooltipText">
-            <summary>
-            Occurs when control is about to display the range tooltip and it allows you to customize tooltip
             </summary>
         </member>
         <member name="P:DevComponents.DotNetBar.Controls.RangeSlider.SliderItem">
@@ -33440,11 +32860,6 @@
             Should be fired when scroll-bar value on child control changes.
             </summary>
         </member>
-        <member name="P:DevComponents.DotNetBar.Controls.IScrollBarOverrideSupport.DesignMode">
-            <summary>
-            Gets whether control is in design mode.
-            </summary>
-        </member>
         <member name="M:DevComponents.DotNetBar.Controls.RichTextBoxScrollEx.OnNonClientSizeChanged(System.EventArgs)">
             <summary>
             Raises NonClientSizeChanged event.
@@ -33479,575 +32894,6 @@
             </summary>
             <param name="sender">Sender.</param>
             <param name="e">Event arguments</param>
-        </member>
-        <member name="P:DevComponents.DotNetBar.Controls.ScrollbarSkinner.ScrollBarAppearance">
-            <summary>
-            Gets or sets the scroll-bar visual style.
-            </summary>
-        </member>
-        <member name="M:DevComponents.DotNetBar.Rendering.SideNavItemPainter.Paint(DevComponents.DotNetBar.Rendering.SideNavItemRendererEventArgs)">
-            <summary>
-            Paints ListBoxItem.
-            </summary>
-            <param name="e">Provides arguments for the operation.</param>
-        </member>
-        <member name="M:DevComponents.DotNetBar.Rendering.OfficeSideNavItemPainter.Paint(DevComponents.DotNetBar.Rendering.SideNavItemRendererEventArgs)">
-            <summary>
-            Paints ListBoxItem.
-            </summary>
-            <param name="e">Provides arguments for the operation.</param>
-        </member>
-        <member name="T:DevComponents.DotNetBar.Controls.SideNav">
-            <summary>
-            Represents SideNav control to create "hamburger" menus.
-            </summary>
-        </member>
-        <member name="M:DevComponents.DotNetBar.Controls.SideNav.StyleManagerStyleChanged(DevComponents.DotNetBar.eDotNetBarStyle)">
-            <summary>
-            Called by StyleManager to notify control that style on manager has changed and that control should refresh its appearance if
-            its style is controlled by StyleManager.
-            </summary>
-            <param name="newStyle">New active style.</param>
-        </member>
-        <member name="M:DevComponents.DotNetBar.Controls.SideNav.UpdateColors">
-            <summary>
-            Updates the control colors from the global color table.
-            </summary>
-        </member>
-        <member name="M:DevComponents.DotNetBar.Controls.SideNav.Maximize(DevComponents.DotNetBar.eEventSource)">
-            <summary>
-            Maximizes control width so it fills up space to the right of the control.
-            </summary>
-            <param name="source">Source of the event.</param>
-        </member>
-        <member name="M:DevComponents.DotNetBar.Controls.SideNav.Restore(DevComponents.DotNetBar.eEventSource)">
-            <summary>
-            Restores the control to previous size if it was maximized before.
-            </summary>
-            <param name="source">Source of event.</param>
-        </member>
-        <member name="M:DevComponents.DotNetBar.Controls.SideNav.Open(DevComponents.DotNetBar.Controls.SideNavItem,DevComponents.DotNetBar.eEventSource)">
-            <summary>
-            Opens the control, i.e. expands it, selects specified item and shows its associated panel.
-            </summary>
-            <param name="item">Item to select.</param>
-            <param name="source">Source of the event.</param>
-        </member>
-        <member name="M:DevComponents.DotNetBar.Controls.SideNav.Close(DevComponents.DotNetBar.eEventSource)">
-            <summary>
-            Closes the control, i.e. unselects any selected item, hide its associated panel and folds the control.
-            </summary>
-            <param name="source">Source of the event.</param>
-        </member>
-        <member name="M:DevComponents.DotNetBar.Controls.SideNav.OnIsMenuExpandedChanged(System.EventArgs)">
-            <summary>
-            Raises IsMenuExpandedChanged event.
-            </summary>
-            <param name="e">Provides event arguments.</param>
-        </member>
-        <member name="M:DevComponents.DotNetBar.Controls.SideNav.ExpandMenu(System.Boolean)">
-            <summary>
-            Expands or collapses the control items menu.
-            </summary>
-            <param name="expand"></param>
-        </member>
-        <member name="M:DevComponents.DotNetBar.Controls.SideNav.OnAnimationTimeChanged(System.Int32,System.Int32)">
-            <summary>
-            Called when AnimationTime property has changed.
-            </summary>
-            <param name="oldValue">Old property value</param>
-            <param name="newValue">New property value</param>
-        </member>
-        <member name="M:DevComponents.DotNetBar.Controls.SideNav.OnBeforeMaximize(DevComponents.DotNetBar.Controls.CancelSourceEventArgs)">
-            <summary>
-            Raises BeforeMaximize event.
-            </summary>
-            <param name="e">Provides event arguments.</param>
-        </member>
-        <member name="M:DevComponents.DotNetBar.Controls.SideNav.OnBeforeRestore(DevComponents.DotNetBar.Controls.CancelSourceEventArgs)">
-            <summary>
-            Raises BeforeRestore event.
-            </summary>
-            <param name="e">Provides event arguments.</param>
-        </member>
-        <member name="M:DevComponents.DotNetBar.Controls.SideNav.OnBeforeOpen(DevComponents.DotNetBar.Controls.CancelSourceEventArgs)">
-            <summary>
-            Raises BeforeOpen event.
-            </summary>
-            <param name="e">Provides event arguments.</param>
-        </member>
-        <member name="M:DevComponents.DotNetBar.Controls.SideNav.OnBeforeClose(DevComponents.DotNetBar.Controls.CancelSourceEventArgs)">
-            <summary>
-            Raises BeforeClose event.
-            </summary>
-            <param name="e">Provides event arguments.</param>
-        </member>
-        <member name="M:DevComponents.DotNetBar.Controls.SideNav.OnSelectedItemChanged(System.EventArgs)">
-            <summary>
-            Raises SelectedItemChanged event.
-            </summary>
-            <param name="e">Provides event arguments.</param>
-        </member>
-        <member name="P:DevComponents.DotNetBar.Controls.SideNav.EnableSplitter">
-            <summary>
-            Indicates whether splitter that is located on right hand side of open control is visible and enabled.
-            </summary>
-        </member>
-        <member name="P:DevComponents.DotNetBar.Controls.SideNav.EnableClose">
-            <summary>
-            Indicates whether button which folds/closes the control is visible.
-            </summary>
-        </member>
-        <!-- Badly formed XML comment ignored for member "P:DevComponents.DotNetBar.Controls.SideNav.EnableMaximize" -->
-        <member name="P:DevComponents.DotNetBar.Controls.SideNav.Items">
-            <summary>
-            Returns collection of items on a bar.
-            </summary>
-        </member>
-        <member name="P:DevComponents.DotNetBar.Controls.SideNav.IsClosed">
-            <summary>
-            Gets or sets whether control is closed, i.e. whether selected item panel is shown or not. When closed
-            any selected item is unselected and selected panel hidden.
-            </summary>
-        </member>
-        <member name="P:DevComponents.DotNetBar.Controls.SideNav.IsMenuExpanded">
-            <summary>
-            Indicates whether side menu is expanded, i.e. shows both image and text. When menu is collapsed only image is shown.
-            </summary>
-        </member>
-        <member name="E:DevComponents.DotNetBar.Controls.SideNav.IsMenuExpandedChanged">
-            <summary>
-            Occurs when IsMenuExpanded property has changed its value.
-            </summary>
-        </member>
-        <member name="P:DevComponents.DotNetBar.Controls.SideNav.AnimationTime">
-            <summary>
-            Indicates the animation time in milliseconds for operations that perform visual animation of transition. Set to zero to disable animation.
-            </summary>
-        </member>
-        <member name="E:DevComponents.DotNetBar.Controls.SideNav.BeforeMaximize">
-            <summary>
-            Occurs before the control is maximized and allows you to cancel that.
-            </summary>
-        </member>
-        <member name="E:DevComponents.DotNetBar.Controls.SideNav.BeforeRestore">
-            <summary>
-            Occurs before the control is restored and allows you to cancel that.
-            </summary>
-        </member>
-        <member name="E:DevComponents.DotNetBar.Controls.SideNav.BeforeOpen">
-            <summary>
-            Occurs before the control is opened and allows you to cancel that.
-            </summary>
-        </member>
-        <member name="E:DevComponents.DotNetBar.Controls.SideNav.BeforeClose">
-            <summary>
-            Occurs before the control is closed and allows you to cancel that.
-            </summary>
-        </member>
-        <member name="P:DevComponents.DotNetBar.Controls.SideNav.SelectedItem">
-            <summary>
-            Gets currently selected item. Only items with Panel assigned can be selected.
-            </summary>
-        </member>
-        <member name="E:DevComponents.DotNetBar.Controls.SideNav.SelectedItemChanged">
-            <summary>
-            Occurs when SelectedItem changes.
-            </summary>
-        </member>
-        <member name="P:DevComponents.DotNetBar.Controls.SideNav.SideNavStrip">
-            <summary>
-            Gets reference to internal SideNavStrip control.
-            </summary>
-        </member>
-        <member name="T:DevComponents.DotNetBar.Controls.CancelSourceEventHandler">
-            <summary>
-            Defines delegate for the CancelSource events.
-            </summary>
-            <param name="sender"></param>
-            <param name="ea"></param>
-        </member>
-        <member name="T:DevComponents.DotNetBar.Controls.CancelSourceEventArgs">
-            <summary>
-            Event arguments for CancelSourceEventHandler
-            </summary>
-        </member>
-        <member name="F:DevComponents.DotNetBar.Controls.CancelSourceEventArgs.Source">
-            <summary>
-            Gets the source of the event.
-            </summary>
-        </member>
-        <member name="F:DevComponents.DotNetBar.Controls.CancelSourceEventArgs.Data">
-            <summary>
-            Gets any optional data that is associated with the event.
-            </summary>
-        </member>
-        <member name="M:DevComponents.DotNetBar.Controls.CancelSourceEventArgs.#ctor(DevComponents.DotNetBar.eEventSource)">
-            <summary>
-            Creates new instance of the object.
-            </summary>
-            <param name="source">Source of event</param>
-        </member>
-        <member name="M:DevComponents.DotNetBar.Controls.CancelSourceEventArgs.#ctor(DevComponents.DotNetBar.eEventSource,System.Object)">
-            <summary>
-            Creates new instance of the object.
-            </summary>
-            <param name="source">Source of event</param>
-            <param name="data">Optional data associated with the event.</param>
-        </member>
-        <member name="M:DevComponents.DotNetBar.Controls.SideNavItem.#ctor">
-            <summary>
-            Initializes a new instance of the MetroTabItem class.
-            </summary>
-        </member>
-        <member name="M:DevComponents.DotNetBar.Controls.SideNavItem.Select">
-            <summary>
-            Selects the tab.
-            </summary>
-        </member>
-        <member name="M:DevComponents.DotNetBar.Controls.SideNavItem.OnCheckedChanged">
-            <summary>
-            Called after Checked property has changed.
-            </summary>
-        </member>
-        <member name="M:DevComponents.DotNetBar.Controls.SideNavItem.OnClick">
-            <summary>
-            Occurs just before Click event is fired.
-            </summary>
-        </member>
-        <member name="M:DevComponents.DotNetBar.Controls.SideNavItem.OnVisibleChanged(System.Boolean)">
-            <summary>
-            Called when Visibility of the items has changed.
-            </summary>
-            <param name="bVisible">New Visible state.</param>
-        </member>
-        <member name="M:DevComponents.DotNetBar.Controls.SideNavItem.OnStyleChanged">
-            <summary>
-            Occurs after item visual style has changed.
-            </summary>
-        </member>
-        <member name="P:DevComponents.DotNetBar.Controls.SideNavItem.ImageRenderBounds">
-            <summary>
-            Gets or sets cached image rendering bounds.
-            </summary>
-        </member>
-        <member name="P:DevComponents.DotNetBar.Controls.SideNavItem.TextRenderBounds">
-            <summary>
-            Gets or sets cached text rendering bounds.
-            </summary>
-        </member>
-        <member name="P:DevComponents.DotNetBar.Controls.SideNavItem.Panel">
-            <summary>
-            Gets or sets the panel assigned to this tab item.
-            </summary>
-        </member>
-        <member name="P:DevComponents.DotNetBar.Controls.SideNavItem.OptionGroup">
-            <summary>
-            Gets or set the Group item belongs to. The groups allows a user to choose from mutually exclusive options within the group. The choice is reflected by Checked property.
-            </summary>
-        </member>
-        <member name="P:DevComponents.DotNetBar.Controls.SideNavItem.SubItems">
-            <summary>
-            Returns the collection of sub items.
-            </summary>
-        </member>
-        <member name="P:DevComponents.DotNetBar.Controls.SideNavItem.BackColors">
-            <summary>
-            Indicates the array of colors that when set are used to draw the background of the item.
-            </summary>
-        </member>
-        <member name="P:DevComponents.DotNetBar.Controls.SideNavItem.BorderColors">
-            <summary>
-            Indicates the array of colors that when set are used to draw the border of the item.
-            </summary>
-        </member>
-        <member name="P:DevComponents.DotNetBar.Controls.SideNavItem.PaddingHorizontal">
-            <summary>
-            Gets or sets the additional padding added around the tab item in pixels. Default value is 0.
-            </summary>
-        </member>
-        <member name="P:DevComponents.DotNetBar.Controls.SideNavItem.Title">
-            <summary>
-            Indicates an optional title for the associated panel. If not set item text is used.
-            </summary>
-        </member>
-        <member name="P:DevComponents.DotNetBar.Controls.SideNavItem.IsSystemMenu">
-            <summary>
-            Gets or sets whether this item acts as the SideNav control system menu which collapses and expands the SideNav items.
-            </summary>
-        </member>
-        <member name="P:DevComponents.DotNetBar.Controls.SideNavItem.AutoCollapseOnClick">
-            <summary>
-            Indicates whether the item will auto-collapse (fold) when clicked. 
-            When item is on popup menu and this property is set to false, menu will not
-            close when item is clicked.
-            </summary>
-        </member>
-        <member name="P:DevComponents.DotNetBar.Controls.SideNavItem.AutoExpandOnClick">
-            <summary>
-            Indicates whether the item will auto-expand when clicked. 
-            When item is on top level bar and not on menu and contains sub-items, sub-items will be shown only if user
-            click the expand part of the button. Setting this propert to true will expand the button and show sub-items when user
-            clicks anywhere inside of the button. Default value is false which indicates that button is expanded only
-            if its expand part is clicked.
-            </summary>
-        </member>
-        <member name="P:DevComponents.DotNetBar.Controls.SideNavItem.CanCustomize">
-            <summary>
-            Gets or sets whether item can be customized by end user.
-            </summary>
-        </member>
-        <member name="P:DevComponents.DotNetBar.Controls.SideNavItem.Checked">
-            <summary>
-            Gets or set a value indicating whether the button is in the checked state.
-            </summary>
-        </member>
-        <member name="P:DevComponents.DotNetBar.Controls.SideNavItem.ClickAutoRepeat">
-            <summary>
-            Gets or sets whether Click event will be auto repeated when mouse button is kept pressed over the item.
-            </summary>
-        </member>
-        <member name="P:DevComponents.DotNetBar.Controls.SideNavItem.ClickRepeatInterval">
-            <summary>
-            Gets or sets the auto-repeat interval for the click event when mouse button is kept pressed over the item.
-            </summary>
-        </member>
-        <member name="P:DevComponents.DotNetBar.Controls.SideNavItem.Enabled">
-            <summary>
-            Gets or sets a value indicating whether the item is enabled.
-            </summary>
-        </member>
-        <member name="P:DevComponents.DotNetBar.Controls.SideNavItem.MenuVisibility">
-            <summary>
-            Indicates item's visiblity when on pop-up menu.
-            </summary>
-        </member>
-        <member name="P:DevComponents.DotNetBar.Controls.SideNavItem.PersonalizedMenus">
-            <summary>
-            Indicates when menu items are displayed when MenuVisiblity is set to VisibleIfRecentlyUsed and RecentlyUsed is true.
-            </summary>
-        </member>
-        <member name="P:DevComponents.DotNetBar.Controls.SideNavItem.PopupAnimation">
-            <summary>
-            Indicates Animation type for Popups.
-            </summary>
-        </member>
-        <member name="P:DevComponents.DotNetBar.Controls.SideNavItem.PopupFont">
-            <summary>
-            Indicates the font that will be used on the popup window.
-            </summary>
-        </member>
-        <member name="P:DevComponents.DotNetBar.Controls.SideNavItem.PopupType">
-            <summary>
-            Indicates whether sub-items are shown on popup Bar or popup menu.
-            </summary>
-        </member>
-        <member name="P:DevComponents.DotNetBar.Controls.SideNavItem.PopupWidth">
-            <summary>
-            Specifies the inital width for the Bar that hosts pop-up items. Applies to PopupType.Toolbar only.
-            </summary>
-        </member>
-        <member name="P:DevComponents.DotNetBar.Controls.SideNavItem.ShowSubItems">
-            <summary>
-            Gets or sets whether item will display sub items.
-            </summary>
-        </member>
-        <member name="P:DevComponents.DotNetBar.Controls.SideNavItem.Stretch">
-            <summary>
-            Gets or sets whether the item expands automatically to fill out the remaining space inside the container. Applies to Items on stretchable, no-wrap Bars only.
-            </summary>
-        </member>
-        <member name="P:DevComponents.DotNetBar.Controls.SideNavItem.SubItemsExpandWidth">
-            <summary>
-            Gets or sets the width of the expand part of the button item.
-            </summary>
-        </member>
-        <member name="P:DevComponents.DotNetBar.Controls.SideNavItem.AlternateShortCutText">
-            <summary>
-            Gets or set the alternative shortcut text.
-            </summary>
-        </member>
-        <member name="P:DevComponents.DotNetBar.Controls.SideNavItem.BeginGroup">
-            <summary>
-            Gets or sets whether item separator is shown before this item.
-            </summary>
-        </member>
-        <member name="P:DevComponents.DotNetBar.Controls.SideNavItem.Category">
-            <summary>
-            Returns category for this item. If item cannot be customzied using the
-            customize dialog category is empty string.
-            </summary>
-        </member>
-        <member name="P:DevComponents.DotNetBar.Controls.SideNavItem.HotForeColor">
-            <summary>
-            Gets or sets the text color of the button when mouse is over the item.
-            </summary>
-        </member>
-        <member name="P:DevComponents.DotNetBar.Controls.SideNavItem.HotTrackingStyle">
-            <summary>
-            Indicates the way item is painting the picture when mouse is over it. Setting the value to Color will render the image in gray-scale when mouse is not over the item.
-            </summary>
-        </member>
-        <member name="P:DevComponents.DotNetBar.Controls.SideNavItem.ButtonStyle">
-            <summary>
-            Gets/Sets the button style which controls the appearance of the button elements. Changing the property can display image only, text only or image and text on the button at all times.
-            </summary>
-        </member>
-        <member name="T:DevComponents.DotNetBar.Rendering.SideNavItemRendererEventArgs">
-            <summary>
-            Provides data for the SideNavItem rendering events.
-            </summary>
-        </member>
-        <member name="F:DevComponents.DotNetBar.Rendering.SideNavItemRendererEventArgs.Item">
-            <summary>
-            Gets or sets the reference to the item being rendered.
-            </summary>
-        </member>
-        <member name="F:DevComponents.DotNetBar.Rendering.SideNavItemRendererEventArgs.Graphics">
-            <summary>
-            Gets or sets the reference to graphics object.
-            </summary>
-        </member>
-        <member name="F:DevComponents.DotNetBar.Rendering.SideNavItemRendererEventArgs.Cancel">
-            <summary>
-            Indicates whether to cancel system rendering of the item.
-            </summary>
-        </member>
-        <member name="M:DevComponents.DotNetBar.Rendering.SideNavItemRendererEventArgs.#ctor(DevComponents.DotNetBar.Controls.SideNavItem,System.Drawing.Graphics)">
-            <summary>
-            Creates new instance of the object and initializes it with default values.
-            </summary>
-            <param name="item">Reference to the ListBoxItem being rendered.</param>
-            <param name="g">Reference to the graphics object.</param>
-        </member>
-        <member name="T:DevComponents.DotNetBar.Rendering.SideNavColorTable">
-            <summary>
-            Defines color table for SideNav control.
-            </summary>
-        </member>
-        <member name="F:DevComponents.DotNetBar.Rendering.SideNavColorTable.SideNavItem">
-            <summary>
-            Gets or sets the color table for SideNavItem
-            </summary>
-        </member>
-        <member name="F:DevComponents.DotNetBar.Rendering.SideNavColorTable.TitleBackColor">
-            <summary>
-            Gets or sets the background color of SideNav title bar.
-            </summary>
-        </member>
-        <member name="F:DevComponents.DotNetBar.Rendering.SideNavColorTable.TitleBorderColors">
-            <summary>
-            Gets or sets the border color of the title of SideNav control.
-            </summary>
-        </member>
-        <member name="F:DevComponents.DotNetBar.Rendering.SideNavColorTable.ItemsBackColor">
-            <summary>
-            Gets or sets the color of the strip which hosts the items.
-            </summary>
-        </member>
-        <member name="F:DevComponents.DotNetBar.Rendering.SideNavColorTable.BorderColors">
-            <summary>
-            Gets or sets the border color of the SideNav control.
-            </summary>
-        </member>
-        <member name="F:DevComponents.DotNetBar.Rendering.SideNavColorTable.PanelBackColor">
-            <summary>
-            Gets or sets the back color of panels that are attached to SideNavItem and displayed when SideNavItem is selected.
-            </summary>
-        </member>
-        <member name="T:DevComponents.DotNetBar.Rendering.SideNavItemColorTable">
-            <summary>
-            Defines color table for SideNavItem
-            </summary>
-        </member>
-        <member name="F:DevComponents.DotNetBar.Rendering.SideNavItemColorTable.Default">
-            <summary>
-            Gets or sets the color table for Default state.
-            </summary>
-        </member>
-        <member name="F:DevComponents.DotNetBar.Rendering.SideNavItemColorTable.MouseOver">
-            <summary>
-            Gets or sets the color table for MouseOver state.
-            </summary>
-        </member>
-        <member name="F:DevComponents.DotNetBar.Rendering.SideNavItemColorTable.Pressed">
-            <summary>
-            Gets or sets the color table for Pressed state.
-            </summary>
-        </member>
-        <member name="F:DevComponents.DotNetBar.Rendering.SideNavItemColorTable.Selected">
-            <summary>
-            Gets or sets the color table for Selected state.
-            </summary>
-        </member>
-        <member name="T:DevComponents.DotNetBar.Rendering.SideNavItemStateColorTable">
-            <summary>
-            Defines state color table for SideNavItem
-            </summary>
-        </member>
-        <member name="F:DevComponents.DotNetBar.Rendering.SideNavItemStateColorTable.TextColor">
-            <summary>
-            Indicates item text color.
-            </summary>
-        </member>
-        <member name="F:DevComponents.DotNetBar.Rendering.SideNavItemStateColorTable.BackColors">
-            <summary>
-            Gets or sets the background colors for the item.
-            </summary>
-        </member>
-        <member name="F:DevComponents.DotNetBar.Rendering.SideNavItemStateColorTable.BackColorsGradientAngle">
-            <summary>
-            Gets or sets the back colors gradient angle if there is more than one color in BackColors array.
-            </summary>
-        </member>
-        <member name="F:DevComponents.DotNetBar.Rendering.SideNavItemStateColorTable.BackColorsPositions">
-            <summary>
-            Gets or sets the gradient colors positions if there is more than one color in BackColors array.
-            </summary>
-        </member>
-        <member name="F:DevComponents.DotNetBar.Rendering.SideNavItemStateColorTable.BorderColors">
-            <summary>
-            Gets or sets the border colors for the item.
-            </summary>
-        </member>
-        <member name="F:DevComponents.DotNetBar.Rendering.SideNavItemStateColorTable.CornerRadius">
-            <summary>
-            Indicates the corner radius.
-            </summary>
-        </member>
-        <member name="T:DevComponents.DotNetBar.Controls.SideNavPanel">
-            <summary>
-            Represents a panel which hosts controls for the SideNavItem.
-            </summary>
-        </member>
-        <member name="M:DevComponents.DotNetBar.Controls.SideNavPanel.OnNonClientSizeChanged(System.EventArgs)">
-            <summary>
-            Raises NonClientSizeChanged event.
-            </summary>
-            <param name="e">Provides event arguments.</param>
-        </member>
-        <member name="M:DevComponents.DotNetBar.Controls.SideNavPanel.OnScrollBarValueChanged(DevComponents.DotNetBar.Controls.ScrollValueChangedEventArgs)">
-            <summary>
-            Raises ScrollBarValueChanged event.
-            </summary>
-            <param name="e">Provides event arguments.</param>
-        </member>
-        <member name="M:DevComponents.DotNetBar.Controls.SideNavStrip.StyleManagerStyleChanged(DevComponents.DotNetBar.eDotNetBarStyle)">
-            <summary>
-            Called by StyleManager to notify control that style on manager has changed and that control should refresh its appearance if
-            its style is controlled by StyleManager.
-            </summary>
-            <param name="newStyle">New active style.</param>
-        </member>
-        <member name="P:DevComponents.DotNetBar.Controls.SideNavStrip.Items">
-            <summary>
-            Returns collection of items on a bar.
-            </summary>
-        </member>
-        <member name="P:DevComponents.DotNetBar.Controls.SideNavStrip.SelectedItem">
-            <summary>
-            Gets currently selected item.
-            </summary>
         </member>
         <member name="T:DevComponents.DotNetBar.Controls.SlidePanel">
             <summary>
@@ -34466,13 +33312,6 @@
             <param name="oldValue">Old property value</param>
             <param name="newValue">New property value</param>
         </member>
-        <member name="M:DevComponents.DotNetBar.Controls.SymbolBox.OnSymbolSetChanged(DevComponents.DotNetBar.eSymbolSet,DevComponents.DotNetBar.eSymbolSet)">
-            <summary>
-            Called when SymbolSet property value changes.
-            </summary>
-            <param name="oldValue">Indciates old value</param>
-            <param name="newValue">Indicates new value</param>
-        </member>
         <member name="M:DevComponents.DotNetBar.Controls.SymbolBox.ShouldSerializeSymbolColor">
             <summary>
             Gets whether property should be serialized.
@@ -34495,19 +33334,9 @@
             Specifies the background style of the control.
             </summary>
         </member>
-        <member name="P:DevComponents.DotNetBar.Controls.SymbolBox.SymbolRealized">
-            <summary>
-            Gets the realized symbol string.
-            </summary>
-        </member>
         <member name="P:DevComponents.DotNetBar.Controls.SymbolBox.Symbol">
             <summary>
             Indicates the symbol displayed on face of the button instead of the image. Setting the symbol overrides the image setting.
-            </summary>
-        </member>
-        <member name="P:DevComponents.DotNetBar.Controls.SymbolBox.SymbolSet">
-            <summary>
-            Gets or sets the symbol set used to represent the Symbol.
             </summary>
         </member>
         <member name="P:DevComponents.DotNetBar.Controls.SymbolBox.SymbolColor">
@@ -34691,645 +33520,6 @@
         <member name="P:DevComponents.DotNetBar.Controls.DGVScrollBar.EnableStyling">
             <summary>
             Gets or sets whether custom styling (Office 2007 style) is enabled. Default value is true.
-            </summary>
-        </member>
-        <member name="T:DevComponents.DotNetBar.Controls.EditToken">
-            <summary>
-            Class represents single token in TokenEditor control.
-            </summary>
-        </member>
-        <member name="M:DevComponents.DotNetBar.Controls.EditToken.#ctor(System.String)">
-            <summary>
-            Initializes a new instance of the EditToken class.
-            </summary>
-            <param name="value">Indicates token value.</param>
-        </member>
-        <member name="M:DevComponents.DotNetBar.Controls.EditToken.#ctor(System.String,System.String)">
-            <summary>
-            Initializes a new instance of the EditToken class.
-            </summary>
-            <param name="value">Indicates token value</param>
-            <param name="text">Indicates token text</param>
-        </member>
-        <member name="M:DevComponents.DotNetBar.Controls.EditToken.#ctor(System.String,System.String,System.Drawing.Image)">
-            <summary>
-            Initializes a new instance of the EditToken class.
-            </summary>
-            <param name="value">Indicates token value</param>
-            <param name="text">Indicates token text</param>
-            <param name="image">Indicates token image</param>
-        </member>
-        <member name="M:DevComponents.DotNetBar.Controls.EditToken.OnValueChanged(System.String,System.String)">
-            <summary>
-            Called when Value property has changed.
-            </summary>
-            <param name="oldValue">Old property value</param>
-            <param name="newValue">New property value</param>
-        </member>
-        <member name="M:DevComponents.DotNetBar.Controls.EditToken.OnTextChanged(System.String,System.String)">
-            <summary>
-            Called when Text property has changed.
-            </summary>
-            <param name="oldValue">Old property value</param>
-            <param name="newValue">New property value</param>
-        </member>
-        <member name="M:DevComponents.DotNetBar.Controls.EditToken.OnImageChanged(System.Drawing.Image,System.Drawing.Image)">
-            <summary>
-            Called when Image property has changed.
-            </summary>
-            <param name="oldValue">Old property value</param>
-            <param name="newValue">New property value</param>
-        </member>
-        <member name="M:DevComponents.DotNetBar.Controls.EditToken.OnSymbolChanged(System.String,System.String)">
-            <summary>
-            Called when Symbol property has changed.
-            </summary>
-            <param name="oldValue">Old property value</param>
-            <param name="newValue">New property value</param>
-        </member>
-        <member name="M:DevComponents.DotNetBar.Controls.EditToken.OnSymbolSetChanged(DevComponents.DotNetBar.eSymbolSet,DevComponents.DotNetBar.eSymbolSet)">
-            <summary>
-            Called when SymbolSet property value changes.
-            </summary>
-            <param name="oldValue">Indciates old value</param>
-            <param name="newValue">Indicates new value</param>
-        </member>
-        <member name="M:DevComponents.DotNetBar.Controls.EditToken.ShouldSerializeSymbolColor">
-            <summary>
-            Gets whether property should be serialized.
-            </summary>
-        </member>
-        <member name="M:DevComponents.DotNetBar.Controls.EditToken.ResetSymbolColor">
-            <summary>
-            Resets property to its default value.
-            </summary>
-        </member>
-        <member name="M:DevComponents.DotNetBar.Controls.EditToken.OnTooltipChanged(System.String,System.String)">
-            <summary>
-            Called when Tooltip property has changed.
-            </summary>
-            <param name="oldValue">Old property value</param>
-            <param name="newValue">New property value</param>
-        </member>
-        <member name="M:DevComponents.DotNetBar.Controls.EditToken.OnMouseOverPartChanged(DevComponents.DotNetBar.Controls.eTokenPart,DevComponents.DotNetBar.Controls.eTokenPart)">
-            <summary>
-            Called when MouseOverPart property has changed.
-            </summary>
-            <param name="oldValue">Old property value</param>
-            <param name="newValue">New property value</param>
-        </member>
-        <member name="P:DevComponents.DotNetBar.Controls.EditToken.Value">
-            <summary>
-            Indicates the token value, for example an email token has email address as token Value and full name as token Text.
-            </summary>
-        </member>
-        <member name="P:DevComponents.DotNetBar.Controls.EditToken.Text">
-            <summary>
-            Indicates the token text, for example an email token has email address as token Value and full name as token Text.
-            </summary>
-        </member>
-        <member name="P:DevComponents.DotNetBar.Controls.EditToken.Tag">
-            <summary>
-            Gets or sets custom data associated with the object.
-            </summary>
-        </member>
-        <member name="P:DevComponents.DotNetBar.Controls.EditToken.Bounds">
-            <summary>
-            Gets the display bounds of the token, if displayed, inside of TokenEditor control.
-            </summary>
-        </member>
-        <member name="P:DevComponents.DotNetBar.Controls.EditToken.Image">
-            <summary>
-            Indicates the image that is displayed next to the token
-            </summary>
-        </member>
-        <member name="P:DevComponents.DotNetBar.Controls.EditToken.SymbolRealized">
-            <summary>
-            Gets the realized symbol string.
-            </summary>
-        </member>
-        <member name="P:DevComponents.DotNetBar.Controls.EditToken.Symbol">
-            <summary>
-            Indicates the symbol displayed on face of the token instead of the image. Setting the symbol overrides the image setting.
-            </summary>
-        </member>
-        <member name="P:DevComponents.DotNetBar.Controls.EditToken.SymbolSet">
-            <summary>
-            Gets or sets the symbol set used to represent the Symbol.
-            </summary>
-        </member>
-        <member name="P:DevComponents.DotNetBar.Controls.EditToken.SymbolColor">
-            <summary>
-            Gets or sets the color of the Symbol.
-            </summary>
-        </member>
-        <member name="P:DevComponents.DotNetBar.Controls.EditToken.Tooltip">
-            <summary>
-            Indicates tooltip that is displayed when mouse is over the token
-            </summary>
-        </member>
-        <member name="P:DevComponents.DotNetBar.Controls.EditToken.MouseOverPart">
-            <summary>
-            Gets the part of the token mouse is over. Valid only when token is selected.
-            </summary>
-        </member>
-        <member name="P:DevComponents.DotNetBar.Controls.EditToken.RemoveButtonBounds">
-            <summary>
-            Gets the bounds of the remove button if displayed. Valid only when token is selected.
-            </summary>
-        </member>
-        <member name="P:DevComponents.DotNetBar.Controls.EditToken.ImageBounds">
-            <summary>
-            Gets the bounds of the image if displayed. Valid only when token is selected.
-            </summary>
-        </member>
-        <member name="P:DevComponents.DotNetBar.Controls.EditToken.IsSelected">
-            <summary>
-            Indicates whether token is selected.
-            </summary>
-        </member>
-        <member name="P:DevComponents.DotNetBar.Controls.EditToken.IsFocused">
-            <summary>
-            Indicates whether token is focused while selected.
-            </summary>
-        </member>
-        <member name="T:DevComponents.DotNetBar.Controls.eTokenPart">
-            <summary>
-            Defines the token parts.
-            </summary>
-        </member>
-        <member name="F:DevComponents.DotNetBar.Controls.eTokenPart.None">
-            <summary>
-            Identifies no token part.
-            </summary>
-        </member>
-        <member name="F:DevComponents.DotNetBar.Controls.eTokenPart.Token">
-            <summary>
-            Identifies the token body/text.
-            </summary>
-        </member>
-        <member name="F:DevComponents.DotNetBar.Controls.eTokenPart.RemoveButton">
-            <summary>
-            Identifies the remove token button.
-            </summary>
-        </member>
-        <member name="F:DevComponents.DotNetBar.Controls.eTokenPart.Image">
-            <summary>
-            Identifies the token image.
-            </summary>
-        </member>
-        <member name="M:DevComponents.DotNetBar.Controls.TokenEditor.#ctor">
-            <summary>
-            Initializes a new instance of the TokenEditor class.
-            </summary>
-        </member>
-        <member name="M:DevComponents.DotNetBar.Controls.TokenEditor.GetColorScheme">
-            <summary>
-            Returns the color scheme used by control. Color scheme for Office2007 style will be retrieved from the current renderer instead of
-            local color scheme referenced by ColorScheme property.
-            </summary>
-            <returns>An instance of ColorScheme object.</returns>
-        </member>
-        <member name="M:DevComponents.DotNetBar.Controls.TokenEditor.ResetBackgroundStyle">
-            <summary>
-            Resets style to default value. Used by windows forms designer.
-            </summary>
-        </member>
-        <member name="M:DevComponents.DotNetBar.Controls.TokenEditor.OnSelectedTokensChanged(System.EventArgs)">
-            <summary>
-            Raises SelectedTokensChanged event.
-            </summary>
-            <param name="e">Provides event arguments.</param>
-        </member>
-        <member name="M:DevComponents.DotNetBar.Controls.TokenEditor.OnRemoveTokenButtonVisibleChanged(System.Boolean,System.Boolean)">
-            <summary>
-            Called when RemoveTokenButtonVisible property has changed.
-            </summary>
-            <param name="oldValue">Old property value</param>
-            <param name="newValue">New property value</param>
-        </member>
-        <member name="M:DevComponents.DotNetBar.Controls.TokenEditor.GetSelectedTokenAt(System.Drawing.Point)">
-            <summary>
-            Returns the token from SelectedTokens at specified position or null/nothing if no token is at given location.
-            </summary>
-            <param name="p">Location in client coordinates to test.</param>
-            <returns>EditToken instance or null/nothing</returns>
-        </member>
-        <member name="M:DevComponents.DotNetBar.Controls.TokenEditor.OnTokenMouseEnter(System.Object,System.EventArgs)">
-            <summary>
-            Raises TokenMouseEnter event.
-            </summary>
-            <param name="e">Provides event arguments.</param>
-        </member>
-        <member name="M:DevComponents.DotNetBar.Controls.TokenEditor.OnTokenMouseLeave(System.Object,System.EventArgs)">
-            <summary>
-            Raises TokenMouseLeave event.
-            </summary>
-            <param name="e">Provides event arguments.</param>
-        </member>
-        <member name="M:DevComponents.DotNetBar.Controls.TokenEditor.OnTokenMouseClick(System.Object,System.Windows.Forms.MouseEventArgs)">
-            <summary>
-            Raises TokenMouseClick event.
-            </summary>
-            <param name="e">Provides event arguments.</param>
-        </member>
-        <member name="M:DevComponents.DotNetBar.Controls.TokenEditor.OnTokenMouseHover(System.Object,System.EventArgs)">
-            <summary>
-            Raises TokenMouseHover event.
-            </summary>
-            <param name="e">Provides event arguments.</param>
-        </member>
-        <member name="M:DevComponents.DotNetBar.Controls.TokenEditor.OnRemovingToken(DevComponents.DotNetBar.Controls.RemovingTokenEventArgs)">
-            <summary>
-            Raises RemovingToken event.
-            </summary>
-            <param name="e">Provides event arguments.</param>
-        </member>
-        <member name="M:DevComponents.DotNetBar.Controls.TokenEditor.OnReadOnlyChanged(System.Boolean,System.Boolean)">
-            <summary>
-            Called when ReadOnly property has changed.
-            </summary>
-            <param name="oldValue">Old property value</param>
-            <param name="newValue">New property value</param>
-        </member>
-        <member name="M:DevComponents.DotNetBar.Controls.TokenEditor.OnDropDownHeightChanged(System.Int32,System.Int32)">
-            <summary>
-            Called when DropDownHeight property has changed.
-            </summary>
-            <param name="oldValue">Old property value</param>
-            <param name="newValue">New property value</param>
-        </member>
-        <member name="M:DevComponents.DotNetBar.Controls.TokenEditor.OnDropDownWidthChanged(System.Int32,System.Int32)">
-            <summary>
-            Called when DropDownWidth property has changed.
-            </summary>
-            <param name="oldValue">Old property value</param>
-            <param name="newValue">New property value</param>
-        </member>
-        <member name="M:DevComponents.DotNetBar.Controls.TokenEditor.OnAutoCompletePopupOpened(System.EventArgs)">
-            <summary>
-            Raises AutoCompletePopupOpened event.
-            </summary>
-            <param name="e">Provides event arguments.</param>
-        </member>
-        <member name="M:DevComponents.DotNetBar.Controls.TokenEditor.OnBeforeAutoCompletePopupOpen(System.ComponentModel.CancelEventArgs)">
-            <summary>
-            Raises BeforeAutoCompletePopupOpen event.
-            </summary>
-            <param name="e">Provides event arguments.</param>
-        </member>
-        <member name="M:DevComponents.DotNetBar.Controls.TokenEditor.OnValidateToken(DevComponents.DotNetBar.Controls.ValidateTokenEventArgs)">
-            <summary>
-            Raises ValidateToken event.
-            </summary>
-            <param name="e">Provides event arguments.</param>
-        </member>
-        <member name="M:DevComponents.DotNetBar.Controls.TokenEditor.ShouldSerializeWatermarkColor">
-            <summary>
-            Indicates whether property should be serialized by Windows Forms designer.
-            </summary>
-        </member>
-        <member name="M:DevComponents.DotNetBar.Controls.TokenEditor.ResetWatermarkColor">
-            <summary>
-            Resets the property to default value.
-            </summary>
-        </member>
-        <member name="F:DevComponents.DotNetBar.Controls.TokenEditor._TextMarkup">
-            <summary>
-            Gets or sets the watermark hiding behaviour. Default value indicates that watermark is hidden when control receives input focus.
-            </summary>
-        </member>
-        <member name="M:DevComponents.DotNetBar.Controls.TokenEditor.OnTextSeparatorChanged(System.String,System.String)">
-            <summary>
-            Called when TextSeparator property has changed.
-            </summary>
-            <param name="oldValue">Old property value</param>
-            <param name="newValue">New property value</param>
-        </member>
-        <member name="M:DevComponents.DotNetBar.Controls.TokenEditor.OnDropDownButtonVisibleChanged(System.Boolean,System.Boolean)">
-            <summary>
-            Called when DropDownButtonVisible property has changed.
-            </summary>
-            <param name="oldValue">Old property value</param>
-            <param name="newValue">New property value</param>
-        </member>
-        <member name="M:DevComponents.DotNetBar.Controls.TokenEditor.OnCheckBoxesVisibleChanged(System.Boolean,System.Boolean)">
-            <summary>
-            Called when CheckBoxesVisible property has changed.
-            </summary>
-            <param name="oldValue">Old property value</param>
-            <param name="newValue">New property value</param>
-        </member>
-        <member name="P:DevComponents.DotNetBar.Controls.TokenEditor.AutoScrollPosition">
-            <summary>
-            Gets or sets the location of the auto-scroll position.
-            </summary>
-        </member>
-        <member name="P:DevComponents.DotNetBar.Controls.TokenEditor.BackgroundStyle">
-            <summary>
-            Specifies the background style of the control.
-            </summary>
-        </member>
-        <member name="P:DevComponents.DotNetBar.Controls.TokenEditor.SelectedTokens">
-            <summary>
-            Gets the collection of the selected tokens.
-            </summary>
-        </member>
-        <member name="E:DevComponents.DotNetBar.Controls.TokenEditor.SelectedTokensChanged">
-            <summary>
-            Occurs when SelectedTokens collection changes.
-            </summary>
-        </member>
-        <member name="P:DevComponents.DotNetBar.Controls.TokenEditor.Tokens">
-            <summary>
-            Gets the collection of the tokens available for selection.
-            </summary>
-        </member>
-        <member name="P:DevComponents.DotNetBar.Controls.TokenEditor.RemoveTokenButtonVisible">
-            <summary>
-            Indicates whether remove token button is displayed on individual tokens so they can be removed from the selection.
-            </summary>
-        </member>
-        <member name="E:DevComponents.DotNetBar.Controls.TokenEditor.TokenMouseEnter">
-            <summary>
-            Occurs when mouse enters one of the SelectedTokens token.
-            </summary>
-        </member>
-        <member name="E:DevComponents.DotNetBar.Controls.TokenEditor.TokenMouseLeave">
-            <summary>
-            Occurs when mouse leaves one of the SelectedTokens token.
-            </summary>
-        </member>
-        <member name="E:DevComponents.DotNetBar.Controls.TokenEditor.TokenMouseClick">
-            <summary>
-            Occurs when mouse clicks one of the SelectedTokens token.
-            </summary>
-        </member>
-        <member name="E:DevComponents.DotNetBar.Controls.TokenEditor.TokenMouseHover">
-            <summary>
-            Occurs when mouse hovers one of the SelectedTokens token.
-            </summary>
-        </member>
-        <member name="E:DevComponents.DotNetBar.Controls.TokenEditor.RemovingToken">
-            <summary>
-            Occurs before token is removed from the SelectedTokens by end user.
-            </summary>
-        </member>
-        <member name="P:DevComponents.DotNetBar.Controls.TokenEditor.ReadOnly">
-            <summary>
-            Indicates whether tokens can be added or removed by end user. Default value is false.
-            </summary>
-        </member>
-        <member name="P:DevComponents.DotNetBar.Controls.TokenEditor.DropDownHeight">
-            <summary>
-            Indicates the height of the auto-complete drop-down.
-            </summary>
-        </member>
-        <member name="P:DevComponents.DotNetBar.Controls.TokenEditor.DropDownWidth">
-            <summary>
-            Indicates the width of the auto-complete drop-down.
-            </summary>
-        </member>
-        <member name="P:DevComponents.DotNetBar.Controls.TokenEditor.EnterKeyValidatesToken">
-            <summary>
-            Indicates whether when token text is entered into the text-box pressing the Enter key attempts to validate the token and converts the text to token.
-            </summary>
-        </member>
-        <member name="E:DevComponents.DotNetBar.Controls.TokenEditor.BeforeAutoCompletePopupOpen">
-            <summary>
-            Occurs before token auto-complete popup is displayed and allows cancelation of popup display.
-            </summary>
-        </member>
-        <member name="E:DevComponents.DotNetBar.Controls.TokenEditor.AutoCompletePopupOpened">
-            <summary>
-            Occurs after auto-complete popup is open.
-            </summary>
-        </member>
-        <member name="P:DevComponents.DotNetBar.Controls.TokenEditor.PreservePopupSize">
-            <summary>
-            Indicates whether auto-complete popup size is preserved between popup displays if popup is resized by end-user.
-            </summary>
-        </member>
-        <member name="P:DevComponents.DotNetBar.Controls.TokenEditor.EnablePopupResize">
-            <summary>
-            Indicates whether auto-complete popup can be resized by end user.
-            </summary>
-        </member>
-        <member name="P:DevComponents.DotNetBar.Controls.TokenEditor.PopupCloseButtonVisible">
-            <summary>
-            Indicates whether multi-column popup close button is visible.
-            </summary>
-        </member>
-        <member name="P:DevComponents.DotNetBar.Controls.TokenEditor.IsPopupOpen">
-            <summary>
-            Gets or sets whether auto-complete popup window is open.
-            </summary>
-        </member>
-        <member name="P:DevComponents.DotNetBar.Controls.TokenEditor.Separators">
-            <summary>
-            Gets the list of separators which are used to divide entered text into the tokens.
-            </summary>
-        </member>
-        <member name="E:DevComponents.DotNetBar.Controls.TokenEditor.ValidateToken">
-            <summary>
-            Occurs when an token is selected from the auto-complete list or when text entry by end user is parsed into token to validate it.
-            </summary>
-        </member>
-        <member name="P:DevComponents.DotNetBar.Controls.TokenEditor.AutoSizeHeight">
-            <summary>
-            Indicates whether control automatically increases its height as more tokens are selected. MaxHeightLines property controls the maximum number of lines control will grow to before showing scroll-bar.
-            </summary>
-        </member>
-        <member name="P:DevComponents.DotNetBar.Controls.TokenEditor.MaxHeightLines">
-            <summary>
-            Indicates maximum number of lines control will grow to when AutoSizeHeight=true. Set to 0 to indicates unlimited growth.
-            Default value is 5.
-            </summary>
-        </member>
-        <member name="P:DevComponents.DotNetBar.Controls.TokenEditor.EditTextBox">
-            <summary>
-            Gets reference to internal text-box control that is used to input the token text.
-            </summary>
-        </member>
-        <member name="P:DevComponents.DotNetBar.Controls.TokenEditor.ValidateTokenTextOnLostFocus">
-            <summary>
-            Indicates whether any text entered into the token editor is validated and converted to token when control loses focus.
-            </summary>
-        </member>
-        <member name="P:DevComponents.DotNetBar.Controls.TokenEditor.WatermarkEnabled">
-            <summary>
-            Gets or sets whether watermark text is displayed when control is empty. Default value is true.
-            </summary>
-        </member>
-        <member name="P:DevComponents.DotNetBar.Controls.TokenEditor.WatermarkImage">
-            <summary>
-            Gets or sets the watermark image displayed inside of the control when Text is not set and control does not have input focus.
-            </summary>
-        </member>
-        <member name="P:DevComponents.DotNetBar.Controls.TokenEditor.WatermarkImageAlignment">
-            <summary>
-            Gets or sets the watermark image alignment.
-            </summary>
-        </member>
-        <member name="P:DevComponents.DotNetBar.Controls.TokenEditor.WatermarkText">
-            <summary>
-            Gets or sets the watermark (tip) text displayed inside of the control when Text is not set and control does not have input focus. This property supports text-markup.
-            </summary>
-        </member>
-        <member name="P:DevComponents.DotNetBar.Controls.TokenEditor.WatermarkFont">
-            <summary>
-            Gets or sets the watermark font.
-            </summary>
-        </member>
-        <member name="P:DevComponents.DotNetBar.Controls.TokenEditor.WatermarkColor">
-            <summary>
-            Gets or sets the watermark text color.
-            </summary>
-        </member>
-        <member name="P:DevComponents.DotNetBar.Controls.TokenEditor.TextSeparator">
-            <summary>
-            Indicates the character separator that is used to separate tokens when controls Text property is updated or parsed.
-            </summary>
-        </member>
-        <member name="P:DevComponents.DotNetBar.Controls.TokenEditor.DropDownButtonVisible">
-            <summary>
-            Indicates whether drop-down button which shows available token popup is displayed
-            </summary>
-        </member>
-        <member name="P:DevComponents.DotNetBar.Controls.TokenEditor.CheckBoxesVisible">
-            <summary>
-            Indicates whether check-boxes are displayed on popup token selection list and used for token selection.
-            </summary>
-        </member>
-        <member name="T:DevComponents.DotNetBar.Controls.ValidateTokenEventHandler">
-            <summary>
-            Delegate for the ValidateTokenEvent event.
-            </summary>
-        </member>
-        <member name="T:DevComponents.DotNetBar.Controls.ValidateTokenEventArgs">
-            <summary>
-            Arguments for the ValidateTokenEvent event.
-            </summary>
-        </member>
-        <member name="F:DevComponents.DotNetBar.Controls.ValidateTokenEventArgs.IsValid">
-            <summary>
-            Indicates whether validated token is valid. Default value is true. When you set this property to false the token being validated will be discared.
-            </summary>
-        </member>
-        <member name="F:DevComponents.DotNetBar.Controls.ValidateTokenEventArgs.Token">
-            <summary>
-            Indicates the Token that will be accepted by the control if IsValid=true.
-            </summary>
-        </member>
-        <member name="F:DevComponents.DotNetBar.Controls.ValidateTokenEventArgs.IsNewToken">
-            <summary>
-            Indicates whether token is newly created. When false it means that token was taken from Tokens collection.
-            </summary>
-        </member>
-        <member name="M:DevComponents.DotNetBar.Controls.ValidateTokenEventArgs.#ctor(DevComponents.DotNetBar.Controls.EditToken,System.Boolean)">
-            <summary>
-            Initializes a new instance of the ValidateTokenEventArgs class.
-            </summary>
-            <param name="token"></param>
-        </member>
-        <member name="T:DevComponents.DotNetBar.Controls.RemovingTokenEventHandler">
-            <summary>
-            Delegate for RemovingToken event.
-            </summary>
-        </member>
-        <member name="T:DevComponents.DotNetBar.Controls.RemovingTokenEventArgs">
-            <summary>
-            Defines event arguments for RemovingToken event.
-            </summary>
-        </member>
-        <member name="F:DevComponents.DotNetBar.Controls.RemovingTokenEventArgs.Token">
-            <summary>
-            Indicates the Token that will be removed.
-            </summary>
-        </member>
-        <member name="F:DevComponents.DotNetBar.Controls.RemovingTokenEventArgs.Cancel">
-            <summary>
-            Set to true to cancel removal of the token.
-            </summary>
-        </member>
-        <member name="F:DevComponents.DotNetBar.Controls.RemovingTokenEventArgs.EventSource">
-            <summary>
-            Indicates the source of the event.
-            </summary>
-        </member>
-        <member name="M:DevComponents.DotNetBar.Controls.RemovingTokenEventArgs.#ctor(DevComponents.DotNetBar.Controls.EditToken,DevComponents.DotNetBar.eEventSource)">
-            <summary>
-            Initializes a new instance of the RemovingTokenEventArgs class.
-            </summary>
-            <param name="token"></param>
-        </member>
-        <member name="T:DevComponents.DotNetBar.Rendering.TokenEditorColorTable">
-            <summary>
-            Represents the color table for TokenEditor control tokens.
-            </summary>
-        </member>
-        <member name="M:DevComponents.DotNetBar.Rendering.TokenEditorColorTable.#ctor">
-            <summary>
-            Initializes a new instance of the TokenEditorColorTable class.
-            </summary>
-        </member>
-        <member name="M:DevComponents.DotNetBar.Rendering.TokenEditorColorTable.#ctor(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)">
-            <summary>
-            Initializes a new instance of the TokenEditorColorTable class.
-            </summary>
-        </member>
-        <member name="M:DevComponents.DotNetBar.Rendering.TokenEditorColorTable.#ctor(System.Drawing.Color,System.Drawing.Color,System.Drawing.Color,System.Drawing.Color,System.Drawing.Color,System.Drawing.Color)">
-            <summary>
-            Initializes a new instance of the TokenEditorColorTable class.
-            </summary>
-        </member>
-        <member name="F:DevComponents.DotNetBar.Rendering.TokenEditorColorTable.Normal">
-            <summary>
-            Gets or sets token default state colors.
-            </summary>
-        </member>
-        <member name="F:DevComponents.DotNetBar.Rendering.TokenEditorColorTable.MouseOver">
-            <summary>
-            Gets or sets token mouse over state colors.
-            </summary>
-        </member>
-        <member name="F:DevComponents.DotNetBar.Rendering.TokenEditorColorTable.Focused">
-            <summary>
-            Gets or sets token focused state colors.
-            </summary>
-        </member>
-        <member name="T:DevComponents.DotNetBar.Rendering.TokenColorTable">
-            <summary>
-            Represents the state color table for token in TokenEditor control.
-            </summary>
-        </member>
-        <member name="M:DevComponents.DotNetBar.Rendering.TokenColorTable.#ctor">
-            <summary>
-            Initializes a new instance of the TokenColorTable class.
-            </summary>
-        </member>
-        <member name="M:DevComponents.DotNetBar.Rendering.TokenColorTable.#ctor(System.Drawing.Color,System.Drawing.Color)">
-            <summary>
-            Initializes a new instance of the TokenColorTable class.
-            </summary>
-            <param name="textColor"></param>
-            <param name="new"></param>
-        </member>
-        <member name="M:DevComponents.DotNetBar.Rendering.TokenColorTable.#ctor(System.Int32,System.Int32)">
-            <summary>
-            Initializes a new instance of the TokenColorTable class.
-            </summary>
-            <param name="textColor"></param>
-            <param name="new"></param>
-        </member>
-        <member name="F:DevComponents.DotNetBar.Rendering.TokenColorTable.TextColor">
-            <summary>
-            Gets or sets token text color.
-            </summary>
-        </member>
-        <member name="F:DevComponents.DotNetBar.Rendering.TokenColorTable.Background">
-            <summary>
-            Gets or sets the background color table.
             </summary>
         </member>
         <member name="T:DevComponents.DotNetBar.Controls.WarningBox">
@@ -38751,24 +36941,9 @@
             Returns whether instance of the item container is used as system container internally by DotNetBar.
             </summary>
         </member>
-        <member name="P:DevComponents.DotNetBar.SimpleItemContainer.ItemSpacing">
-            <summary>
-            Indicates the spacing between items.
-            </summary>
-        </member>
         <member name="P:DevComponents.DotNetBar.SimpleItemContainer.BeginGroupSpacing">
             <summary>
             Indicates additional spacing between item when its BeginGroup property is set.
-            </summary>
-        </member>
-        <member name="P:DevComponents.DotNetBar.SimpleItemContainer.LayoutOrientation">
-            <summary>
-            Specifies the layout orientation
-            </summary>
-        </member>
-        <member name="P:DevComponents.DotNetBar.SimpleItemContainer.EqualizeButtonSize">
-            <summary>
-            Indicates whether all items are resized to be of the size equal to largest item in the container
             </summary>
         </member>
         <member name="T:DevComponents.DotNetBar.Metro.MetroTabPanel">
@@ -39100,13 +37275,6 @@
             <param name="oldValue">Old property value</param>
             <param name="newValue">New property value</param>
         </member>
-        <member name="M:DevComponents.DotNetBar.Metro.MetroTileItem.OnSymbolSetChanged(DevComponents.DotNetBar.eSymbolSet,DevComponents.DotNetBar.eSymbolSet)">
-            <summary>
-            Called when SymbolSet property value changes.
-            </summary>
-            <param name="oldValue">Indciates old value</param>
-            <param name="newValue">Indicates new value</param>
-        </member>
         <member name="M:DevComponents.DotNetBar.Metro.MetroTileItem.OnIsLeftMouseButtonDownChanged(System.Boolean,System.Boolean)">
             <summary>
             Called when IsLeftMouseButtonDown property has changed.
@@ -39251,11 +37419,6 @@
         <member name="P:DevComponents.DotNetBar.Metro.MetroTileItem.Symbol">
             <summary>
             Indicates the symbol displayed on face of the tile instead of the image. Setting the symbol overrides the image setting.
-            </summary>
-        </member>
-        <member name="P:DevComponents.DotNetBar.Metro.MetroTileItem.SymbolSet">
-            <summary>
-            Gets or sets the symbol set used to represent the Symbol.
             </summary>
         </member>
         <member name="P:DevComponents.DotNetBar.Metro.MetroTileItem.SymbolSize">
@@ -39475,13 +37638,6 @@
             <param name="oldValue">Old property value</param>
             <param name="newValue">New property value</param>
         </member>
-        <member name="M:DevComponents.DotNetBar.Metro.MetroTileFrame.OnSymbolSetChanged(DevComponents.DotNetBar.eSymbolSet,DevComponents.DotNetBar.eSymbolSet)">
-            <summary>
-            Called when SymbolSet property value changes.
-            </summary>
-            <param name="oldValue">Indciates old value</param>
-            <param name="newValue">Indicates new value</param>
-        </member>
         <member name="M:DevComponents.DotNetBar.Metro.MetroTileFrame.OnSymbolSizeChanged(System.Single,System.Single)">
             <summary>
             Called when SymbolSize property has changed.
@@ -39608,19 +37764,9 @@
             Specifies the Tile style of the item.
             </summary>
         </member>
-        <member name="P:DevComponents.DotNetBar.Metro.MetroTileFrame.SymbolRealized">
-            <summary>
-            Gets the realized symbol string.
-            </summary>
-        </member>
         <member name="P:DevComponents.DotNetBar.Metro.MetroTileFrame.Symbol">
             <summary>
             Indicates the symbol displayed on face of the tile instead of the image. Setting the symbol overrides the image setting.
-            </summary>
-        </member>
-        <member name="P:DevComponents.DotNetBar.Metro.MetroTileFrame.SymbolSet">
-            <summary>
-            Gets or sets the symbol set used to represent the Symbol.
             </summary>
         </member>
         <member name="P:DevComponents.DotNetBar.Metro.MetroTileFrame.SymbolSize">
@@ -44166,11 +42312,6 @@
             Specifies the back button symbol.
             </summary>
         </member>
-        <member name="P:DevComponents.DotNetBar.RadialMenu.BackButtonSymbolSet">
-            <summary>
-            Gets or sets the symbol set used to represent the Symbol.
-            </summary>
-        </member>
         <member name="P:DevComponents.DotNetBar.RadialMenu.CenterButtonDiameter">
             <summary>
             Indicates diameter of center button of radial menu.
@@ -44200,11 +42341,6 @@
         <member name="P:DevComponents.DotNetBar.RadialMenu.Symbol">
             <summary>
             Indicates symbol displayed in center of the radial menu. When set, it overrides any Image settings.
-            </summary>
-        </member>
-        <member name="P:DevComponents.DotNetBar.RadialMenu.SymbolSet">
-            <summary>
-            Gets or sets the symbol set used to represent the Symbol.
             </summary>
         </member>
         <member name="P:DevComponents.DotNetBar.RadialMenu.SymbolSize">
@@ -44678,13 +42814,6 @@
             <param name="oldValue">Old property value</param>
             <param name="newValue">New property value</param>
         </member>
-        <member name="M:DevComponents.DotNetBar.RadialMenuContainer.OnBackButtonSymbolSetChanged(DevComponents.DotNetBar.eSymbolSet,DevComponents.DotNetBar.eSymbolSet)">
-            <summary>
-            Called when BackButtonSymbolSet property value changes.
-            </summary>
-            <param name="oldValue">Indciates old value</param>
-            <param name="newValue">Indicates new value</param>
-        </member>
         <member name="M:DevComponents.DotNetBar.RadialMenuContainer.OnMaxItemPieAngleChanged(System.Int32,System.Int32)">
             <summary>
             Called when MaxItemPieAngle property has changed.
@@ -44705,13 +42834,6 @@
             </summary>
             <param name="oldValue">Old property value</param>
             <param name="newValue">New property value</param>
-        </member>
-        <member name="M:DevComponents.DotNetBar.RadialMenuContainer.OnSymbolSetChanged(DevComponents.DotNetBar.eSymbolSet,DevComponents.DotNetBar.eSymbolSet)">
-            <summary>
-            Called when SymbolSet property value changes.
-            </summary>
-            <param name="oldValue">Indciates old value</param>
-            <param name="newValue">Indicates new value</param>
         </member>
         <member name="M:DevComponents.DotNetBar.RadialMenuContainer.OnSymbolSizeChanged(System.Single,System.Single)">
             <summary>
@@ -44800,11 +42922,6 @@
             Specifies the back button symbol.
             </summary>
         </member>
-        <member name="P:DevComponents.DotNetBar.RadialMenuContainer.BackButtonSymbolSet">
-            <summary>
-            Gets or sets the symbol set used to represent the Symbol.
-            </summary>
-        </member>
         <member name="P:DevComponents.DotNetBar.RadialMenuContainer.MaxItemPieAngle">
             <summary>
             Specifies the maximum pie part angle an item will occupy. Maximum is 180, minimum is 1 degree.
@@ -44822,19 +42939,9 @@
             eRadialMenuType.Circular is designed to be used for single level menus only that don't need text.
             </summary>
         </member>
-        <member name="P:DevComponents.DotNetBar.RadialMenuContainer.SymbolRealized">
-            <summary>
-            Gets the realized symbol string.
-            </summary>
-        </member>
         <member name="P:DevComponents.DotNetBar.RadialMenuContainer.Symbol">
             <summary>
             Indicates the symbol displayed on face of the button instead of the image. Setting the symbol overrides the image setting.
-            </summary>
-        </member>
-        <member name="P:DevComponents.DotNetBar.RadialMenuContainer.SymbolSet">
-            <summary>
-            Gets or sets the symbol set used to represent the Symbol.
             </summary>
         </member>
         <member name="P:DevComponents.DotNetBar.RadialMenuContainer.SymbolSize">
@@ -44913,13 +43020,6 @@
             </summary>
             <param name="oldValue">Old property value</param>
             <param name="newValue">New property value</param>
-        </member>
-        <member name="M:DevComponents.DotNetBar.RadialMenuItem.OnSymbolSetChanged(DevComponents.DotNetBar.eSymbolSet,DevComponents.DotNetBar.eSymbolSet)">
-            <summary>
-            Called when SymbolSet property value changes.
-            </summary>
-            <param name="oldValue">Indciates old value</param>
-            <param name="newValue">Indicates new value</param>
         </member>
         <member name="M:DevComponents.DotNetBar.RadialMenuItem.OnSymbolSizeChanged(System.Single,System.Single)">
             <summary>
@@ -45022,19 +43122,9 @@
             Gets display path of the item.
             </summary>
         </member>
-        <member name="P:DevComponents.DotNetBar.RadialMenuItem.SymbolRealized">
-            <summary>
-            Gets the realized symbol string.
-            </summary>
-        </member>
         <member name="P:DevComponents.DotNetBar.RadialMenuItem.Symbol">
             <summary>
             Indicates the symbol displayed on face of the button instead of the image. Setting the symbol overrides the image setting.
-            </summary>
-        </member>
-        <member name="P:DevComponents.DotNetBar.RadialMenuItem.SymbolSet">
-            <summary>
-            Gets or sets the symbol set used to represent the Symbol.
             </summary>
         </member>
         <member name="P:DevComponents.DotNetBar.RadialMenuItem.SymbolSize">
@@ -45890,21 +43980,6 @@
             Gets or sets the color table for the radial menu.
             </summary>
         </member>
-        <member name="F:DevComponents.DotNetBar.Rendering.Office2007ColorTable.TokenEditor">
-            <summary>
-            Gets or sets color table for TokenEditor control tokens.
-            </summary>
-        </member>
-        <member name="F:DevComponents.DotNetBar.Rendering.Office2007ColorTable.Flyout">
-            <summary>
-            Gets or sets color table for Flyout control.
-            </summary>
-        </member>
-        <member name="F:DevComponents.DotNetBar.Rendering.Office2007ColorTable.SideNav">
-            <summary>
-            Gets or sets the colors for the SideNav control.
-            </summary>
-        </member>
         <member name="M:DevComponents.DotNetBar.Rendering.Office2007ColorTable.GetClass(System.String)">
             <summary>
             Returns the instance of the ElementStyle with given class name or null if there is no class with that name defined.
@@ -46628,12 +44703,6 @@
             </summary>
             <param name="e">Provides event arguments.</param>
         </member>
-        <member name="M:DevComponents.DotNetBar.RangeSliderItem.OnRangeTooltipText(DevComponents.DotNetBar.RangeTooltipEventArgs)">
-            <summary>
-            Raises GetRangeTooltipText event.
-            </summary>
-            <param name="e">Provides event arguments.</param>
-        </member>
         <member name="M:DevComponents.DotNetBar.RangeSliderItem.HitTest(System.Drawing.Point)">
             <summary>
             Gets the range part that is under specified client location.
@@ -46760,11 +44829,6 @@
         <member name="P:DevComponents.DotNetBar.RangeSliderItem.MouseDownPart">
             <summary>
             Gets current part that is pressed using mouse left button.
-            </summary>
-        </member>
-        <member name="E:DevComponents.DotNetBar.RangeSliderItem.RangeTooltipText">
-            <summary>
-            Occurs when control is about to display the range tooltip and it allows you to customize tooltip
             </summary>
         </member>
         <member name="P:DevComponents.DotNetBar.RangeSliderItem.Minimum">
@@ -47003,29 +45067,6 @@
             Indicates the track area part of the control.
             </summary>
         </member>
-        <member name="T:DevComponents.DotNetBar.RangeTooltipEventHandler">
-            <summary>
-            Defines delegate for RangeSliderValueChanging event.
-            </summary>
-            <param name="sender"></param>
-            <param name="e"></param>
-        </member>
-        <member name="T:DevComponents.DotNetBar.RangeTooltipEventArgs">
-            <summary>
-            Provides information for GetRangeTooltip event.
-            </summary>
-        </member>
-        <member name="F:DevComponents.DotNetBar.RangeTooltipEventArgs.Tooltip">
-            <summary>
-             Gets or sets the tooltip to display.
-            </summary>
-        </member>
-        <member name="M:DevComponents.DotNetBar.RangeTooltipEventArgs.#ctor(System.String)">
-            <summary>
-            Initializes a new instance of the RangeTooltipEventArgs class.
-            </summary>
-            <param name="tooltip"></param>
-        </member>
         <member name="T:DevComponents.DotNetBar.Schedule.ColorDef">
             <summary>
             Color definition class
@@ -47150,26 +45191,6 @@
             </summary>
             <param name="copy">New ButtonItem instance.</param>
         </member>
-        <member name="M:DevComponents.DotNetBar.Separator.ShouldSerializeSeparatorColor">
-            <summary>
-            Gets whether property should be serialized.
-            </summary>
-        </member>
-        <member name="M:DevComponents.DotNetBar.Separator.ResetSeparatorColor">
-            <summary>
-            Resets property to its default value.
-            </summary>
-        </member>
-        <member name="M:DevComponents.DotNetBar.Separator.ShouldSerializeShadeColor">
-            <summary>
-            Gets whether property should be serialized.
-            </summary>
-        </member>
-        <member name="M:DevComponents.DotNetBar.Separator.ResetShadeColor">
-            <summary>
-            Resets property to its default value.
-            </summary>
-        </member>
         <member name="P:DevComponents.DotNetBar.Separator.Padding">
             <summary>
             Gets or sets separator padding.
@@ -47178,21 +45199,6 @@
         <member name="P:DevComponents.DotNetBar.Separator.FixedSize">
             <summary>
             Gets or sets the size of separator. Size specified is for separator in Vertical orientation. If orientation changes then the size will be internally switched to respect proper orientation.
-            </summary>
-        </member>
-        <member name="P:DevComponents.DotNetBar.Separator.SeparatorOrientation">
-            <summary>
-            Indicates splitter orientation.
-            </summary>
-        </member>
-        <member name="P:DevComponents.DotNetBar.Separator.SeparatorColor">
-            <summary>
-            Gets or sets the separator color.
-            </summary>
-        </member>
-        <member name="P:DevComponents.DotNetBar.Separator.ShadeColor">
-            <summary>
-            Gets or sets the separator shade color.
             </summary>
         </member>
         <member name="T:DevComponents.DotNetBar.CustomizeItem">
@@ -49193,30 +47199,6 @@
             </summary>
             <param name="parent"></param>
         </member>
-        <member name="M:DevComponents.Editors.InputButtonSettings.OnSymbolChanged(System.String,System.String)">
-            <summary>
-            Called when Symbol property has changed.
-            </summary>
-            <param name="oldValue">Old property value</param>
-            <param name="newValue">New property value</param>
-        </member>
-        <member name="M:DevComponents.Editors.InputButtonSettings.OnSymbolSetChanged(DevComponents.DotNetBar.eSymbolSet,DevComponents.DotNetBar.eSymbolSet)">
-            <summary>
-            Called when SymbolSet property value changes.
-            </summary>
-            <param name="oldValue">Indciates old value</param>
-            <param name="newValue">Indicates new value</param>
-        </member>
-        <member name="M:DevComponents.Editors.InputButtonSettings.ShouldSerializeSymbolColor">
-            <summary>
-            Gets whether property should be serialized.
-            </summary>
-        </member>
-        <member name="M:DevComponents.Editors.InputButtonSettings.ResetSymbolColor">
-            <summary>
-            Resets property to its default value.
-            </summary>
-        </member>
         <member name="M:DevComponents.Editors.InputButtonSettings.CopyToItem(DevComponents.Editors.InputButtonSettings)">
             <summary>
             Copies properties to new instance of the item.
@@ -49261,21 +47243,6 @@
         <member name="P:DevComponents.Editors.InputButtonSettings.Tooltip">
             <summary>
             Gets or sets tooltip displayed for the button when mouse hovers over it.
-            </summary>
-        </member>
-        <member name="P:DevComponents.Editors.InputButtonSettings.Symbol">
-            <summary>
-            Indicates the symbol displayed on face of the button instead of the image. Setting the symbol overrides the image setting.
-            </summary>
-        </member>
-        <member name="P:DevComponents.Editors.InputButtonSettings.SymbolSet">
-            <summary>
-            Gets or sets the symbol set used to represent the Symbol.
-            </summary>
-        </member>
-        <member name="P:DevComponents.Editors.InputButtonSettings.SymbolColor">
-            <summary>
-            Gets or sets the color of the Symbol.
             </summary>
         </member>
         <member name="T:DevComponents.Editors.InputControlColors">
@@ -50005,25 +47972,6 @@
             Gets or sets the button tooltip.
             </summary>
         </member>
-        <member name="M:DevComponents.Editors.VisualButton.OnSymbolChanged(System.String,System.String)">
-            <summary>
-            Called when Symbol property has changed.
-            </summary>
-            <param name="oldValue">Old property value</param>
-            <param name="newValue">New property value</param>
-        </member>
-        <member name="M:DevComponents.Editors.VisualButton.OnSymbolSetChanged(DevComponents.DotNetBar.eSymbolSet,DevComponents.DotNetBar.eSymbolSet)">
-            <summary>
-            Called when SymbolSet property value changes.
-            </summary>
-            <param name="oldValue">Indciates old value</param>
-            <param name="newValue">Indicates new value</param>
-        </member>
-        <member name="P:DevComponents.Editors.VisualButton.Height">
-            <summary>
-            Gets or sets the fixed button height.
-            </summary>
-        </member>
         <member name="P:DevComponents.Editors.VisualButton.IsMouseOver">
             <summary>
             Gets whether mouse is over the control.
@@ -50042,26 +47990,6 @@
         <member name="P:DevComponents.Editors.VisualButton.Image">
             <summary>
             Gets or sets the image displayed on the face of the button.
-            </summary>
-        </member>
-        <member name="P:DevComponents.Editors.VisualButton.SymbolRealized">
-            <summary>
-            Gets the realized symbol string.
-            </summary>
-        </member>
-        <member name="P:DevComponents.Editors.VisualButton.Symbol">
-            <summary>
-            Indicates the symbol displayed on face of the button instead of the image. Setting the symbol overrides the image setting.
-            </summary>
-        </member>
-        <member name="P:DevComponents.Editors.VisualButton.SymbolSet">
-            <summary>
-            Gets or sets the symbol set used to represent the Symbol.
-            </summary>
-        </member>
-        <member name="P:DevComponents.Editors.VisualButton.SymbolColor">
-            <summary>
-            Gets or sets the color of the Symbol.
             </summary>
         </member>
         <member name="M:DevComponents.Editors.FreeTextEntryBox.OnDecreaseValue(System.EventArgs)">
@@ -50489,18 +48417,6 @@
             </summary>
             <returns>The current renderer.</returns>
         </member>
-        <member name="M:DevComponents.DotNetBar.PanelEx.OnNonClientSizeChanged(System.EventArgs)">
-            <summary>
-            Raises NonClientSizeChanged event.
-            </summary>
-            <param name="e">Provides event arguments.</param>
-        </member>
-        <member name="M:DevComponents.DotNetBar.PanelEx.OnScrollBarValueChanged(DevComponents.DotNetBar.Controls.ScrollValueChangedEventArgs)">
-            <summary>
-            Raises ScrollBarValueChanged event.
-            </summary>
-            <param name="e">Provides event arguments.</param>
-        </member>
         <member name="M:DevComponents.DotNetBar.PanelEx.DevComponents#DotNetBar#Controls#INonClientControl#get_Enabled">
             <summary>
             Represents graphical panel control with support for different visual styles and gradients.
@@ -50597,21 +48513,6 @@
         <member name="P:DevComponents.DotNetBar.PanelEx.MarkupUsesStyleAlignment">
             <summary>
             Gets or sets whether text markup if it occupies less space than control provides uses the Style Alignment and LineAlignment properties to align the markup inside of the control. Default value is false.
-            </summary>
-        </member>
-        <member name="P:DevComponents.DotNetBar.PanelEx.VScrollBar">
-            <summary>
-            Returns reference to internal vertical scroll-bar control.
-            </summary>
-        </member>
-        <member name="P:DevComponents.DotNetBar.PanelEx.HScrollBar">
-            <summary>
-            Returns reference to internal horizontal scroll-bar control.
-            </summary>
-        </member>
-        <member name="P:DevComponents.DotNetBar.PanelEx.UseThemedScrollbars">
-            <summary>
-            Indicates whether panel uses themed DotNetBar scrollbars. Default value is true.
             </summary>
         </member>
         <member name="P:DevComponents.DotNetBar.PanelEx.DialogResult">
@@ -51909,11 +49810,6 @@
             Gets the style key for the ProgressSteps control.
             </summary>
         </member>
-        <member name="F:DevComponents.DotNetBar.Rendering.ElementStyleClassKeys.SideNavStripKey">
-            <summary>
-            Gets the style key for the SideNavStrip control.
-            </summary>
-        </member>
         <member name="T:DevComponents.DotNetBar.Rendering.GlobalManager">
             <summary>
             Represents a static class that maintains the global rendering properties for all controls when eRenderMode is set to global.
@@ -52021,12 +49917,6 @@
             </summary>
             <param name="start">Start color in hexadecimal representation like FFFFFF.</param>
             <param name="end">End color in hexadecimal representation like FFFFFF.</param>
-        </member>
-        <member name="M:DevComponents.DotNetBar.Rendering.LinearGradientColorTable.#ctor(System.Int32)">
-            <summary>
-            Creates new instance of the object.
-            </summary>
-            <param name="start">Start color in 32-bit RGB representation.</param>
         </member>
         <member name="M:DevComponents.DotNetBar.Rendering.LinearGradientColorTable.#ctor(System.Int32,System.Int32)">
             <summary>
@@ -52595,13 +50485,6 @@
             <param name="height">Height in pixels</param>
             <returns>True if width was applied by parent otherwise false</returns>
         </member>
-        <member name="M:DevComponents.DotNetBar.DocumentBaseContainer.UpdateScrollBounds(System.Int32,System.Int32,System.Boolean)">
-            <summary>
-            Updates bounds of the item in response to the scrolling of LayoutControl.
-            </summary>
-            <param name="xScroll"></param>
-            <param name="yScroll"></param>
-        </member>
         <member name="P:DevComponents.DotNetBar.DocumentBaseContainer.Id">
             <summary>
             Gets the unique ID for the container.
@@ -52838,11 +50721,6 @@
         <member name="P:DevComponents.DotNetBar.DocumentDockContainer.RecordDocumentSize">
             <summary>
             Gets or sets whether the size of the documents is recorded once the layout is calculated.
-            </summary>
-        </member>
-        <member name="P:DevComponents.DotNetBar.DocumentDockContainer.OversizeEnabled">
-            <summary>
-            Indicates whether the container is allowed to exceed the parent control client size due to inner child windows minimum size constraints.
             </summary>
         </member>
         <member name="T:DevComponents.DotNetBar.DocumentDockContainerConverter">
@@ -56144,21 +54022,6 @@
             Defines position for the notification mark
             </summary>
         </member>
-        <member name="T:DevComponents.DotNetBar.eSymbolSet">
-            <summary>
-            Defines available symbol sets.
-            </summary>
-        </member>
-        <member name="F:DevComponents.DotNetBar.eSymbolSet.Awesome">
-            <summary>
-            FontAwesome Symbol Set.
-            </summary>
-        </member>
-        <member name="F:DevComponents.DotNetBar.eSymbolSet.Material">
-            <summary>
-            Android Material Symbol Set.
-            </summary>
-        </member>
         <member name="F:DevComponents.DotNetBar.ColorItemRendererEventArgs.Graphics">
             <summary>
             Gets or sets Graphics object group is rendered on.
@@ -58084,13 +55947,6 @@
             <param name="oldValue">Old property value</param>
             <param name="newValue">New property value</param>
         </member>
-        <member name="M:DevComponents.DotNetBar.LabelItem.OnSymbolSetChanged(DevComponents.DotNetBar.eSymbolSet,DevComponents.DotNetBar.eSymbolSet)">
-            <summary>
-            Called when SymbolSet property value changes.
-            </summary>
-            <param name="oldValue">Indciates old value</param>
-            <param name="newValue">Indicates new value</param>
-        </member>
         <member name="M:DevComponents.DotNetBar.LabelItem.OnSymbolSizeChanged(System.Single,System.Single)">
             <summary>
             Called when SymbolSize property has changed.
@@ -58210,11 +56066,6 @@
             Gets or sets a value that determines whether text is displayed in multiple lines or one long line.
             </summary>
         </member>
-        <member name="P:DevComponents.DotNetBar.LabelItem.FontBold">
-            <summary>
-            Indicates whether label text is rendered using bold font unless the Font property is specifically set to different font.
-            </summary>
-        </member>
         <member name="P:DevComponents.DotNetBar.LabelItem.Text">
             <summary>
             Gets or sets the text associated with this item.
@@ -58250,19 +56101,9 @@
             Gets or sets how vertical text is rotated when TextOrientation = Vertical.
             </summary>
         </member>
-        <member name="P:DevComponents.DotNetBar.LabelItem.SymbolRealized">
-            <summary>
-            Gets the realized symbol string.
-            </summary>
-        </member>
         <member name="P:DevComponents.DotNetBar.LabelItem.Symbol">
             <summary>
             Indicates the symbol displayed on label instead of the image. Setting the symbol overrides the image setting.
-            </summary>
-        </member>
-        <member name="P:DevComponents.DotNetBar.LabelItem.SymbolSet">
-            <summary>
-            Gets or sets the symbol set used to represent the Symbol.
             </summary>
         </member>
         <member name="P:DevComponents.DotNetBar.LabelItem.SymbolSize">
@@ -61613,19 +59454,6 @@
             </summary>
             <param name="e">Provides context information.</param>
         </member>
-        <member name="M:DevComponents.DotNetBar.Rendering.BaseRenderer.OnRenderSideNavItem(DevComponents.DotNetBar.Rendering.SideNavItemRendererEventArgs)">
-            <summary>
-            Raises RenderListBoxItem event.
-            </summary>
-            <param name="e">Provides context information.</param>
-        </member>
-        <member name="M:DevComponents.DotNetBar.Rendering.BaseRenderer.DrawSideNavItem(DevComponents.DotNetBar.Rendering.SideNavItemRendererEventArgs)">
-            <summary>
-            Draws the ListBoxItem. If you need to provide custom rendering this is the method that you should override in your custom rendered. If you
-            do not want default rendering to occur do not call the base implementation. You can call OnRenderListBoxItem method so events can occur.
-            </summary>
-            <param name="e">Provides context information.</param>
-        </member>
         <member name="E:DevComponents.DotNetBar.Rendering.BaseRenderer.RenderKeyTips">
             <summary>
             Occurs when KeyTip is rendered.
@@ -61774,11 +59602,6 @@
         <member name="E:DevComponents.DotNetBar.Rendering.BaseRenderer.RenderListBoxItem">
             <summary>
             Occurs when ListBoxItem is being rendered.
-            </summary>
-        </member>
-        <member name="E:DevComponents.DotNetBar.Rendering.BaseRenderer.RenderSideNavItem">
-            <summary>
-            Occurs when SideNavItem is being rendered.
             </summary>
         </member>
         <member name="M:DevComponents.DotNetBar.Rendering.Office2007Renderer.DrawKeyTips(DevComponents.DotNetBar.KeyTipsRendererEventArgs)">
@@ -61984,13 +59807,6 @@
             <param name="e">Provides context information.</param>
         </member>
         <member name="M:DevComponents.DotNetBar.Rendering.Office2007Renderer.DrawListBoxItem(DevComponents.DotNetBar.ListBoxItemRendererEventArgs)">
-            <summary>
-            Draws the ListBoxItem. If you need to provide custom rendering this is the method that you should override in your custom rendered. If you
-            do not want default rendering to occur do not call the base implementation. You can call OnRenderListBoxItem method so events can occur.
-            </summary>
-            <param name="e">Provides context information.</param>
-        </member>
-        <member name="M:DevComponents.DotNetBar.Rendering.Office2007Renderer.DrawSideNavItem(DevComponents.DotNetBar.Rendering.SideNavItemRendererEventArgs)">
             <summary>
             Draws the ListBoxItem. If you need to provide custom rendering this is the method that you should override in your custom rendered. If you
             do not want default rendering to occur do not call the base implementation. You can call OnRenderListBoxItem method so events can occur.
@@ -63024,11 +60840,6 @@
         <member name="T:DevComponents.DotNetBar.ListBoxItemRendererEventHandler">
             <summary>
             Defines delegate for the ListBoxItem rendering events.
-            </summary>
-        </member>
-        <member name="T:DevComponents.DotNetBar.SideNavItemRendererEventHandler">
-            <summary>
-            Defines delegate for the SideNavItem rendering events.
             </summary>
         </member>
         <member name="T:DevComponents.DotNetBar.GalleryContainer">
@@ -66500,11 +64311,6 @@
             <param name="value">The amount by which to increment the sliders current position. </param>
         </member>
         <member name="M:DevComponents.DotNetBar.SliderItem.OnValueChanged">
-            <summary>
-            Raises the ValueChanged event.
-            </summary>
-        </member>
-        <member name="M:DevComponents.DotNetBar.SliderItem.OnValueChanged(System.EventArgs)">
             <summary>
             Raises the ValueChanged event.
             </summary>
@@ -70332,13 +68138,6 @@
             <param name="oldValue">Old property value</param>
             <param name="newValue">New property value</param>
         </member>
-        <member name="M:DevComponents.DotNetBar.SuperTabItem.OnSymbolSetChanged(DevComponents.DotNetBar.eSymbolSet,DevComponents.DotNetBar.eSymbolSet)">
-            <summary>
-            Called when SymbolSet property value changes.
-            </summary>
-            <param name="oldValue">Indciates old value</param>
-            <param name="newValue">Indicates new value</param>
-        </member>
         <member name="M:DevComponents.DotNetBar.SuperTabItem.ShouldSerializeSymbolColor">
             <summary>
             Gets whether property should be serialized.
@@ -70672,20 +68471,10 @@
             Gets or sets the selected tab Font
             </summary>
         </member>
-        <member name="P:DevComponents.DotNetBar.SuperTabItem.SymbolRealized">
-            <summary>
-            Gets the realized symbol string.
-            </summary>
-        </member>
         <member name="P:DevComponents.DotNetBar.SuperTabItem.Symbol">
             <summary>
             Indicates the symbol displayed on face of the button instead of
             the image. Setting the symbol overrides the image setting.
-            </summary>
-        </member>
-        <member name="P:DevComponents.DotNetBar.SuperTabItem.SymbolSet">
-            <summary>
-            Gets or sets the symbol set used to represent the Symbol.
             </summary>
         </member>
         <member name="P:DevComponents.DotNetBar.SuperTabItem.SymbolColor">
@@ -72746,11 +70535,6 @@
             Gets or sets the color of the read-only marker.
             </summary>
         </member>
-        <member name="P:DevComponents.DotNetBar.Controls.SwitchButton.SwitchClickTogglesValue">
-            <summary>
-            Indicates whether clicking left mouse button on the switch part of the item will toggle the switch Value.
-            </summary>
-        </member>
         <member name="E:DevComponents.DotNetBar.Controls.SwitchButton.ValueObjectChanged">
             <summary>
             Occurs after ValueObject property changes.
@@ -72974,11 +70758,6 @@
             Gets or sets the switch value.
             </summary>
         </member>
-        <member name="P:DevComponents.DotNetBar.SwitchButtonItem.SwitchClickTogglesValue">
-            <summary>
-            Indicates whether clicking left mouse button on the switch part of the item will toggle the switch Value.
-            </summary>
-        </member>
         <member name="P:DevComponents.DotNetBar.SwitchButtonItem.SwitchBounds">
             <summary>
             Gets the switch bounds.
@@ -73166,22 +70945,7 @@
             <param name="f">Indicates the font for the text.</param>
             <param name="rtl">Indicates whether item is in Right-To-Left environment.</param>
         </member>
-        <member name="M:DevComponents.DotNetBar.Symbols.GetFont(System.Single,DevComponents.DotNetBar.eSymbolSet)">
-            <summary>
-            Returns specific font set at specified size/
-            </summary>
-            <param name="fontSize">Font size</param>
-            <param name="symbolSet">Symbol set to return</param>
-            <returns>Font</returns>
-        </member>
         <member name="M:DevComponents.DotNetBar.Symbols.GetFontAwesome(System.Single)">
-            <summary>
-            Returns FontAwesome at specific size.
-            </summary>
-            <param name="fontSize">Font size in points</param>
-            <returns>Font in desired size.</returns>
-        </member>
-        <member name="M:DevComponents.DotNetBar.Symbols.GetFontMaterial(System.Single)">
             <summary>
             Returns FontAwesome at specific size.
             </summary>
@@ -73196,21 +70960,6 @@
         <member name="P:DevComponents.DotNetBar.Symbols.FontAwesomeFamily">
             <summary>
             Returns FontAwesome Family.
-            </summary>
-        </member>
-        <member name="P:DevComponents.DotNetBar.Symbols.FontMaterial">
-            <summary>
-            Gets Material Font at default size.
-            </summary>
-        </member>
-        <member name="P:DevComponents.DotNetBar.Symbols.FontMaterialFamily">
-            <summary>
-            Returns Material Font Family.
-            </summary>
-        </member>
-        <member name="P:DevComponents.DotNetBar.Symbols.FontMaterialDefaultSize">
-            <summary>
-            Gets the default size for the Material font size in points.
             </summary>
         </member>
         <member name="P:DevComponents.DotNetBar.Symbols.FontAwesomeDefaultSize">
@@ -74218,36 +71967,6 @@
             Represents Tab-Strip control.
             </summary>
         </member>
-        <member name="M:DevComponents.DotNetBar.TabStrip.OnTabMouseEnter(DevComponents.DotNetBar.TabItem,System.EventArgs)">
-            <summary>
-            Raises TabMouseEnter event.
-            </summary>
-            <param name="e">Provides event arguments.</param>
-        </member>
-        <member name="M:DevComponents.DotNetBar.TabStrip.OnTabMouseLeave(DevComponents.DotNetBar.TabItem,System.EventArgs)">
-            <summary>
-            Raises TabMouseLeave event.
-            </summary>
-            <param name="e">Provides event arguments.</param>
-        </member>
-        <member name="M:DevComponents.DotNetBar.TabStrip.OnTabMouseMove(DevComponents.DotNetBar.TabItem,System.Windows.Forms.MouseEventArgs)">
-            <summary>
-            Raises TabMouseMove event.
-            </summary>
-            <param name="e">Provides event arguments.</param>
-        </member>
-        <member name="M:DevComponents.DotNetBar.TabStrip.OnTabMouseClick(DevComponents.DotNetBar.TabItem,System.Windows.Forms.MouseEventArgs)">
-            <summary>
-            Raises TabMouseClick event.
-            </summary>
-            <param name="e">Provides event arguments.</param>
-        </member>
-        <member name="M:DevComponents.DotNetBar.TabStrip.OnTabMouseHover(DevComponents.DotNetBar.TabItem,System.EventArgs)">
-            <summary>
-            Raises TabMouseHover event.
-            </summary>
-            <param name="e">Provides event arguments.</param>
-        </member>
         <member name="M:DevComponents.DotNetBar.TabStrip.#ctor">
             <summary>
             Default constructor.
@@ -74405,31 +72124,6 @@
         <member name="E:DevComponents.DotNetBar.TabStrip.PostRenderTabItem">
             <summary>
             Occurs after tab is rendered and allows you to render on top of the default rendering performed by the control.
-            </summary>
-        </member>
-        <member name="E:DevComponents.DotNetBar.TabStrip.TabMouseEnter">
-            <summary>
-            Occurs when mouse enters a tab.
-            </summary>
-        </member>
-        <member name="E:DevComponents.DotNetBar.TabStrip.TabMouseLeave">
-            <summary>
-            Occurs when mouse leaves a tab.
-            </summary>
-        </member>
-        <member name="E:DevComponents.DotNetBar.TabStrip.TabMouseMove">
-            <summary>
-            Occurs when mouse moves over the tab.
-            </summary>
-        </member>
-        <member name="E:DevComponents.DotNetBar.TabStrip.TabMouseClick">
-            <summary>
-            Occurs when mouse clicks the tab.
-            </summary>
-        </member>
-        <member name="E:DevComponents.DotNetBar.TabStrip.TabMouseHover">
-            <summary>
-            Occurs when mouse hovers over the tab.
             </summary>
         </member>
         <member name="P:DevComponents.DotNetBar.TabStrip.AntiAlias">
@@ -76894,11 +74588,6 @@
         <member name="P:DevComponents.DotNetBar.Validator.RangeValidator.MinimumValue">
             <summary>
             Gets or sets the minimum value control may have.
-            </summary>
-        </member>
-        <member name="P:DevComponents.DotNetBar.Validator.RangeValidator.IsEmptyStringValid">
-            <summary>
-            Indicates whether empty string of zero length is considered valid input.
             </summary>
         </member>
         <member name="T:DevComponents.DotNetBar.Validator.RegularExpressionValidator">

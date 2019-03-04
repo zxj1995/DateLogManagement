@@ -50,7 +50,7 @@
     <ApplicationIcon>20190118090449451_easyicon_net_512.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DevComponents.DotNetBar2, Version=12.4.0.2, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL" />
+    <Reference Include="DevComponents.DotNetBar2, Version=12.0.0.1, Culture=neutral, PublicKeyToken=c39c3242a43eee2b, processorArchitecture=MSIL" />
     <Reference Include="Interop.Microsoft.Office.Interop.OneNote, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Interop.Microsoft.Office.Interop.OneNote.1.1.0.0\lib\net40\Interop.Microsoft.Office.Interop.OneNote.dll</HintPath>
       <EmbedInteropTypes>True</EmbedInteropTypes>
