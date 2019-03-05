@@ -131,7 +131,7 @@ namespace FileContextSearch
 
         private void button4_Click(object sender, EventArgs e)
         {
-            //var fsh = FileSearchHelper.GetInstance();test
+            //var fsh = FileSearchHelper.GetInstance();
             //fsh.DateLogDir = textBox4.Text;
             //fsh.CreateNewDatelog();
             //fsh.GenerateFile();

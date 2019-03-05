@@ -70,7 +70,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.styleManager1 = new DevComponents.DotNetBar.StyleManager(this.components);
-            this.button10 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.DateLog.SuspendLayout();
@@ -281,7 +280,6 @@
             // 
             // DateLog
             // 
-            this.DateLog.Controls.Add(this.button10);
             this.DateLog.Controls.Add(this.IsByDateTime);
             this.DateLog.Controls.Add(this.richTextBox1);
             this.DateLog.Controls.Add(this.label5);
@@ -524,17 +522,6 @@
             this.styleManager1.ManagerStyle = DevComponents.DotNetBar.eStyle.Office2013;
             this.styleManager1.MetroColorParameters = new DevComponents.DotNetBar.Metro.ColorTables.MetroColorGeneratorParameters(System.Drawing.Color.White, System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(87)))), ((int)(((byte)(154))))));
             // 
-            // button10
-            // 
-            this.button10.Location = new System.Drawing.Point(555, 88);
-            this.button10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(85, 23);
-            this.button10.TabIndex = 26;
-            this.button10.Text = "Test";
-            this.button10.UseVisualStyleBackColor = true;
-            this.button10.Click += new System.EventHandler(this.button10_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -612,7 +599,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.CheckBox IsByDateTime;
-        private System.Windows.Forms.Button button10;
     }
 }
 
