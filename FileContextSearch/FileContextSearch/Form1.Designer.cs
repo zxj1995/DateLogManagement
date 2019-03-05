@@ -50,6 +50,7 @@
             this.button8 = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.DateLog = new System.Windows.Forms.TabPage();
+            this.IsByDateTime = new System.Windows.Forms.CheckBox();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.Test = new System.Windows.Forms.TabPage();
             this.button11 = new System.Windows.Forms.Button();
@@ -69,7 +70,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.styleManager1 = new DevComponents.DotNetBar.StyleManager(this.components);
-            this.IsByDateTime = new System.Windows.Forms.CheckBox();
+            this.button10 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.DateLog.SuspendLayout();
@@ -280,6 +281,7 @@
             // 
             // DateLog
             // 
+            this.DateLog.Controls.Add(this.button10);
             this.DateLog.Controls.Add(this.IsByDateTime);
             this.DateLog.Controls.Add(this.richTextBox1);
             this.DateLog.Controls.Add(this.label5);
@@ -305,6 +307,17 @@
             this.DateLog.TabIndex = 0;
             this.DateLog.Text = "日志";
             this.DateLog.UseVisualStyleBackColor = true;
+            // 
+            // IsByDateTime
+            // 
+            this.IsByDateTime.AutoSize = true;
+            this.IsByDateTime.Location = new System.Drawing.Point(368, 24);
+            this.IsByDateTime.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.IsByDateTime.Name = "IsByDateTime";
+            this.IsByDateTime.Size = new System.Drawing.Size(96, 16);
+            this.IsByDateTime.TabIndex = 25;
+            this.IsByDateTime.Text = "生成日志日期";
+            this.IsByDateTime.UseVisualStyleBackColor = true;
             // 
             // richTextBox1
             // 
@@ -511,16 +524,16 @@
             this.styleManager1.ManagerStyle = DevComponents.DotNetBar.eStyle.Office2013;
             this.styleManager1.MetroColorParameters = new DevComponents.DotNetBar.Metro.ColorTables.MetroColorGeneratorParameters(System.Drawing.Color.White, System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(87)))), ((int)(((byte)(154))))));
             // 
-            // IsByDateTime
+            // button10
             // 
-            this.IsByDateTime.AutoSize = true;
-            this.IsByDateTime.Location = new System.Drawing.Point(368, 24);
-            this.IsByDateTime.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.IsByDateTime.Name = "IsByDateTime";
-            this.IsByDateTime.Size = new System.Drawing.Size(96, 16);
-            this.IsByDateTime.TabIndex = 25;
-            this.IsByDateTime.Text = "生成日志日期";
-            this.IsByDateTime.UseVisualStyleBackColor = true;
+            this.button10.Location = new System.Drawing.Point(555, 88);
+            this.button10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(85, 23);
+            this.button10.TabIndex = 26;
+            this.button10.Text = "Test";
+            this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
             // Form1
             // 
@@ -599,6 +612,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.CheckBox IsByDateTime;
+        private System.Windows.Forms.Button button10;
     }
 }
 
