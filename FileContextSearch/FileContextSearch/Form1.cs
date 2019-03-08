@@ -135,6 +135,8 @@ namespace FileContextSearch
             //fsh.DateLogDir = textBox4.Text;
             //fsh.CreateNewDatelog();
             //fsh.GenerateFile();
+            tabControl1.SelectedIndex = 3;
+            //査小杰屏蔽于2019-3-8 16:08:18
             OpenFileByTemplate();
             //Thread th = new Thread(new ThreadStart(OpenFileByTemplate));
             //th.Start();
@@ -212,9 +214,16 @@ namespace FileContextSearch
             Tc = new System.Threading.Timer(new TimerCallback(autoSave), null, Timeout.Infinite, 3600000);
             Tc.Change(3600000, 3600000);
             //加载treeview
+            this.WindowState =FormWindowState.Maximized;
+
         }
         public void autoSave(object obj)
         {
+            string[] fileNames = new string[] { "DailyMission.txt", "Idea.txt", "Draft.txt" };
+            foreach (var item in fileNames)
+            {
+                FileSearchHelper.GetInstance().ReadTxtandWriteFile(DailyMission, item+".txt");
+            }
             FileSearchHelper.GetInstance().GenerateFile(DateTime.Now);
         }
         private void InitialUI()
@@ -255,6 +264,8 @@ namespace FileContextSearch
                 ResearchTreeView.BeforeExpand += BeforeExpand;
 
             }
+
+            InitNewModel();
         }
         private void button7_Click(object sender, EventArgs e)
         {
@@ -296,6 +307,7 @@ namespace FileContextSearch
 
         private void button8_Click(object sender, EventArgs e)
         {
+            autoSave(null);
             if (IsByDateTime.Checked)
             {
                 var fsh = FileSearchHelper.GetInstance();
@@ -663,5 +675,134 @@ namespace FileContextSearch
         {
 
         }
+        //2019-3-8 12:04:10
+        //初始化新日志模块
+        public void InitNewModel()
+        {
+            //UI上等分contentContainer
+            FlexLayOut();
+            ContentChange();
+        }
+        public void FlexLayOut()
+        {
+            foreach (var item in ContentContainer.Controls)
+            {
+                if (item.GetType().ToString() == "System.Windows.Forms.RichTextBox")
+                {
+                    var itemtemp = (RichTextBox)item;
+                    itemtemp.Height  = ContentContainer.Height-65;
+                    itemtemp.Width = ContentContainer.Width/3;
+                }
+                DailyMission.Location = new Point(0, 85);
+                Idea.Location = new Point(ContentContainer.Width /3, 85);
+                Draft.Location = new Point((ContentContainer.Width /3)*2, 85);
+            }
+            lblDailyMission.Location = new Point(20, 24);
+            lblIdea .Location = new Point(Idea.Location.X+20, 24);
+            lblDraft.Location = new Point(Draft.Location.X + 20, 24);
+        }
+        public void ContentChange()
+        {
+            //"DailyMission.txt", "Idea.txt", "Draft.txt"
+            var strArr = FileSearchHelper.GetInstance().tempFileHandler();
+            DailyMission.Text = strArr[0];
+            Idea.Text = strArr[1];
+            Draft.Text = strArr[2];
+        }
+        public void FillRTX()
+        {
+            var item = "";
+        }
+
+        private void ContentContainer_SizeChanged(object sender, EventArgs e)
+        {
+            FlexLayOut();
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form1_SizeChanged(object sender, EventArgs e)
+        {
+            HeightInit();
+        }
+        public void HeightInit()
+        {
+            if (NewDateLog.Height > 180)
+            {
+                ContentContainer.Height = NewDateLog.Height - 180;
+            }
+        }
+
+
+
+        private void NewDateLog_SizeChanged(object sender, EventArgs e)
+        {
+            HeightInit();
+        }
+
+
+
+
+
+        private void DailyMission_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            var filePath = Path.Combine(FileSearchHelper.GetInstance().DateLogDir, "temp", "DailyMission.txt");
+            if (File.Exists(filePath))
+            {
+                var a = (double)Screen.PrimaryScreen.Bounds.Width * 0.3;
+                int sw = (int)a;
+                int sh = Screen.PrimaryScreen.Bounds.Height;
+                int j = 0;
+                int x1 = (int)a * j;
+                int y1 = 0;
+                var temp = new TestFun();
+                temp.OpenAndSetFileSize(filePath, x1, y1, sw, sh);
+            }
+
+        }
+
+        private void Idea_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            var filePath = Path.Combine(FileSearchHelper.GetInstance().DateLogDir, "temp", "Idea.txt");
+            if (File.Exists(filePath))
+            {
+                var a = (double)Screen.PrimaryScreen.Bounds.Width * 0.3;
+                int sw = (int)a;
+                int sh = Screen.PrimaryScreen.Bounds.Height;
+                int j = 1;
+                int x1 = (int)a * j;
+                int y1 = 0;
+                var temp = new TestFun();
+                temp.OpenAndSetFileSize(filePath, x1, y1, sw, sh);
+            }
+
+        }
+
+        private void Draft_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            var filePath = Path.Combine(FileSearchHelper.GetInstance().DateLogDir, "temp", "Draft.txt");
+            if (File.Exists(filePath))
+            {
+                var a = (double)Screen.PrimaryScreen.Bounds.Width * 0.3;
+                int sw = (int)a;
+                int sh = Screen.PrimaryScreen.Bounds.Height;
+                int j = 2;
+                int x1 = (int)a * j;
+                int y1 = 0;
+                var temp = new TestFun();
+                temp.OpenAndSetFileSize(filePath, x1, y1, sw, sh);
+            }
+
+        }
+
+        private void DateLog_SizeChanged(object sender, EventArgs e)
+        {
+            richTextBox1.Height = DateLog.Height - 198;
+        }
+        //2019-3-8 12:04:10
+
     }
 }

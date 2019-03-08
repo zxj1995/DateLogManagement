@@ -69,7 +69,16 @@
             this.label6 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.NewDateLog = new System.Windows.Forms.TabPage();
+            this.ContentContainer = new System.Windows.Forms.GroupBox();
+            this.DailyMission = new System.Windows.Forms.RichTextBox();
+            this.Idea = new System.Windows.Forms.RichTextBox();
+            this.Draft = new System.Windows.Forms.RichTextBox();
             this.styleManager1 = new DevComponents.DotNetBar.StyleManager(this.components);
+            this.lblDailyMission = new System.Windows.Forms.Label();
+            this.lblIdea = new System.Windows.Forms.Label();
+            this.lblDraft = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.DateLog.SuspendLayout();
@@ -81,6 +90,9 @@
             this.splitContainer1.SuspendLayout();
             this.SearchName.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.NewDateLog.SuspendLayout();
+            this.ContentContainer.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
@@ -211,7 +223,7 @@
             this.设置ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(843, 25);
+            this.menuStrip1.Size = new System.Drawing.Size(1112, 25);
             this.menuStrip1.TabIndex = 16;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -270,11 +282,12 @@
             this.tabControl1.Controls.Add(this.DateLog);
             this.tabControl1.Controls.Add(this.Test);
             this.tabControl1.Controls.Add(this.Research);
+            this.tabControl1.Controls.Add(this.NewDateLog);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 25);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(843, 486);
+            this.tabControl1.Size = new System.Drawing.Size(1112, 486);
             this.tabControl1.TabIndex = 24;
             this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
@@ -301,10 +314,11 @@
             this.DateLog.Location = new System.Drawing.Point(4, 22);
             this.DateLog.Name = "DateLog";
             this.DateLog.Padding = new System.Windows.Forms.Padding(3);
-            this.DateLog.Size = new System.Drawing.Size(835, 460);
+            this.DateLog.Size = new System.Drawing.Size(1104, 460);
             this.DateLog.TabIndex = 0;
             this.DateLog.Text = "日志";
             this.DateLog.UseVisualStyleBackColor = true;
+            this.DateLog.SizeChanged += new System.EventHandler(this.DateLog_SizeChanged);
             // 
             // IsByDateTime
             // 
@@ -320,10 +334,10 @@
             // richTextBox1
             // 
             this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.richTextBox1.Location = new System.Drawing.Point(3, 213);
+            this.richTextBox1.Location = new System.Drawing.Point(3, 214);
             this.richTextBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(829, 244);
+            this.richTextBox1.Size = new System.Drawing.Size(1098, 243);
             this.richTextBox1.TabIndex = 24;
             this.richTextBox1.Text = "";
             // 
@@ -339,7 +353,7 @@
             this.Test.Location = new System.Drawing.Point(4, 22);
             this.Test.Name = "Test";
             this.Test.Padding = new System.Windows.Forms.Padding(3);
-            this.Test.Size = new System.Drawing.Size(835, 460);
+            this.Test.Size = new System.Drawing.Size(1104, 460);
             this.Test.TabIndex = 1;
             this.Test.Text = "测试";
             this.Test.UseVisualStyleBackColor = true;
@@ -418,7 +432,7 @@
             this.Research.Location = new System.Drawing.Point(4, 22);
             this.Research.Name = "Research";
             this.Research.Padding = new System.Windows.Forms.Padding(3);
-            this.Research.Size = new System.Drawing.Size(835, 460);
+            this.Research.Size = new System.Drawing.Size(1104, 460);
             this.Research.TabIndex = 2;
             this.Research.Text = "Research";
             this.Research.UseVisualStyleBackColor = true;
@@ -439,8 +453,8 @@
             // 
             this.splitContainer1.Panel2.Controls.Add(this.SearchName);
             this.splitContainer1.Panel2.Controls.Add(this.panel2);
-            this.splitContainer1.Size = new System.Drawing.Size(829, 454);
-            this.splitContainer1.SplitterDistance = 276;
+            this.splitContainer1.Size = new System.Drawing.Size(1098, 454);
+            this.splitContainer1.SplitterDistance = 365;
             this.splitContainer1.TabIndex = 17;
             // 
             // button13
@@ -517,16 +531,114 @@
             this.label1.Text = "Research List";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // NewDateLog
+            // 
+            this.NewDateLog.Controls.Add(this.ContentContainer);
+            this.NewDateLog.Location = new System.Drawing.Point(4, 22);
+            this.NewDateLog.Name = "NewDateLog";
+            this.NewDateLog.Padding = new System.Windows.Forms.Padding(3);
+            this.NewDateLog.Size = new System.Drawing.Size(1104, 460);
+            this.NewDateLog.TabIndex = 3;
+            this.NewDateLog.Text = "NewDateLog";
+            this.NewDateLog.UseVisualStyleBackColor = true;
+            this.NewDateLog.SizeChanged += new System.EventHandler(this.NewDateLog_SizeChanged);
+            // 
+            // ContentContainer
+            // 
+            this.ContentContainer.Controls.Add(this.groupBox1);
+            this.ContentContainer.Controls.Add(this.DailyMission);
+            this.ContentContainer.Controls.Add(this.Idea);
+            this.ContentContainer.Controls.Add(this.Draft);
+            this.ContentContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ContentContainer.Location = new System.Drawing.Point(3, 3);
+            this.ContentContainer.Name = "ContentContainer";
+            this.ContentContainer.Size = new System.Drawing.Size(1098, 454);
+            this.ContentContainer.TabIndex = 32;
+            this.ContentContainer.TabStop = false;
+            this.ContentContainer.SizeChanged += new System.EventHandler(this.ContentContainer_SizeChanged);
+            // 
+            // DailyMission
+            // 
+            this.DailyMission.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(227)))), ((int)(((byte)(231)))));
+            this.DailyMission.Location = new System.Drawing.Point(33, 88);
+            this.DailyMission.Name = "DailyMission";
+            this.DailyMission.Size = new System.Drawing.Size(100, 96);
+            this.DailyMission.TabIndex = 2;
+            this.DailyMission.Text = "";
+            this.DailyMission.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.DailyMission_MouseDoubleClick);
+            // 
+            // Idea
+            // 
+            this.Idea.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(227)))), ((int)(((byte)(231)))));
+            this.Idea.Location = new System.Drawing.Point(165, 88);
+            this.Idea.Name = "Idea";
+            this.Idea.Size = new System.Drawing.Size(100, 96);
+            this.Idea.TabIndex = 1;
+            this.Idea.Text = "";
+            this.Idea.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.Idea_MouseDoubleClick);
+            // 
+            // Draft
+            // 
+            this.Draft.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(227)))), ((int)(((byte)(231)))));
+            this.Draft.Location = new System.Drawing.Point(287, 88);
+            this.Draft.Name = "Draft";
+            this.Draft.Size = new System.Drawing.Size(100, 96);
+            this.Draft.TabIndex = 0;
+            this.Draft.Text = "";
+            this.Draft.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.Draft_MouseDoubleClick);
+            // 
             // styleManager1
             // 
             this.styleManager1.ManagerStyle = DevComponents.DotNetBar.eStyle.Office2013;
             this.styleManager1.MetroColorParameters = new DevComponents.DotNetBar.Metro.ColorTables.MetroColorGeneratorParameters(System.Drawing.Color.White, System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(87)))), ((int)(((byte)(154))))));
             // 
+            // lblDailyMission
+            // 
+            this.lblDailyMission.AutoSize = true;
+            this.lblDailyMission.Font = new System.Drawing.Font("Buxton Sketch", 18F, System.Drawing.FontStyle.Bold);
+            this.lblDailyMission.Location = new System.Drawing.Point(20, 24);
+            this.lblDailyMission.Name = "lblDailyMission";
+            this.lblDailyMission.Size = new System.Drawing.Size(136, 29);
+            this.lblDailyMission.TabIndex = 33;
+            this.lblDailyMission.Text = "DailyMission";
+            // 
+            // lblIdea
+            // 
+            this.lblIdea.AutoSize = true;
+            this.lblIdea.Font = new System.Drawing.Font("Buxton Sketch", 18F, System.Drawing.FontStyle.Bold);
+            this.lblIdea.Location = new System.Drawing.Point(354, 17);
+            this.lblIdea.Name = "lblIdea";
+            this.lblIdea.Size = new System.Drawing.Size(50, 29);
+            this.lblIdea.TabIndex = 34;
+            this.lblIdea.Text = "Idea";
+            // 
+            // lblDraft
+            // 
+            this.lblDraft.AutoSize = true;
+            this.lblDraft.Font = new System.Drawing.Font("Buxton Sketch", 18F, System.Drawing.FontStyle.Bold);
+            this.lblDraft.Location = new System.Drawing.Point(619, 17);
+            this.lblDraft.Name = "lblDraft";
+            this.lblDraft.Size = new System.Drawing.Size(65, 29);
+            this.lblDraft.TabIndex = 35;
+            this.lblDraft.Text = "Draft";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.lblDailyMission);
+            this.groupBox1.Controls.Add(this.lblDraft);
+            this.groupBox1.Controls.Add(this.lblIdea);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.groupBox1.Location = new System.Drawing.Point(3, 17);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(1092, 65);
+            this.groupBox1.TabIndex = 36;
+            this.groupBox1.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(843, 511);
+            this.ClientSize = new System.Drawing.Size(1112, 511);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -536,8 +648,10 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form1";
             this.Text = "日志管理";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.SizeChanged += new System.EventHandler(this.Form1_SizeChanged);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.tabControl1.ResumeLayout(false);
@@ -552,6 +666,10 @@
             this.splitContainer1.ResumeLayout(false);
             this.SearchName.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+            this.NewDateLog.ResumeLayout(false);
+            this.ContentContainer.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -599,6 +717,15 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.CheckBox IsByDateTime;
+        private System.Windows.Forms.TabPage NewDateLog;
+        private System.Windows.Forms.GroupBox ContentContainer;
+        private System.Windows.Forms.RichTextBox DailyMission;
+        private System.Windows.Forms.RichTextBox Idea;
+        private System.Windows.Forms.RichTextBox Draft;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label lblDailyMission;
+        private System.Windows.Forms.Label lblDraft;
+        private System.Windows.Forms.Label lblIdea;
     }
 }
 

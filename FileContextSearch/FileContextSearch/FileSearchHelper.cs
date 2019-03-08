@@ -241,8 +241,76 @@ namespace FileContextSearch
                 }
                 File.WriteAllText(filePath, sb.ToString());
             }
-        }
 
+        }
+        public void ReadTxtandWriteFile(RichTextBox RTB, string strFilePath)
+        {
+            var txt = RTB.Text;
+            var booltemp = false;
+            var filePathTemp = Path.Combine(FileSearchHelper.GetInstance().DateLogDir, "temp", strFilePath);
+            if (File.Exists(filePathTemp))
+            {
+                booltemp = false;
+            }
+            else
+            {
+                booltemp = true;
+            }
+            using (StreamWriter fs=new StreamWriter(filePathTemp))
+            {
+                fs.Write(txt);
+            }
+        }
+        public string[] tempFileHandler()
+        {
+            var sb = new StringBuilder();
+            sb.Clear();
+
+            string[] fileNames = new string[] { "DailyMission.txt", "Idea.txt", "Draft.txt" };
+            int itemp = 0;
+            var result = new string[3];
+            bool[] booltemp = new bool[] { false, false, false };
+            //for (int i = 0; i < lineEx.Length; i++)
+            //{
+            //    lineEx[i] = "--";
+            //}
+            for (int i = 0; i < 3; i++)
+            {
+                var filePathTemp = Path.Combine(FileSearchHelper.GetInstance().DateLogDir, "temp", fileNames[i]);
+                if (File.Exists(filePathTemp))
+                {
+                    booltemp[i] = false;
+                }
+                else
+                {
+                    booltemp[i] = true;
+                }
+            }
+
+            if ((booltemp[0] || booltemp[1] || booltemp[2]))
+            {
+                return result;
+            }
+            else
+            {
+                int i = 0;
+                foreach (var item in fileNames)
+                {
+                    var filePathTemp = Path.Combine(FileSearchHelper.GetInstance().DateLogDir, "temp", item);
+                    //var fi= new FileInfo(filePathTemp);
+                    var fn = Path.GetFileNameWithoutExtension(filePathTemp);
+                    var fileContentTemp = File.ReadAllLines(filePathTemp, Encoding.Default);
+                    foreach (var subitem in fileContentTemp)
+                    {
+                        sb.AppendLine(subitem);
+                    }
+                    result[i] = sb.ToString();
+                    i++;
+                }
+                return result;
+            }
+
+        }
         public bool CreateNewDatelog()
         {
             var dt = DateTime.Now;
