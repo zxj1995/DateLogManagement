@@ -135,9 +135,10 @@ namespace FileContextSearch
             //fsh.DateLogDir = textBox4.Text;
             //fsh.CreateNewDatelog();
             //fsh.GenerateFile();
+            ContentChange();
             tabControl1.SelectedIndex = 3;
             //査小杰屏蔽于2019-3-8 16:08:18
-            OpenFileByTemplate();
+            //OpenFileByTemplate();
             //Thread th = new Thread(new ThreadStart(OpenFileByTemplate));
             //th.Start();
         }
@@ -222,7 +223,7 @@ namespace FileContextSearch
             string[] fileNames = new string[] { "DailyMission.txt", "Idea.txt", "Draft.txt" };
             foreach (var item in fileNames)
             {
-                FileSearchHelper.GetInstance().ReadTxtandWriteFile(DailyMission, item+".txt");
+                FileSearchHelper.GetInstance().ReadTxtandWriteFile(DailyMission, item);
             }
             FileSearchHelper.GetInstance().GenerateFile(DateTime.Now);
         }
@@ -444,7 +445,7 @@ namespace FileContextSearch
                 SearchName.Controls.Add(TV);
                 LoadTreeView(ResearchTreeView, "");
             }
-
+            //ContentChange();
 
         }
 
