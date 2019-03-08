@@ -296,6 +296,7 @@ namespace FileContextSearch
                 int i = 0;
                 foreach (var item in fileNames)
                 {
+                    sb.Clear();
                     var filePathTemp = Path.Combine(FileSearchHelper.GetInstance().DateLogDir, "temp", item);
                     //var fi= new FileInfo(filePathTemp);
                     var fn = Path.GetFileNameWithoutExtension(filePathTemp);
