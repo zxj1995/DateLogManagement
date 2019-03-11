@@ -254,7 +254,7 @@ namespace FileContextSearch
                 ResearchTreeView.Nodes.Clear();
                 ResearchTreeView.Name = "ResearchTreeView";
                 ResearchTreeView.DoubleClick += TreeNode_DoubleClick;
-                ResearchTreeView.Size = new Size(Research.Size.Width, Research.Size.Height - label1.Height - 10);
+                ResearchTreeView.Size = new Size(panel2.Size.Width, panel2.Size.Height - label1.Height);
                 ResearchTreeView.Dock = DockStyle.Bottom;
                 TV.Font = new Font("微软雅黑", 12, FontStyle.Bold);
                 ResearchTreeView.Font = new Font("微软雅黑", 12, FontStyle.Bold);
@@ -445,9 +445,9 @@ namespace FileContextSearch
                 panel2.Controls.Add(ResearchTreeView);
                 SearchName.Controls.Add(TV);
                 LoadTreeView(ResearchTreeView, "");
+                LoadTreeView(TV, "");
             }
             //ContentChange();
-
         }
 
         private void ResearchTreeView_DoubleClick(object sender, EventArgs e)
@@ -803,6 +803,14 @@ namespace FileContextSearch
         private void DateLog_SizeChanged(object sender, EventArgs e)
         {
             richTextBox1.Height = DateLog.Height - 198;
+        }
+
+        private void splitContainer1_Panel2_SizeChanged(object sender, EventArgs e)
+        {
+            panel2.Height = splitContainer1.Panel2.Height-10;
+            SearchName.Height= splitContainer1.Panel2.Height-10;
+            TV.Size = new Size(SearchName.Size.Width, SearchName.Size.Height - label6.Height);
+            ResearchTreeView.Size = new Size(panel2.Size.Width, panel2.Size.Height - label1.Height);
         }
         //2019-3-8 12:04:10
 

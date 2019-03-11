@@ -453,6 +453,7 @@
             // 
             this.splitContainer1.Panel2.Controls.Add(this.SearchName);
             this.splitContainer1.Panel2.Controls.Add(this.panel2);
+            this.splitContainer1.Panel2.SizeChanged += new System.EventHandler(this.splitContainer1_Panel2_SizeChanged);
             this.splitContainer1.Size = new System.Drawing.Size(1098, 454);
             this.splitContainer1.SplitterDistance = 365;
             this.splitContainer1.TabIndex = 17;
