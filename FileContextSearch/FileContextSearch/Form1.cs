@@ -221,9 +221,10 @@ namespace FileContextSearch
         public void autoSave(object obj)
         {
             string[] fileNames = new string[] { "DailyMission.txt", "Idea.txt", "Draft.txt" };
-            foreach (var item in fileNames)
+            RichTextBox[] RTXArr = new RichTextBox[] { DailyMission, Idea, Draft };
+            for (int i = 0; i < RTXArr.Length; i++)
             {
-                FileSearchHelper.GetInstance().ReadTxtandWriteFile(DailyMission, item);
+                FileSearchHelper.GetInstance().ReadTxtandWriteFile(RTXArr[i], fileNames[i]);
             }
             FileSearchHelper.GetInstance().GenerateFile(DateTime.Now);
         }
@@ -691,7 +692,7 @@ namespace FileContextSearch
                 if (item.GetType().ToString() == "System.Windows.Forms.RichTextBox")
                 {
                     var itemtemp = (RichTextBox)item;
-                    itemtemp.Height  = ContentContainer.Height-65;
+                    itemtemp.Height  = ContentContainer.Height-85;
                     itemtemp.Width = ContentContainer.Width/3;
                 }
                 DailyMission.Location = new Point(0, 85);

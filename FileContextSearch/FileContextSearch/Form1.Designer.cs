@@ -71,14 +71,14 @@
             this.label1 = new System.Windows.Forms.Label();
             this.NewDateLog = new System.Windows.Forms.TabPage();
             this.ContentContainer = new System.Windows.Forms.GroupBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblDailyMission = new System.Windows.Forms.Label();
+            this.lblDraft = new System.Windows.Forms.Label();
+            this.lblIdea = new System.Windows.Forms.Label();
             this.DailyMission = new System.Windows.Forms.RichTextBox();
             this.Idea = new System.Windows.Forms.RichTextBox();
             this.Draft = new System.Windows.Forms.RichTextBox();
             this.styleManager1 = new DevComponents.DotNetBar.StyleManager(this.components);
-            this.lblDailyMission = new System.Windows.Forms.Label();
-            this.lblIdea = new System.Windows.Forms.Label();
-            this.lblDraft = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.DateLog.SuspendLayout();
@@ -557,71 +557,6 @@
             this.ContentContainer.TabStop = false;
             this.ContentContainer.SizeChanged += new System.EventHandler(this.ContentContainer_SizeChanged);
             // 
-            // DailyMission
-            // 
-            this.DailyMission.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(227)))), ((int)(((byte)(231)))));
-            this.DailyMission.Location = new System.Drawing.Point(33, 88);
-            this.DailyMission.Name = "DailyMission";
-            this.DailyMission.Size = new System.Drawing.Size(100, 96);
-            this.DailyMission.TabIndex = 2;
-            this.DailyMission.Text = "";
-            this.DailyMission.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.DailyMission_MouseDoubleClick);
-            // 
-            // Idea
-            // 
-            this.Idea.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(227)))), ((int)(((byte)(231)))));
-            this.Idea.Location = new System.Drawing.Point(165, 88);
-            this.Idea.Name = "Idea";
-            this.Idea.Size = new System.Drawing.Size(100, 96);
-            this.Idea.TabIndex = 1;
-            this.Idea.Text = "";
-            this.Idea.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.Idea_MouseDoubleClick);
-            // 
-            // Draft
-            // 
-            this.Draft.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(227)))), ((int)(((byte)(231)))));
-            this.Draft.Location = new System.Drawing.Point(287, 88);
-            this.Draft.Name = "Draft";
-            this.Draft.Size = new System.Drawing.Size(100, 96);
-            this.Draft.TabIndex = 0;
-            this.Draft.Text = "";
-            this.Draft.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.Draft_MouseDoubleClick);
-            // 
-            // styleManager1
-            // 
-            this.styleManager1.ManagerStyle = DevComponents.DotNetBar.eStyle.Office2013;
-            this.styleManager1.MetroColorParameters = new DevComponents.DotNetBar.Metro.ColorTables.MetroColorGeneratorParameters(System.Drawing.Color.White, System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(87)))), ((int)(((byte)(154))))));
-            // 
-            // lblDailyMission
-            // 
-            this.lblDailyMission.AutoSize = true;
-            this.lblDailyMission.Font = new System.Drawing.Font("Buxton Sketch", 18F, System.Drawing.FontStyle.Bold);
-            this.lblDailyMission.Location = new System.Drawing.Point(20, 24);
-            this.lblDailyMission.Name = "lblDailyMission";
-            this.lblDailyMission.Size = new System.Drawing.Size(136, 29);
-            this.lblDailyMission.TabIndex = 33;
-            this.lblDailyMission.Text = "DailyMission";
-            // 
-            // lblIdea
-            // 
-            this.lblIdea.AutoSize = true;
-            this.lblIdea.Font = new System.Drawing.Font("Buxton Sketch", 18F, System.Drawing.FontStyle.Bold);
-            this.lblIdea.Location = new System.Drawing.Point(354, 17);
-            this.lblIdea.Name = "lblIdea";
-            this.lblIdea.Size = new System.Drawing.Size(50, 29);
-            this.lblIdea.TabIndex = 34;
-            this.lblIdea.Text = "Idea";
-            // 
-            // lblDraft
-            // 
-            this.lblDraft.AutoSize = true;
-            this.lblDraft.Font = new System.Drawing.Font("Buxton Sketch", 18F, System.Drawing.FontStyle.Bold);
-            this.lblDraft.Location = new System.Drawing.Point(619, 17);
-            this.lblDraft.Name = "lblDraft";
-            this.lblDraft.Size = new System.Drawing.Size(65, 29);
-            this.lblDraft.TabIndex = 35;
-            this.lblDraft.Text = "Draft";
-            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.lblDailyMission);
@@ -633,6 +568,74 @@
             this.groupBox1.Size = new System.Drawing.Size(1092, 65);
             this.groupBox1.TabIndex = 36;
             this.groupBox1.TabStop = false;
+            // 
+            // lblDailyMission
+            // 
+            this.lblDailyMission.AutoSize = true;
+            this.lblDailyMission.Font = new System.Drawing.Font("Buxton Sketch", 18F, System.Drawing.FontStyle.Bold);
+            this.lblDailyMission.Location = new System.Drawing.Point(20, 24);
+            this.lblDailyMission.Name = "lblDailyMission";
+            this.lblDailyMission.Size = new System.Drawing.Size(136, 29);
+            this.lblDailyMission.TabIndex = 33;
+            this.lblDailyMission.Text = "DailyMission";
+            // 
+            // lblDraft
+            // 
+            this.lblDraft.AutoSize = true;
+            this.lblDraft.Font = new System.Drawing.Font("Buxton Sketch", 18F, System.Drawing.FontStyle.Bold);
+            this.lblDraft.Location = new System.Drawing.Point(619, 17);
+            this.lblDraft.Name = "lblDraft";
+            this.lblDraft.Size = new System.Drawing.Size(65, 29);
+            this.lblDraft.TabIndex = 35;
+            this.lblDraft.Text = "Draft";
+            // 
+            // lblIdea
+            // 
+            this.lblIdea.AutoSize = true;
+            this.lblIdea.Font = new System.Drawing.Font("Buxton Sketch", 18F, System.Drawing.FontStyle.Bold);
+            this.lblIdea.Location = new System.Drawing.Point(354, 17);
+            this.lblIdea.Name = "lblIdea";
+            this.lblIdea.Size = new System.Drawing.Size(50, 29);
+            this.lblIdea.TabIndex = 34;
+            this.lblIdea.Text = "Idea";
+            // 
+            // DailyMission
+            // 
+            this.DailyMission.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(227)))), ((int)(((byte)(231)))));
+            this.DailyMission.Location = new System.Drawing.Point(44, 88);
+            this.DailyMission.Name = "DailyMission";
+            this.DailyMission.Size = new System.Drawing.Size(100, 96);
+            this.DailyMission.TabIndex = 2;
+            this.DailyMission.Text = "査小杰aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\n査小杰\n査小杰\n査小杰\n査小杰\n査小杰\n";
+            this.DailyMission.WordWrap = false;
+            this.DailyMission.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.DailyMission_MouseDoubleClick);
+            // 
+            // Idea
+            // 
+            this.Idea.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(227)))), ((int)(((byte)(231)))));
+            this.Idea.Location = new System.Drawing.Point(165, 88);
+            this.Idea.Name = "Idea";
+            this.Idea.Size = new System.Drawing.Size(100, 96);
+            this.Idea.TabIndex = 1;
+            this.Idea.Text = "";
+            this.Idea.WordWrap = false;
+            this.Idea.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.Idea_MouseDoubleClick);
+            // 
+            // Draft
+            // 
+            this.Draft.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(227)))), ((int)(((byte)(231)))));
+            this.Draft.Location = new System.Drawing.Point(287, 88);
+            this.Draft.Name = "Draft";
+            this.Draft.Size = new System.Drawing.Size(100, 96);
+            this.Draft.TabIndex = 0;
+            this.Draft.Text = "";
+            this.Draft.WordWrap = false;
+            this.Draft.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.Draft_MouseDoubleClick);
+            // 
+            // styleManager1
+            // 
+            this.styleManager1.ManagerStyle = DevComponents.DotNetBar.eStyle.Office2013;
+            this.styleManager1.MetroColorParameters = new DevComponents.DotNetBar.Metro.ColorTables.MetroColorGeneratorParameters(System.Drawing.Color.White, System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(87)))), ((int)(((byte)(154))))));
             // 
             // Form1
             // 

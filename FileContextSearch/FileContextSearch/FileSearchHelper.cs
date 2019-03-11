@@ -186,7 +186,7 @@ namespace FileContextSearch
             //1.检测日志是否存在
             //2.生成昨日日志文件
             var sb = new StringBuilder();
-            var lineEx = new string[50];
+            var lineEx = new string[100];
             sb.Clear();
             var dt = dtTemp;
             var yearID = dt.Year.ToString();
@@ -246,6 +246,8 @@ namespace FileContextSearch
         public void ReadTxtandWriteFile(RichTextBox RTB, string strFilePath)
         {
             var txt = RTB.Text;
+            var txtarr = txt.Split(new string[] { "\n" }, StringSplitOptions.None);
+
             var booltemp = false;
             var filePathTemp = Path.Combine(FileSearchHelper.GetInstance().DateLogDir, "temp", strFilePath);
             if (File.Exists(filePathTemp))
@@ -256,10 +258,7 @@ namespace FileContextSearch
             {
                 booltemp = true;
             }
-            using (StreamWriter fs=new StreamWriter(filePathTemp))
-            {
-                fs.Write(txt);
-            }
+            File.WriteAllLines(filePathTemp, txtarr);
         }
         public string[] tempFileHandler()
         {
@@ -300,7 +299,7 @@ namespace FileContextSearch
                     var filePathTemp = Path.Combine(FileSearchHelper.GetInstance().DateLogDir, "temp", item);
                     //var fi= new FileInfo(filePathTemp);
                     var fn = Path.GetFileNameWithoutExtension(filePathTemp);
-                    var fileContentTemp = File.ReadAllLines(filePathTemp, Encoding.Default);
+                    var fileContentTemp = File.ReadAllLines(filePathTemp, Encoding.UTF8);
                     foreach (var subitem in fileContentTemp)
                     {
                         sb.AppendLine(subitem);
