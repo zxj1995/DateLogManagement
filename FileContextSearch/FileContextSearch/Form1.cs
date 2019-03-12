@@ -305,6 +305,7 @@ namespace FileContextSearch
 
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {
+            autoSave(null);
             FileSearchHelper.GetInstance().GenerateFile(DateTime.Now);
         }
 
