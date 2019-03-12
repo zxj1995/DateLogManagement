@@ -232,14 +232,14 @@ namespace FileContextSearch
                     //var fi= new FileInfo(filePathTemp);
                     var fn = Path.GetFileNameWithoutExtension(filePathTemp);
                     sb.AppendLine(fn + string.Join("", lineEx));
-                    var fileContentTemp = File.ReadAllLines(filePathTemp, Encoding.Default);
+                    var fileContentTemp = File.ReadAllLines(filePathTemp, Encoding.UTF8);
                     foreach (var subitem in fileContentTemp)
                     {
                         sb.AppendLine(subitem);
                     }
                     sb.AppendLine();
                 }
-                File.WriteAllText(filePath, sb.ToString());
+                File.WriteAllText(filePath, sb.ToString(),Encoding.UTF8);
             }
 
         }
