@@ -26,6 +26,7 @@ namespace FileContextSearch
             this.textBox3.Text = DateTime.Now.AddMonths(-1).ToString("yyyy-MM-dd");
             this.textBox2.Text = DateTime.Now.AddDays(-1).ToString("yyyy-MM-dd");
             //this.button5.Visible = false;
+
         }
         public static string startDate;
         public static string endDate;

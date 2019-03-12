@@ -258,7 +258,7 @@ namespace FileContextSearch
             {
                 booltemp = true;
             }
-            File.WriteAllLines(filePathTemp, txtarr);
+            File.WriteAllLines(filePathTemp, txtarr,Encoding.UTF8);
         }
         public string[] tempFileHandler()
         {
