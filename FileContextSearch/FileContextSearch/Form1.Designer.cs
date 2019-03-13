@@ -602,6 +602,7 @@
             // 
             // DailyMission
             // 
+            this.DailyMission.AcceptsTab = true;
             this.DailyMission.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(227)))), ((int)(((byte)(231)))));
             this.DailyMission.Location = new System.Drawing.Point(44, 88);
             this.DailyMission.Name = "DailyMission";
@@ -613,6 +614,7 @@
             // 
             // Idea
             // 
+            this.Idea.AcceptsTab = true;
             this.Idea.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(227)))), ((int)(((byte)(231)))));
             this.Idea.Location = new System.Drawing.Point(165, 88);
             this.Idea.Name = "Idea";
@@ -624,6 +626,7 @@
             // 
             // Draft
             // 
+            this.Draft.AcceptsTab = true;
             this.Draft.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(227)))), ((int)(((byte)(231)))));
             this.Draft.Location = new System.Drawing.Point(287, 88);
             this.Draft.Name = "Draft";
