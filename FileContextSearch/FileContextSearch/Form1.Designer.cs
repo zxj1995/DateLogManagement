@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.button1 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -38,7 +39,6 @@
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.button4 = new System.Windows.Forms.Button();
@@ -50,7 +50,10 @@
             this.button8 = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.DateLog = new System.Windows.Forms.TabPage();
+            this.IsByDateTime = new System.Windows.Forms.CheckBox();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.Test = new System.Windows.Forms.TabPage();
+            this.button11 = new System.Windows.Forms.Button();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.button9 = new System.Windows.Forms.Button();
@@ -58,12 +61,38 @@
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.Research = new System.Windows.Forms.TabPage();
-            this.button10 = new System.Windows.Forms.Button();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.button13 = new System.Windows.Forms.Button();
+            this.NodeState = new System.Windows.Forms.ComboBox();
+            this.button17 = new System.Windows.Forms.Button();
+            this.SearchName = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.NewDateLog = new System.Windows.Forms.TabPage();
+            this.ContentContainer = new System.Windows.Forms.GroupBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblDailyMission = new System.Windows.Forms.Label();
+            this.lblDraft = new System.Windows.Forms.Label();
+            this.lblIdea = new System.Windows.Forms.Label();
+            this.DailyMission = new System.Windows.Forms.RichTextBox();
+            this.Idea = new System.Windows.Forms.RichTextBox();
+            this.Draft = new System.Windows.Forms.RichTextBox();
+            this.styleManager1 = new DevComponents.DotNetBar.StyleManager(this.components);
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.DateLog.SuspendLayout();
             this.Test.SuspendLayout();
             this.Research.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+            this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
+            this.splitContainer1.SuspendLayout();
+            this.SearchName.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.NewDateLog.SuspendLayout();
+            this.ContentContainer.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
@@ -156,16 +185,6 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // richTextBox1
-            // 
-            this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.richTextBox1.Location = new System.Drawing.Point(0, 267);
-            this.richTextBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(843, 244);
-            this.richTextBox1.TabIndex = 11;
-            this.richTextBox1.Text = "";
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -204,7 +223,7 @@
             this.设置ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(843, 25);
+            this.menuStrip1.Size = new System.Drawing.Size(1112, 25);
             this.menuStrip1.TabIndex = 16;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -249,7 +268,7 @@
             // 
             // button8
             // 
-            this.button8.Location = new System.Drawing.Point(646, 50);
+            this.button8.Location = new System.Drawing.Point(555, 17);
             this.button8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(85, 23);
@@ -263,15 +282,19 @@
             this.tabControl1.Controls.Add(this.DateLog);
             this.tabControl1.Controls.Add(this.Test);
             this.tabControl1.Controls.Add(this.Research);
+            this.tabControl1.Controls.Add(this.NewDateLog);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 25);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(843, 242);
+            this.tabControl1.Size = new System.Drawing.Size(1112, 486);
             this.tabControl1.TabIndex = 24;
+            this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
             // DateLog
             // 
+            this.DateLog.Controls.Add(this.IsByDateTime);
+            this.DateLog.Controls.Add(this.richTextBox1);
             this.DateLog.Controls.Add(this.label5);
             this.DateLog.Controls.Add(this.button8);
             this.DateLog.Controls.Add(this.button1);
@@ -291,13 +314,36 @@
             this.DateLog.Location = new System.Drawing.Point(4, 22);
             this.DateLog.Name = "DateLog";
             this.DateLog.Padding = new System.Windows.Forms.Padding(3);
-            this.DateLog.Size = new System.Drawing.Size(835, 216);
+            this.DateLog.Size = new System.Drawing.Size(1104, 460);
             this.DateLog.TabIndex = 0;
             this.DateLog.Text = "日志";
             this.DateLog.UseVisualStyleBackColor = true;
+            this.DateLog.SizeChanged += new System.EventHandler(this.DateLog_SizeChanged);
+            // 
+            // IsByDateTime
+            // 
+            this.IsByDateTime.AutoSize = true;
+            this.IsByDateTime.Location = new System.Drawing.Point(368, 24);
+            this.IsByDateTime.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.IsByDateTime.Name = "IsByDateTime";
+            this.IsByDateTime.Size = new System.Drawing.Size(96, 16);
+            this.IsByDateTime.TabIndex = 25;
+            this.IsByDateTime.Text = "生成日志日期";
+            this.IsByDateTime.UseVisualStyleBackColor = true;
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.richTextBox1.Location = new System.Drawing.Point(3, 214);
+            this.richTextBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(1098, 243);
+            this.richTextBox1.TabIndex = 24;
+            this.richTextBox1.Text = "";
             // 
             // Test
             // 
+            this.Test.Controls.Add(this.button11);
             this.Test.Controls.Add(this.textBox7);
             this.Test.Controls.Add(this.textBox8);
             this.Test.Controls.Add(this.button9);
@@ -307,10 +353,20 @@
             this.Test.Location = new System.Drawing.Point(4, 22);
             this.Test.Name = "Test";
             this.Test.Padding = new System.Windows.Forms.Padding(3);
-            this.Test.Size = new System.Drawing.Size(835, 216);
+            this.Test.Size = new System.Drawing.Size(1104, 460);
             this.Test.TabIndex = 1;
             this.Test.Text = "测试";
             this.Test.UseVisualStyleBackColor = true;
+            // 
+            // button11
+            // 
+            this.button11.Location = new System.Drawing.Point(295, 16);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(82, 46);
+            this.button11.TabIndex = 29;
+            this.button11.Text = "Research数据结构测试1";
+            this.button11.UseVisualStyleBackColor = true;
+            this.button11.Click += new System.EventHandler(this.button11_Click);
             // 
             // textBox7
             // 
@@ -372,34 +428,225 @@
             // 
             // Research
             // 
-            this.Research.Controls.Add(this.button10);
+            this.Research.Controls.Add(this.splitContainer1);
             this.Research.Location = new System.Drawing.Point(4, 22);
             this.Research.Name = "Research";
             this.Research.Padding = new System.Windows.Forms.Padding(3);
-            this.Research.Size = new System.Drawing.Size(835, 216);
+            this.Research.Size = new System.Drawing.Size(1104, 460);
             this.Research.TabIndex = 2;
             this.Research.Text = "Research";
             this.Research.UseVisualStyleBackColor = true;
             // 
-            // button10
+            // splitContainer1
             // 
-            this.button10.Font = new System.Drawing.Font("Buxton Sketch", 18F, System.Drawing.FontStyle.Bold);
-            this.button10.Location = new System.Drawing.Point(21, 21);
-            this.button10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(122, 73);
-            this.button10.TabIndex = 16;
-            this.button10.Text = "Start Research";
-            this.button10.UseVisualStyleBackColor = true;
-            this.button10.Click += new System.EventHandler(this.button10_Click);
+            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer1.Location = new System.Drawing.Point(3, 3);
+            this.splitContainer1.Name = "splitContainer1";
+            // 
+            // splitContainer1.Panel1
+            // 
+            this.splitContainer1.Panel1.Controls.Add(this.button13);
+            this.splitContainer1.Panel1.Controls.Add(this.NodeState);
+            this.splitContainer1.Panel1.Controls.Add(this.button17);
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.SearchName);
+            this.splitContainer1.Panel2.Controls.Add(this.panel2);
+            this.splitContainer1.Panel2.SizeChanged += new System.EventHandler(this.splitContainer1_Panel2_SizeChanged);
+            this.splitContainer1.Size = new System.Drawing.Size(1098, 454);
+            this.splitContainer1.SplitterDistance = 365;
+            this.splitContainer1.TabIndex = 17;
+            // 
+            // button13
+            // 
+            this.button13.Font = new System.Drawing.Font("Buxton Sketch", 18F, System.Drawing.FontStyle.Bold);
+            this.button13.Location = new System.Drawing.Point(16, 116);
+            this.button13.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button13.Name = "button13";
+            this.button13.Size = new System.Drawing.Size(220, 35);
+            this.button13.TabIndex = 18;
+            this.button13.Text = "Node Create";
+            this.button13.UseVisualStyleBackColor = true;
+            this.button13.Click += new System.EventHandler(this.button13_Click);
+            // 
+            // NodeState
+            // 
+            this.NodeState.FormattingEnabled = true;
+            this.NodeState.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3"});
+            this.NodeState.Location = new System.Drawing.Point(16, 76);
+            this.NodeState.Name = "NodeState";
+            this.NodeState.Size = new System.Drawing.Size(196, 20);
+            this.NodeState.TabIndex = 24;
+            // 
+            // button17
+            // 
+            this.button17.Font = new System.Drawing.Font("Buxton Sketch", 18F, System.Drawing.FontStyle.Bold);
+            this.button17.Location = new System.Drawing.Point(16, 24);
+            this.button17.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button17.Name = "button17";
+            this.button17.Size = new System.Drawing.Size(196, 47);
+            this.button17.TabIndex = 22;
+            this.button17.Text = "Conquer now";
+            this.button17.UseVisualStyleBackColor = true;
+            this.button17.Click += new System.EventHandler(this.button17_Click);
+            // 
+            // SearchName
+            // 
+            this.SearchName.Controls.Add(this.label6);
+            this.SearchName.Location = new System.Drawing.Point(241, 3);
+            this.SearchName.Name = "SearchName";
+            this.SearchName.Size = new System.Drawing.Size(218, 451);
+            this.SearchName.TabIndex = 5;
+            // 
+            // label6
+            // 
+            this.label6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label6.Font = new System.Drawing.Font("Buxton Sketch", 18F, System.Drawing.FontStyle.Bold);
+            this.label6.Location = new System.Drawing.Point(0, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(218, 49);
+            this.label6.TabIndex = 4;
+            this.label6.Text = "Search Result";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Location = new System.Drawing.Point(3, 3);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(232, 451);
+            this.panel2.TabIndex = 4;
+            // 
+            // label1
+            // 
+            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label1.Font = new System.Drawing.Font("Buxton Sketch", 18F, System.Drawing.FontStyle.Bold);
+            this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(232, 49);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Research List";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // NewDateLog
+            // 
+            this.NewDateLog.Controls.Add(this.ContentContainer);
+            this.NewDateLog.Location = new System.Drawing.Point(4, 22);
+            this.NewDateLog.Name = "NewDateLog";
+            this.NewDateLog.Padding = new System.Windows.Forms.Padding(3);
+            this.NewDateLog.Size = new System.Drawing.Size(1104, 460);
+            this.NewDateLog.TabIndex = 3;
+            this.NewDateLog.Text = "NewDateLog";
+            this.NewDateLog.UseVisualStyleBackColor = true;
+            this.NewDateLog.SizeChanged += new System.EventHandler(this.NewDateLog_SizeChanged);
+            // 
+            // ContentContainer
+            // 
+            this.ContentContainer.Controls.Add(this.groupBox1);
+            this.ContentContainer.Controls.Add(this.DailyMission);
+            this.ContentContainer.Controls.Add(this.Idea);
+            this.ContentContainer.Controls.Add(this.Draft);
+            this.ContentContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ContentContainer.Location = new System.Drawing.Point(3, 3);
+            this.ContentContainer.Name = "ContentContainer";
+            this.ContentContainer.Size = new System.Drawing.Size(1098, 454);
+            this.ContentContainer.TabIndex = 32;
+            this.ContentContainer.TabStop = false;
+            this.ContentContainer.SizeChanged += new System.EventHandler(this.ContentContainer_SizeChanged);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.lblDailyMission);
+            this.groupBox1.Controls.Add(this.lblDraft);
+            this.groupBox1.Controls.Add(this.lblIdea);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.groupBox1.Location = new System.Drawing.Point(3, 17);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(1092, 65);
+            this.groupBox1.TabIndex = 36;
+            this.groupBox1.TabStop = false;
+            // 
+            // lblDailyMission
+            // 
+            this.lblDailyMission.AutoSize = true;
+            this.lblDailyMission.Font = new System.Drawing.Font("Buxton Sketch", 18F, System.Drawing.FontStyle.Bold);
+            this.lblDailyMission.Location = new System.Drawing.Point(20, 24);
+            this.lblDailyMission.Name = "lblDailyMission";
+            this.lblDailyMission.Size = new System.Drawing.Size(136, 29);
+            this.lblDailyMission.TabIndex = 33;
+            this.lblDailyMission.Text = "DailyMission";
+            // 
+            // lblDraft
+            // 
+            this.lblDraft.AutoSize = true;
+            this.lblDraft.Font = new System.Drawing.Font("Buxton Sketch", 18F, System.Drawing.FontStyle.Bold);
+            this.lblDraft.Location = new System.Drawing.Point(619, 17);
+            this.lblDraft.Name = "lblDraft";
+            this.lblDraft.Size = new System.Drawing.Size(65, 29);
+            this.lblDraft.TabIndex = 35;
+            this.lblDraft.Text = "Draft";
+            // 
+            // lblIdea
+            // 
+            this.lblIdea.AutoSize = true;
+            this.lblIdea.Font = new System.Drawing.Font("Buxton Sketch", 18F, System.Drawing.FontStyle.Bold);
+            this.lblIdea.Location = new System.Drawing.Point(354, 17);
+            this.lblIdea.Name = "lblIdea";
+            this.lblIdea.Size = new System.Drawing.Size(50, 29);
+            this.lblIdea.TabIndex = 34;
+            this.lblIdea.Text = "Idea";
+            // 
+            // DailyMission
+            // 
+            this.DailyMission.AcceptsTab = true;
+            this.DailyMission.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(227)))), ((int)(((byte)(231)))));
+            this.DailyMission.Location = new System.Drawing.Point(44, 88);
+            this.DailyMission.Name = "DailyMission";
+            this.DailyMission.Size = new System.Drawing.Size(100, 96);
+            this.DailyMission.TabIndex = 2;
+            this.DailyMission.Text = "査小杰aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\n査小杰\n査小杰\n査小杰\n査小杰\n査小杰\n";
+            this.DailyMission.WordWrap = false;
+            this.DailyMission.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.DailyMission_MouseDoubleClick);
+            // 
+            // Idea
+            // 
+            this.Idea.AcceptsTab = true;
+            this.Idea.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(227)))), ((int)(((byte)(231)))));
+            this.Idea.Location = new System.Drawing.Point(165, 88);
+            this.Idea.Name = "Idea";
+            this.Idea.Size = new System.Drawing.Size(100, 96);
+            this.Idea.TabIndex = 1;
+            this.Idea.Text = "";
+            this.Idea.WordWrap = false;
+            this.Idea.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.Idea_MouseDoubleClick);
+            // 
+            // Draft
+            // 
+            this.Draft.AcceptsTab = true;
+            this.Draft.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(227)))), ((int)(((byte)(231)))));
+            this.Draft.Location = new System.Drawing.Point(287, 88);
+            this.Draft.Name = "Draft";
+            this.Draft.Size = new System.Drawing.Size(100, 96);
+            this.Draft.TabIndex = 0;
+            this.Draft.Text = "";
+            this.Draft.WordWrap = false;
+            this.Draft.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.Draft_MouseDoubleClick);
+            // 
+            // styleManager1
+            // 
+            this.styleManager1.ManagerStyle = DevComponents.DotNetBar.eStyle.Office2013;
+            this.styleManager1.MetroColorParameters = new DevComponents.DotNetBar.Metro.ColorTables.MetroColorGeneratorParameters(System.Drawing.Color.White, System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(87)))), ((int)(((byte)(154))))));
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(843, 511);
+            this.ClientSize = new System.Drawing.Size(1112, 511);
             this.Controls.Add(this.tabControl1);
-            this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -407,9 +654,11 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "日志管理";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.SizeChanged += new System.EventHandler(this.Form1_SizeChanged);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.tabControl1.ResumeLayout(false);
@@ -418,6 +667,16 @@
             this.Test.ResumeLayout(false);
             this.Test.PerformLayout();
             this.Research.ResumeLayout(false);
+            this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
+            this.splitContainer1.ResumeLayout(false);
+            this.SearchName.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.NewDateLog.ResumeLayout(false);
+            this.ContentContainer.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -434,7 +693,6 @@
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Button button4;
@@ -454,7 +712,27 @@
         private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.TabPage Research;
-        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.Button button11;
+        private DevComponents.DotNetBar.StyleManager styleManager1;
+        private System.Windows.Forms.SplitContainer splitContainer1;
+        private System.Windows.Forms.Button button13;
+        private System.Windows.Forms.Button button17;
+        public System.Windows.Forms.ComboBox NodeState;
+        private System.Windows.Forms.Panel SearchName;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.CheckBox IsByDateTime;
+        private System.Windows.Forms.TabPage NewDateLog;
+        private System.Windows.Forms.GroupBox ContentContainer;
+        private System.Windows.Forms.RichTextBox DailyMission;
+        private System.Windows.Forms.RichTextBox Idea;
+        private System.Windows.Forms.RichTextBox Draft;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label lblDailyMission;
+        private System.Windows.Forms.Label lblDraft;
+        private System.Windows.Forms.Label lblIdea;
     }
 }
 

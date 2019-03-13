@@ -1,0 +1,13 @@
+一.C#	
+	网站后端
+	桌面应用
+	服务器api 
+	WCF  electron 
+	三种网站架构模式
+	linq lambda
+二.java	
+三.前端	
+四.数据库	
+	mysql sql sever oracle
+五.安卓	
+六.微信端程序

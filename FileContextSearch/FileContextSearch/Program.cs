@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
+using System.Diagnostics;
 
 namespace FileContextSearch
 {
@@ -13,6 +14,11 @@ namespace FileContextSearch
         [STAThread]
         static void Main()
         {
+            if (AppInstance())
+            {
+                return;
+            }
+
             Application.SetUnhandledExceptionMode (UnhandledExceptionMode.CatchException);
             Application.ThreadException += new System.Threading.ThreadExceptionEventHandler(Application_ThreadException);
             //处理非UI线程异常
@@ -21,6 +27,19 @@ namespace FileContextSearch
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
             
+        }
+        public static bool AppInstance()
+        {
+            Process[] MyProcesses = Process.GetProcesses();
+            int i = 0;
+            foreach (Process MyProcess in MyProcesses)
+            {
+                if (MyProcess.ProcessName == Process.GetCurrentProcess().ProcessName)
+                {
+                    i++;
+                }
+            }
+            return (i > 1) ? true : false;
         }
         static void Application_ThreadException(object sender, System.Threading.ThreadExceptionEventArgs e)
         {

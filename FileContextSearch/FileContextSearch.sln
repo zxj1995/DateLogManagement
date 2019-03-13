@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.329
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileContextSearch", "FileContextSearch\FileContextSearch.csproj", "{ABFBDADF-1487-48C4-8DF2-697FA4688FB8}"
 EndProject
 Global
@@ -25,5 +27,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D9D15B34-3235-47F8-B0F6-F11B3CF7B10F}
 	EndGlobalSection
 EndGlobal

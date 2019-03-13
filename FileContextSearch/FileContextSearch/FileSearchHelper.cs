@@ -16,12 +16,33 @@ namespace FileContextSearch
         }
         private static FileSearchHelper Instance;
         private  static readonly object locker=new object();
-        public string DateLogDir = "";
-        //public string DateLogDir
-        //{
-        //    get;
-        //    set;
-        //}
+        public string _DateLogDir = "";
+        public string _ResearchDir = "";
+
+        public string DateLogDir
+        {
+            get
+            {
+                return _DateLogDir;
+            }
+            set
+            {
+                _DateLogDir = value;
+            }
+        }
+
+        public string ResearchDir
+        {
+            get
+            {
+                return _ResearchDir;
+            }
+            set
+            {
+                _ResearchDir = value;
+            }
+        }
+
 
         public static FileSearchHelper GetInstance()
         {
@@ -153,27 +174,33 @@ namespace FileContextSearch
         }
 
 
-            //foreach (var item in fileNames)
-            //{
-                
-            //    //OpenAndSetWindow(item,win)
-            //}
-        
-        public void GenerateFile()
+        //foreach (var item in fileNames)
+        //{
+
+        //    //OpenAndSetWindow(item,win)
+        //}
+
+        public void GenerateFile(DateTime dtTemp)
         {
 
             //1.检测日志是否存在
             //2.生成昨日日志文件
             var sb = new StringBuilder();
-            var lineEx = new string[50];
+            var lineEx = new string[100];
             sb.Clear();
-            var dt = DateTime.Now;
+            var dt = dtTemp;
             var yearID = dt.Year.ToString();
             var monthID = dt.Month.ToString();
             var dayID = dt.Day.ToString();
-            var filePath = Path.Combine(FileSearchHelper.GetInstance().DateLogDir, yearID, monthID + "月", dt.ToString("MM.dd") + ".txt");
-            var dirPath = Path.Combine(FileSearchHelper.GetInstance().DateLogDir, yearID, monthID + "月");
-            string[] fileNames = new string[] {"DailyMission.txt", "Idea.txt" ,"Draft.txt" };
+            var filePath = "";
+            var dirPath = "";
+            filePath = Path.Combine(FileSearchHelper.GetInstance().DateLogDir, yearID, monthID + "月", dt.ToString("MM.dd") + ".txt");
+            dirPath = Path.Combine(FileSearchHelper.GetInstance().DateLogDir, yearID, monthID + "月");
+            if (!Directory.Exists(dirPath))
+            {
+                Directory.CreateDirectory(dirPath);
+            }
+            string[] fileNames = new string[] { "DailyMission.txt", "Idea.txt", "Draft.txt" };
             int itemp = 0;
             bool[] booltemp = new bool[] { false, false, false };
             for (int i = 0; i < lineEx.Length; i++)
@@ -205,17 +232,85 @@ namespace FileContextSearch
                     //var fi= new FileInfo(filePathTemp);
                     var fn = Path.GetFileNameWithoutExtension(filePathTemp);
                     sb.AppendLine(fn + string.Join("", lineEx));
-                    var fileContentTemp = File.ReadAllLines(filePathTemp, Encoding.Default);
+                    var fileContentTemp = File.ReadAllLines(filePathTemp, Encoding.UTF8);
                     foreach (var subitem in fileContentTemp)
                     {
                         sb.AppendLine(subitem);
                     }
                     sb.AppendLine();
                 }
-                File.WriteAllText(filePath, sb.ToString());
+                File.WriteAllText(filePath, sb.ToString(),Encoding.UTF8);
             }
-        }
 
+        }
+        public void ReadTxtandWriteFile(RichTextBox RTB, string strFilePath)
+        {
+            var txt = RTB.Text;
+            var txtarr = txt.Split(new string[] { "\n" }, StringSplitOptions.None);
+
+            var booltemp = false;
+            var filePathTemp = Path.Combine(FileSearchHelper.GetInstance().DateLogDir, "temp", strFilePath);
+            if (File.Exists(filePathTemp))
+            {
+                booltemp = false;
+            }
+            else
+            {
+                booltemp = true;
+            }
+            File.WriteAllLines(filePathTemp, txtarr,Encoding.UTF8);
+        }
+        public string[] tempFileHandler()
+        {
+            var sb = new StringBuilder();
+            sb.Clear();
+
+            string[] fileNames = new string[] { "DailyMission.txt", "Idea.txt", "Draft.txt" };
+            int itemp = 0;
+            var result = new string[3];
+            bool[] booltemp = new bool[] { false, false, false };
+            //for (int i = 0; i < lineEx.Length; i++)
+            //{
+            //    lineEx[i] = "--";
+            //}
+            for (int i = 0; i < 3; i++)
+            {
+                var filePathTemp = Path.Combine(FileSearchHelper.GetInstance().DateLogDir, "temp", fileNames[i]);
+                if (File.Exists(filePathTemp))
+                {
+                    booltemp[i] = false;
+                }
+                else
+                {
+                    booltemp[i] = true;
+                }
+            }
+
+            if ((booltemp[0] || booltemp[1] || booltemp[2]))
+            {
+                return result;
+            }
+            else
+            {
+                int i = 0;
+                foreach (var item in fileNames)
+                {
+                    sb.Clear();
+                    var filePathTemp = Path.Combine(FileSearchHelper.GetInstance().DateLogDir, "temp", item);
+                    //var fi= new FileInfo(filePathTemp);
+                    var fn = Path.GetFileNameWithoutExtension(filePathTemp);
+                    var fileContentTemp = File.ReadAllLines(filePathTemp, Encoding.UTF8);
+                    foreach (var subitem in fileContentTemp)
+                    {
+                        sb.AppendLine(subitem);
+                    }
+                    result[i] = sb.ToString();
+                    i++;
+                }
+                return result;
+            }
+
+        }
         public bool CreateNewDatelog()
         {
             var dt = DateTime.Now;
