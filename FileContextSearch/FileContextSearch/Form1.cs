@@ -138,7 +138,16 @@ namespace FileContextSearch
             //fsh.CreateNewDatelog();
             //fsh.GenerateFile();
             ContentChange();
-            tabControl1.SelectedIndex = 3;
+            int index = 0;
+            for (int i = 0; i < tabControl1.TabPages.Count; i++)
+            {
+                if (tabControl1.TabPages[i].Name=="NewDateLog")
+                {
+                    index = i;
+                    break;
+                }
+            }
+            tabControl1.SelectedIndex = index;
             //査小杰屏蔽于2019-3-8 16:08:18
             //OpenFileByTemplate();
             //Thread th = new Thread(new ThreadStart(OpenFileByTemplate));
