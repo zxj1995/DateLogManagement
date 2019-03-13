@@ -814,6 +814,11 @@ namespace FileContextSearch
             TV.Size = new Size(SearchName.Size.Width, SearchName.Size.Height - label6.Height);
             ResearchTreeView.Size = new Size(panel2.Size.Width, panel2.Size.Height - label1.Height);
         }
+
+        private void 保存ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            autoSave(null);
+        }
         //2019-3-8 12:04:10
 
     }

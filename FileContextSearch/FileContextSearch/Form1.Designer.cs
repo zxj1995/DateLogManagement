@@ -79,6 +79,7 @@
             this.Idea = new System.Windows.Forms.RichTextBox();
             this.Draft = new System.Windows.Forms.RichTextBox();
             this.styleManager1 = new DevComponents.DotNetBar.StyleManager(this.components);
+            this.保存ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.DateLog.SuspendLayout();
@@ -220,7 +221,8 @@
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.设置ToolStripMenuItem});
+            this.设置ToolStripMenuItem,
+            this.保存ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1112, 25);
@@ -641,6 +643,13 @@
             this.styleManager1.ManagerStyle = DevComponents.DotNetBar.eStyle.Office2013;
             this.styleManager1.MetroColorParameters = new DevComponents.DotNetBar.Metro.ColorTables.MetroColorGeneratorParameters(System.Drawing.Color.White, System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(87)))), ((int)(((byte)(154))))));
             // 
+            // 保存ToolStripMenuItem
+            // 
+            this.保存ToolStripMenuItem.Name = "保存ToolStripMenuItem";
+            this.保存ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
+            this.保存ToolStripMenuItem.Text = "保存";
+            this.保存ToolStripMenuItem.Click += new System.EventHandler(this.保存ToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -733,6 +742,7 @@
         private System.Windows.Forms.Label lblDailyMission;
         private System.Windows.Forms.Label lblDraft;
         private System.Windows.Forms.Label lblIdea;
+        private System.Windows.Forms.ToolStripMenuItem 保存ToolStripMenuItem;
     }
 }
 
