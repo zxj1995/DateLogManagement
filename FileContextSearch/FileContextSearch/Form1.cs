@@ -23,8 +23,8 @@ namespace FileContextSearch
         public Form1()
         {
             InitializeComponent();
-            this.textBox3.Text = DateTime.Now.AddMonths(-1).ToString("yyyy-MM-dd");
-            this.textBox2.Text = DateTime.Now.AddDays(-1).ToString("yyyy-MM-dd");
+            //this.textBox3.Text = DateTime.Now.AddMonths(-1).ToString("yyyy-MM-dd");
+            //this.textBox2.Text = DateTime.Now.AddDays(-1).ToString("yyyy-MM-dd");
             //this.button5.Visible = false;
             Test.Parent = null;
 
@@ -242,12 +242,13 @@ namespace FileContextSearch
         private void InitialUI()
         {
             this.Text += Application.ProductVersion.ToString();
+            var itemp = DateTime.Now.DayOfWeek - DayOfWeek.Monday;
             var dt1 = DateTime.Now.AddDays(-1).ToString("yyyy-MM-dd");
-            var dt2 = DateTime.Now.AddDays(-7).ToString("yyyy-MM-dd");
-            var dt3 = DateTime.Now.AddDays(-1).ToString("yyyy-MM-dd");
+            var dt2 = DateTime.Now.AddDays(-7-itemp).ToString("yyyy-MM-dd");
+            var dt3 = DateTime.Now.AddDays(-7 - itemp+4).ToString("yyyy-MM-dd");
             textBox4.Text = dt1;
-            textBox3.Text = dt3;
-            textBox2.Text = dt2;
+            textBox3.Text = dt2;
+            textBox2.Text = dt3;
             var strArr = new string[] { "Conquering", "Conquered", "Abandoned", "Urgent"};
             NodeState.Items.Clear();
             foreach (var item in strArr)

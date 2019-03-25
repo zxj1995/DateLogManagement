@@ -62,8 +62,8 @@ namespace FileContextSearch
             var ld = new List<string>();
             while (DateTime.Compare(dttemp, endTime) <= 0)
             {
-                dttemp = dttemp.AddDays(1);
                 ld.Add(dttemp.ToString("yyyy-MM-dd"));
+                dttemp = dttemp.AddDays(1);
             }
             return ld;
         }
@@ -147,6 +147,10 @@ namespace FileContextSearch
         {
             try
             {
+                if (string.IsNullOrEmpty(searchContent))
+                {
+                    return true;
+                }
                 if (fileContent.IndexOf(searchContent,StringComparison.OrdinalIgnoreCase)>=0)
                 {
                     return true;
