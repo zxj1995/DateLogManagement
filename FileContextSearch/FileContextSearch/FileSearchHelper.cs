@@ -83,7 +83,7 @@ namespace FileContextSearch
                 {
                     if (File.Exists(filePath))
                     {
-                        using (var fs = new StreamReader(filePath,Encoding.Default, false))
+                        using (var fs = new StreamReader(filePath,Encoding.UTF8 , false))
                         {
                             strtemp = fs.ReadToEnd();
                         }
@@ -93,7 +93,7 @@ namespace FileContextSearch
                 {
                     if (File.Exists(filePath1))
                     {
-                        using (var fs = new StreamReader(filePath1,Encoding.Default, false))
+                        using (var fs = new StreamReader(filePath1,Encoding.UTF8, false))
                         {
                             strtemp = fs.ReadToEnd();
                         }
