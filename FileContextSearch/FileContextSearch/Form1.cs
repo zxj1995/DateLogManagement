@@ -220,7 +220,7 @@ namespace FileContextSearch
             var str = registryHelper.GetInstance().GetKeyValue(logPath);
             FileSearchHelper.GetInstance().DateLogDir = str;
             var ResearchPath = "ResearchDirPath";
-            str = registryHelper.GetInstance().GetKeyValue(logPath);
+            str = registryHelper.GetInstance().GetKeyValue(ResearchPath);
             //str = System.Configuration.ConfigurationManager.AppSettings["fileDirResearch"];
             FileSearchHelper.GetInstance().ResearchDir = str;
             ResearchPathDir = str;
