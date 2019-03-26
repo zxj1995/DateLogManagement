@@ -33,8 +33,8 @@ namespace FileContextSearch
         private void setForm_Load(object sender, EventArgs e)
         {
             var config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.PerUserRoamingAndLocal);
-            textBox4.Text = config.AppSettings.Settings["fileDir"].Value;
-            textBox1.Text = config.AppSettings.Settings["fileDirResearch"].Value;
+            textBox4.Text = registryHelper.GetInstance().GetKeyValue("fileDir");// config.AppSettings.Settings["fileDir"].Value;
+            textBox1.Text = registryHelper.GetInstance().GetKeyValue("fileDirResearch");// config.AppSettings.Settings["fileDirResearch"].Value;
         }
 
         private void button2_Click(object sender, EventArgs e)
