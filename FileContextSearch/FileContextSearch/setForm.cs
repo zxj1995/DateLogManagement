@@ -24,7 +24,9 @@ namespace FileContextSearch
             var config = ConfigurationManager.OpenExeConfiguration(Application.ExecutablePath);
             config.AppSettings.Settings["fileDir"].Value = textBox4.Text;
             config.Save(ConfigurationSaveMode.Modified);
-            
+            var logPath = "DateLogDirPath";
+            //var ResearchPath = "ResearchDirPath";
+            registryHelper.GetInstance().AddKey(logPath, textBox4.Text);
             FileSearchHelper.GetInstance().DateLogDir = textBox4.Text;
         }
 
@@ -62,6 +64,9 @@ namespace FileContextSearch
             var config = ConfigurationManager.OpenExeConfiguration(Application.ExecutablePath);
             config.AppSettings.Settings["fileDirResearch"].Value = textBox1.Text;
             config.Save(ConfigurationSaveMode.Modified);
+            //var logPath = "DateLogDirPath";
+            var ResearchPath = "ResearchDirPath";
+            registryHelper.GetInstance().AddKey(ResearchPath, textBox1.Text);
             FileSearchHelper.GetInstance().ResearchDir = textBox1.Text;
             Form1.ResearchPathDir = textBox1.Text;
         }
@@ -83,6 +88,57 @@ namespace FileContextSearch
             else
             {
                 System.Diagnostics.Process.Start(textBox1.Text);
+            }
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+                // 建立 OpenFileDialog 对象
+                FolderBrowserDialog myFolderBrowserDialog = new FolderBrowserDialog();
+                string settingpath="";
+                // 设定 OpenFileDialog 对象的各个属性
+                    var withBlock = myFolderBrowserDialog;
+                withBlock.Description = "请选择一个文件夹";
+
+            //是否显示对话框左下角 新建文件夹 按钮，默认为 true
+            //dialog.ShowNewFolderButton = false;
+            //withBlock.ShowDialog();
+            //if (settingpath != "")
+            //{
+            //    withBlock.SelectedPath = settingpath;
+            //}
+            if (withBlock.ShowDialog() == DialogResult.OK)
+            {
+                //记录选中的目录
+                settingpath = withBlock.SelectedPath;
+                textBox4.Text = settingpath;
+            }
+
+
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            // 建立 OpenFileDialog 对象
+            FolderBrowserDialog myFolderBrowserDialog = new FolderBrowserDialog();
+            string settingpath = "";
+            // 设定 OpenFileDialog 对象的各个属性
+            var withBlock = myFolderBrowserDialog;
+            withBlock.Description = "请选择一个文件夹";
+
+            //是否显示对话框左下角 新建文件夹 按钮，默认为 true
+            //dialog.ShowNewFolderButton = false;
+            //withBlock.ShowDialog();
+            //if (settingpath != "")
+            //{
+            //    withBlock.SelectedPath = settingpath;
+            //}
+            if (withBlock.ShowDialog() == DialogResult.OK)
+            {
+                //记录选中的目录
+                settingpath = withBlock.SelectedPath;
+                textBox1.Text = settingpath;
+
             }
         }
     }

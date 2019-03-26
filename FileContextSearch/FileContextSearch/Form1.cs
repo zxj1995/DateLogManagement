@@ -92,7 +92,6 @@ namespace FileContextSearch
                 var endTime = DateTime.Parse(textBox2.Text);
                 var fsh = FileSearchHelper.GetInstance();
                 var dArr = fsh.getDate(startTime, endTime);
-                //fsh.DateLogDir = textBox4.Text;
                 foreach (var item in dArr)
                 {
                     //if (item=="2018-09-03")
@@ -227,7 +226,21 @@ namespace FileContextSearch
             Tc.Change(3600000, 3600000);
             //加载treeview
             this.WindowState =FormWindowState.Maximized;
-
+            //检查注册表中是否存在日志保存地址信息
+            var logPath = "DateLogDirPath";
+            var ResearchPath = "ResearchDirPath";
+            if (! registryHelper.GetInstance().IsRegisted (logPath))
+            {
+                MessageBox.Show("请设置日志保存文件夹！", "Warning", MessageBoxButtons.OK);
+                var sf = new setForm();
+                sf.ShowDialog();
+            }
+            if (!registryHelper.GetInstance().IsRegisted(ResearchPath))
+            {
+                MessageBox.Show("请设置Research保存文件夹！", "Warning", MessageBoxButtons.OK);
+                var sf = new setForm();
+                sf.ShowDialog();
+            }
         }
         public void autoSave(object obj)
         {

@@ -4,6 +4,14 @@ using System.Windows.Forms;
 
 public class registryHelper
 {
+    // Public Property registryNodeName As String
+    // Get
+    // Return SoftName
+    // End Get
+    // Set(value As String)
+    // SoftName = value
+    // End Set
+    // End Property
 
     public static registryHelper registryHelperInstance;
     public static object locker = new object();
@@ -23,8 +31,8 @@ public class registryHelper
         return registryHelperInstance;
     }
 
-    public string SoftName = "singleWaveTest";
-    public string produceType = "Test";
+    public string SoftName = "LogSF";
+    public string produceType = "LogSF";
 
 
     public string GetKeyValue(string name)
@@ -125,26 +133,6 @@ public class registryHelper
     {
         try
         {
-            // Dim hkml As RegistryKey = Registry.LocalMachine
-            // Dim software As RegistryKey = hkml.OpenSubKey("SOFTWARE", True)
-
-            // If software IsNot Nothing Then
-            // Dim subKeys1 As RegistryKey = software.OpenSubKey(SoftName, True)
-            // Dim subKeys2 As RegistryKey = subKeys1.OpenSubKey(produceType, True)
-
-            // If subKeys2 IsNot Nothing Then
-            // Dim keyNames As String() = subKeys2.GetValueNames()
-
-            // For Each keyName As String In keyNames
-
-            // If keyName = key Then
-            // Return True
-            // End If
-            // Next
-            // End If
-            // End If
-
-
             RegistryKey hklm = Registry.LocalMachine;
             RegistryKey Regedit1 = hklm.OpenSubKey("SOFTWARE", true);
             if (Regedit1 != null)
