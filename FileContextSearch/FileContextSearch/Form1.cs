@@ -454,7 +454,7 @@ namespace FileContextSearch
         public void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
             //添加两个TreeView控件
-            if (tabControl1.SelectedIndex==2)
+            if (tabControl1.SelectedIndex==1)
             {
                 foreach (Control item in panel2.Controls)
                 {
