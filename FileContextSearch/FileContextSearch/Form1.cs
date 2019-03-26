@@ -215,9 +215,13 @@ namespace FileContextSearch
         public System.Threading.Timer Tc;
         private void Form1_Load(object sender, EventArgs e)
         {
-            var str = System.Configuration.ConfigurationManager.AppSettings["fileDir"];
+            //var str = System.Configuration.ConfigurationManager.AppSettings["fileDir"];
+            var logPath = "DateLogDirPath";
+            var str = registryHelper.GetInstance().GetKeyValue(logPath);
             FileSearchHelper.GetInstance().DateLogDir = str;
-            str = System.Configuration.ConfigurationManager.AppSettings["fileDirResearch"];
+            var ResearchPath = "ResearchDirPath";
+            str = registryHelper.GetInstance().GetKeyValue(logPath);
+            //str = System.Configuration.ConfigurationManager.AppSettings["fileDirResearch"];
             FileSearchHelper.GetInstance().ResearchDir = str;
             ResearchPathDir = str;
             InitialDir();
@@ -227,8 +231,8 @@ namespace FileContextSearch
             //加载treeview
             this.WindowState =FormWindowState.Maximized;
             //检查注册表中是否存在日志保存地址信息
-            var logPath = "DateLogDirPath";
-            var ResearchPath = "ResearchDirPath";
+             logPath = "DateLogDirPath";
+             ResearchPath = "ResearchDirPath";
             if (! registryHelper.GetInstance().IsRegisted (logPath))
             {
                 MessageBox.Show("请设置日志保存文件夹！", "Warning", MessageBoxButtons.OK);
@@ -611,8 +615,6 @@ namespace FileContextSearch
             TN.Expand();
             LoadTreeView(TV, state);
             //TV.Location = new Point(label6.Location.X, label6.Location.Y+label6.Height);
-
-
         }
 
 

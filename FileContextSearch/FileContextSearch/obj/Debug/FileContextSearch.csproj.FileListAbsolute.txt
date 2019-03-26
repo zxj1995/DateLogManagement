@@ -27,4 +27,3 @@ C:\ZXJ\GitRepository\DateLogManagement\FileContextSearch\FileContextSearch\bin\D
 C:\ZXJ\GitRepository\DateLogManagement\FileContextSearch\FileContextSearch\obj\Debug\FileContextSearch.csproj.CopyComplete
 C:\ZXJ\GitRepository\DateLogManagement\FileContextSearch\FileContextSearch\obj\Debug\FileContextSearch.NodeSetting.resources
 C:\ZXJ\GitRepository\DateLogManagement\FileContextSearch\FileContextSearch\obj\Debug\FileContextSearch.Form1.resources
-C:\ZXJ\GitRepository\DateLogManagement\FileContextSearch\FileContextSearch\obj\Debug\FileContextSearch.csprojAssemblyReference.cache
