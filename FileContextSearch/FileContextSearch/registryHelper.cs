@@ -41,7 +41,7 @@ public class registryHelper
         {
             if (IsRegisted(name))
             {
-                RegistryKey hkml = Registry.LocalMachine;
+                RegistryKey hkml = Registry.CurrentUser;
                 RegistryKey software = hkml.OpenSubKey("SOFTWARE", RegistryKeyPermissionCheck.ReadSubTree).OpenSubKey(SoftName, RegistryKeyPermissionCheck.ReadSubTree).OpenSubKey(produceType, RegistryKeyPermissionCheck.ReadSubTree);
                 if (software != null)
                 {
@@ -65,10 +65,11 @@ public class registryHelper
     {
         try
         {
-            RegistryKey hklm = Registry.LocalMachine;
+            RegistryKey hklm = Registry.CurrentUser;
             if (registryHelper.GetInstance().IsRegisted(key))
             {
                 RegistryKey Regedit = hklm.OpenSubKey("SOFTWARE", RegistryKeyPermissionCheck.ReadWriteSubTree).OpenSubKey(SoftName, RegistryKeyPermissionCheck.ReadWriteSubTree).OpenSubKey(produceType, RegistryKeyPermissionCheck.ReadWriteSubTree).OpenSubKey(key, RegistryKeyPermissionCheck.ReadWriteSubTree);
+                RegistryKey HKLM = Registry.CurrentUser;
                 Regedit.SetValue(key, keyValue);
             }
             else
@@ -112,7 +113,7 @@ public class registryHelper
 
     public void DeleteKey(string key)
     {
-        RegistryKey hkml = Registry.LocalMachine;
+        RegistryKey hkml = Registry.CurrentUser;
         RegistryKey software = hkml.OpenSubKey("SOFTWARE", true);
         if (software != null)
         {
@@ -133,7 +134,7 @@ public class registryHelper
     {
         try
         {
-            RegistryKey hklm = Registry.LocalMachine;
+            RegistryKey hklm = Registry.CurrentUser;
             RegistryKey Regedit1 = hklm.OpenSubKey("SOFTWARE", true);
             if (Regedit1 != null)
             {
