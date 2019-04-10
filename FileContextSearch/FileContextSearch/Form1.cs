@@ -248,8 +248,17 @@ namespace FileContextSearch
         }
         public void autoSave(object obj)
         {
+            var s = DateTime.Parse(DateTime.Now.Date.ToString());
+            var ts = DateTime.Now.Subtract(s);
             string[] fileNames = new string[] { "DailyMission.txt", "Idea.txt", "Draft.txt" };
             RichTextBox[] RTXArr = new RichTextBox[] { DailyMission, Idea, Draft };
+            if (ts.TotalMinutes <= 60)
+            {
+                for (int i = 0; i < RTXArr.Length; i++)
+                {
+                    RTXArr[i].Text = "";
+                }
+            }
             for (int i = 0; i < RTXArr.Length; i++)
             {
                 FileSearchHelper.GetInstance().ReadTxtandWriteFile(RTXArr[i], fileNames[i]);
