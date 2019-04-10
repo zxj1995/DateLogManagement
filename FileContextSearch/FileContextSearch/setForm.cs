@@ -141,5 +141,56 @@ namespace FileContextSearch
 
             }
         }
+
+        private void ProjectPathSave_Click(object sender, EventArgs e)
+        {
+            System.Configuration.ConfigurationManager.AppSettings.Set("fileDirProject", textBox4.Text);
+            var config = ConfigurationManager.OpenExeConfiguration(Application.ExecutablePath);
+            config.AppSettings.Settings["fileDirProject"].Value = textBox1.Text;
+            config.Save(ConfigurationSaveMode.Modified);
+            //var logPath = "DateLogDirPath";
+            var ProjectPath = "fileDirProject";
+            registryHelper.GetInstance().AddKey(ProjectPath, txtProjectPath.Text);
+            FileSearchHelper.GetInstance().ProjectDir = txtProjectPath.Text;
+            Form1.ProjectPathDir = txtProjectPath.Text;
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+
+            if (!Directory.Exists(txtProjectPath.Text))
+            {
+                Directory.CreateDirectory(txtProjectPath.Text);
+            }
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            if (!Directory.Exists(txtProjectPath.Text))
+            {
+                MessageBox.Show("请先创建文件夹！", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                System.Diagnostics.Process.Start(txtProjectPath.Text);
+            }
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            // 建立 OpenFileDialog 对象
+            FolderBrowserDialog myFolderBrowserDialog = new FolderBrowserDialog();
+            string settingpath = "";
+            // 设定 OpenFileDialog 对象的各个属性
+            var withBlock = myFolderBrowserDialog;
+            withBlock.Description = "请选择一个文件夹";
+            if (withBlock.ShowDialog() == DialogResult.OK)
+            {
+                //记录选中的目录
+                settingpath = withBlock.SelectedPath;
+                txtProjectPath.Text = settingpath;
+
+            }
+        }
     }
 }

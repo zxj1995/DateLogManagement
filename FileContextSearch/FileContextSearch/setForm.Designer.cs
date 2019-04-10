@@ -35,17 +35,25 @@
             this.button3 = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.date_log = new System.Windows.Forms.TabPage();
+            this.button7 = new System.Windows.Forms.Button();
             this.research = new System.Windows.Forms.TabPage();
+            this.button8 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
+            this.Project = new System.Windows.Forms.TabPage();
+            this.button9 = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.button10 = new System.Windows.Forms.Button();
+            this.txtProjectPath = new System.Windows.Forms.TextBox();
+            this.button11 = new System.Windows.Forms.Button();
+            this.ProjectPathSave = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.date_log.SuspendLayout();
             this.research.SuspendLayout();
+            this.Project.SuspendLayout();
             this.SuspendLayout();
             // 
             // textBox4
@@ -99,6 +107,7 @@
             // 
             this.tabControl1.Controls.Add(this.date_log);
             this.tabControl1.Controls.Add(this.research);
+            this.tabControl1.Controls.Add(this.Project);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
@@ -122,6 +131,16 @@
             this.date_log.Text = "date_log";
             this.date_log.UseVisualStyleBackColor = true;
             // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(576, 41);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(101, 25);
+            this.button7.TabIndex = 19;
+            this.button7.Text = "...";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
             // research
             // 
             this.research.Controls.Add(this.button8);
@@ -137,6 +156,16 @@
             this.research.TabIndex = 1;
             this.research.Text = "research";
             this.research.UseVisualStyleBackColor = true;
+            // 
+            // button8
+            // 
+            this.button8.Location = new System.Drawing.Point(592, 48);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(101, 25);
+            this.button8.TabIndex = 22;
+            this.button8.Text = "...";
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // button4
             // 
@@ -185,25 +214,78 @@
             this.textBox1.TabIndex = 17;
             this.textBox1.Text = "C:\\ZXJ\\Research";
             // 
-            // button7
+            // Project
             // 
-            this.button7.Location = new System.Drawing.Point(576, 41);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(101, 25);
-            this.button7.TabIndex = 19;
-            this.button7.Text = "...";
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
+            this.Project.Controls.Add(this.button9);
+            this.Project.Controls.Add(this.label3);
+            this.Project.Controls.Add(this.button10);
+            this.Project.Controls.Add(this.txtProjectPath);
+            this.Project.Controls.Add(this.button11);
+            this.Project.Controls.Add(this.ProjectPathSave);
+            this.Project.Location = new System.Drawing.Point(4, 22);
+            this.Project.Name = "Project";
+            this.Project.Padding = new System.Windows.Forms.Padding(3);
+            this.Project.Size = new System.Drawing.Size(739, 149);
+            this.Project.TabIndex = 2;
+            this.Project.Text = "Project";
+            this.Project.UseVisualStyleBackColor = true;
             // 
-            // button8
+            // button9
             // 
-            this.button8.Location = new System.Drawing.Point(592, 48);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(101, 25);
-            this.button8.TabIndex = 22;
-            this.button8.Text = "...";
-            this.button8.UseVisualStyleBackColor = true;
-            this.button8.Click += new System.EventHandler(this.button8_Click);
+            this.button9.Location = new System.Drawing.Point(578, 43);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(101, 25);
+            this.button9.TabIndex = 25;
+            this.button9.Text = "...";
+            this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(35, 16);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(89, 12);
+            this.label3.TabIndex = 20;
+            this.label3.Text = "项目文件夹地址";
+            // 
+            // button10
+            // 
+            this.button10.Location = new System.Drawing.Point(469, 43);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(101, 25);
+            this.button10.TabIndex = 24;
+            this.button10.Text = "打开文件夹";
+            this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
+            // 
+            // txtProjectPath
+            // 
+            this.txtProjectPath.Location = new System.Drawing.Point(130, 13);
+            this.txtProjectPath.Name = "txtProjectPath";
+            this.txtProjectPath.Size = new System.Drawing.Size(312, 21);
+            this.txtProjectPath.TabIndex = 21;
+            this.txtProjectPath.Text = "E:\\zxj\\personal\\zxj work info\\datelog";
+            // 
+            // button11
+            // 
+            this.button11.Location = new System.Drawing.Point(578, 11);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(101, 25);
+            this.button11.TabIndex = 23;
+            this.button11.Text = "创建文件夹路径";
+            this.button11.UseVisualStyleBackColor = true;
+            this.button11.Click += new System.EventHandler(this.button11_Click);
+            // 
+            // ProjectPathSave
+            // 
+            this.ProjectPathSave.Location = new System.Drawing.Point(469, 11);
+            this.ProjectPathSave.Name = "ProjectPathSave";
+            this.ProjectPathSave.Size = new System.Drawing.Size(101, 25);
+            this.ProjectPathSave.TabIndex = 22;
+            this.ProjectPathSave.Text = "保存";
+            this.ProjectPathSave.UseVisualStyleBackColor = true;
+            this.ProjectPathSave.Click += new System.EventHandler(this.ProjectPathSave_Click);
             // 
             // setForm
             // 
@@ -219,6 +301,8 @@
             this.date_log.PerformLayout();
             this.research.ResumeLayout(false);
             this.research.PerformLayout();
+            this.Project.ResumeLayout(false);
+            this.Project.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -240,5 +324,12 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.TabPage Project;
+        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.TextBox txtProjectPath;
+        private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.Button ProjectPathSave;
     }
 }

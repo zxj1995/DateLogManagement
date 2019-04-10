@@ -44,11 +44,12 @@
             this.button4 = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.设置ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.保存ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.button5 = new System.Windows.Forms.Button();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.button6 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.MainTabControl = new System.Windows.Forms.TabControl();
             this.DateLog = new System.Windows.Forms.TabPage();
             this.IsByDateTime = new System.Windows.Forms.CheckBox();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
@@ -79,9 +80,20 @@
             this.Idea = new System.Windows.Forms.RichTextBox();
             this.Draft = new System.Windows.Forms.RichTextBox();
             this.styleManager1 = new DevComponents.DotNetBar.StyleManager(this.components);
-            this.保存ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.Project = new System.Windows.Forms.TabPage();
+            this.PersonalProjectPanel = new System.Windows.Forms.Panel();
+            this.WorkProjectPanel = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.splitContainer3 = new System.Windows.Forms.SplitContainer();
+            this.splitContainer4 = new System.Windows.Forms.SplitContainer();
+            this.splitContainer5 = new System.Windows.Forms.SplitContainer();
+            this.button10 = new System.Windows.Forms.Button();
+            this.button12 = new System.Windows.Forms.Button();
+            this.button14 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
-            this.tabControl1.SuspendLayout();
+            this.MainTabControl.SuspendLayout();
             this.DateLog.SuspendLayout();
             this.Test.SuspendLayout();
             this.Research.SuspendLayout();
@@ -94,6 +106,23 @@
             this.NewDateLog.SuspendLayout();
             this.ContentContainer.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.Project.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
+            this.splitContainer2.Panel1.SuspendLayout();
+            this.splitContainer2.Panel2.SuspendLayout();
+            this.splitContainer2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).BeginInit();
+            this.splitContainer3.Panel1.SuspendLayout();
+            this.splitContainer3.Panel2.SuspendLayout();
+            this.splitContainer3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer4)).BeginInit();
+            this.splitContainer4.Panel1.SuspendLayout();
+            this.splitContainer4.Panel2.SuspendLayout();
+            this.splitContainer4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer5)).BeginInit();
+            this.splitContainer5.Panel1.SuspendLayout();
+            this.splitContainer5.Panel2.SuspendLayout();
+            this.splitContainer5.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
@@ -236,6 +265,13 @@
             this.设置ToolStripMenuItem.Text = "设置";
             this.设置ToolStripMenuItem.Click += new System.EventHandler(this.设置ToolStripMenuItem_Click);
             // 
+            // 保存ToolStripMenuItem
+            // 
+            this.保存ToolStripMenuItem.Name = "保存ToolStripMenuItem";
+            this.保存ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
+            this.保存ToolStripMenuItem.Text = "保存";
+            this.保存ToolStripMenuItem.Click += new System.EventHandler(this.保存ToolStripMenuItem_Click);
+            // 
             // button5
             // 
             this.button5.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
@@ -279,19 +315,20 @@
             this.button8.UseVisualStyleBackColor = true;
             this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
-            // tabControl1
+            // MainTabControl
             // 
-            this.tabControl1.Controls.Add(this.DateLog);
-            this.tabControl1.Controls.Add(this.Test);
-            this.tabControl1.Controls.Add(this.Research);
-            this.tabControl1.Controls.Add(this.NewDateLog);
-            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl1.Location = new System.Drawing.Point(0, 25);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1112, 486);
-            this.tabControl1.TabIndex = 24;
-            this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
+            this.MainTabControl.Controls.Add(this.DateLog);
+            this.MainTabControl.Controls.Add(this.Test);
+            this.MainTabControl.Controls.Add(this.Research);
+            this.MainTabControl.Controls.Add(this.NewDateLog);
+            this.MainTabControl.Controls.Add(this.Project);
+            this.MainTabControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.MainTabControl.Location = new System.Drawing.Point(0, 25);
+            this.MainTabControl.Name = "MainTabControl";
+            this.MainTabControl.SelectedIndex = 0;
+            this.MainTabControl.Size = new System.Drawing.Size(1112, 486);
+            this.MainTabControl.TabIndex = 24;
+            this.MainTabControl.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
             // DateLog
             // 
@@ -643,19 +680,168 @@
             this.styleManager1.ManagerStyle = DevComponents.DotNetBar.eStyle.Office2013;
             this.styleManager1.MetroColorParameters = new DevComponents.DotNetBar.Metro.ColorTables.MetroColorGeneratorParameters(System.Drawing.Color.White, System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(87)))), ((int)(((byte)(154))))));
             // 
-            // 保存ToolStripMenuItem
+            // Project
             // 
-            this.保存ToolStripMenuItem.Name = "保存ToolStripMenuItem";
-            this.保存ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
-            this.保存ToolStripMenuItem.Text = "保存";
-            this.保存ToolStripMenuItem.Click += new System.EventHandler(this.保存ToolStripMenuItem_Click);
+            this.Project.Controls.Add(this.splitContainer2);
+            this.Project.Location = new System.Drawing.Point(4, 22);
+            this.Project.Name = "Project";
+            this.Project.Padding = new System.Windows.Forms.Padding(3);
+            this.Project.Size = new System.Drawing.Size(1104, 460);
+            this.Project.TabIndex = 4;
+            this.Project.Text = "Project";
+            this.Project.UseVisualStyleBackColor = true;
+            // 
+            // PersonalProjectPanel
+            // 
+            this.PersonalProjectPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.PersonalProjectPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PersonalProjectPanel.Location = new System.Drawing.Point(0, 0);
+            this.PersonalProjectPanel.Name = "PersonalProjectPanel";
+            this.PersonalProjectPanel.Size = new System.Drawing.Size(358, 402);
+            this.PersonalProjectPanel.TabIndex = 0;
+            // 
+            // WorkProjectPanel
+            // 
+            this.WorkProjectPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.WorkProjectPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.WorkProjectPanel.Location = new System.Drawing.Point(0, 0);
+            this.WorkProjectPanel.Name = "WorkProjectPanel";
+            this.WorkProjectPanel.Size = new System.Drawing.Size(366, 402);
+            this.WorkProjectPanel.TabIndex = 1;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Buxton Sketch", 18F, System.Drawing.FontStyle.Bold);
+            this.label7.Location = new System.Drawing.Point(39, 13);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(96, 29);
+            this.label7.TabIndex = 35;
+            this.label7.Text = "Personal";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Buxton Sketch", 18F, System.Drawing.FontStyle.Bold);
+            this.label8.Location = new System.Drawing.Point(34, 17);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(62, 29);
+            this.label8.TabIndex = 36;
+            this.label8.Text = "Work";
+            // 
+            // splitContainer2
+            // 
+            this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer2.Location = new System.Drawing.Point(3, 3);
+            this.splitContainer2.Name = "splitContainer2";
+            // 
+            // splitContainer2.Panel1
+            // 
+            this.splitContainer2.Panel1.Controls.Add(this.button14);
+            this.splitContainer2.Panel1.Controls.Add(this.button12);
+            this.splitContainer2.Panel1.Controls.Add(this.button10);
+            // 
+            // splitContainer2.Panel2
+            // 
+            this.splitContainer2.Panel2.Controls.Add(this.splitContainer3);
+            this.splitContainer2.Size = new System.Drawing.Size(1098, 454);
+            this.splitContainer2.SplitterDistance = 366;
+            this.splitContainer2.TabIndex = 37;
+            // 
+            // splitContainer3
+            // 
+            this.splitContainer3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer3.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer3.Name = "splitContainer3";
+            // 
+            // splitContainer3.Panel1
+            // 
+            this.splitContainer3.Panel1.Controls.Add(this.splitContainer4);
+            // 
+            // splitContainer3.Panel2
+            // 
+            this.splitContainer3.Panel2.Controls.Add(this.splitContainer5);
+            this.splitContainer3.Size = new System.Drawing.Size(728, 454);
+            this.splitContainer3.SplitterDistance = 358;
+            this.splitContainer3.TabIndex = 37;
+            // 
+            // splitContainer4
+            // 
+            this.splitContainer4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer4.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer4.Name = "splitContainer4";
+            this.splitContainer4.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer4.Panel1
+            // 
+            this.splitContainer4.Panel1.Controls.Add(this.label7);
+            // 
+            // splitContainer4.Panel2
+            // 
+            this.splitContainer4.Panel2.Controls.Add(this.PersonalProjectPanel);
+            this.splitContainer4.Size = new System.Drawing.Size(358, 454);
+            this.splitContainer4.SplitterDistance = 48;
+            this.splitContainer4.TabIndex = 36;
+            // 
+            // splitContainer5
+            // 
+            this.splitContainer5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer5.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer5.Name = "splitContainer5";
+            this.splitContainer5.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer5.Panel1
+            // 
+            this.splitContainer5.Panel1.Controls.Add(this.label8);
+            // 
+            // splitContainer5.Panel2
+            // 
+            this.splitContainer5.Panel2.Controls.Add(this.WorkProjectPanel);
+            this.splitContainer5.Size = new System.Drawing.Size(366, 454);
+            this.splitContainer5.SplitterDistance = 48;
+            this.splitContainer5.TabIndex = 37;
+            // 
+            // button10
+            // 
+            this.button10.Font = new System.Drawing.Font("Buxton Sketch", 18F, System.Drawing.FontStyle.Bold);
+            this.button10.Location = new System.Drawing.Point(21, 17);
+            this.button10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(220, 35);
+            this.button10.TabIndex = 19;
+            this.button10.Text = "Project Create";
+            this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.button10_Click_1);
+            // 
+            // button12
+            // 
+            this.button12.Font = new System.Drawing.Font("Buxton Sketch", 18F, System.Drawing.FontStyle.Bold);
+            this.button12.Location = new System.Drawing.Point(21, 56);
+            this.button12.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(220, 35);
+            this.button12.TabIndex = 20;
+            this.button12.Text = "Project Bakup";
+            this.button12.UseVisualStyleBackColor = true;
+            // 
+            // button14
+            // 
+            this.button14.Font = new System.Drawing.Font("Buxton Sketch", 18F, System.Drawing.FontStyle.Bold);
+            this.button14.Location = new System.Drawing.Point(21, 95);
+            this.button14.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button14.Name = "button14";
+            this.button14.Size = new System.Drawing.Size(220, 35);
+            this.button14.TabIndex = 21;
+            this.button14.Text = "Project Show Test";
+            this.button14.UseVisualStyleBackColor = true;
+            this.button14.Click += new System.EventHandler(this.button14_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1112, 511);
-            this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.MainTabControl);
             this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -670,7 +856,7 @@
             this.SizeChanged += new System.EventHandler(this.Form1_SizeChanged);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            this.tabControl1.ResumeLayout(false);
+            this.MainTabControl.ResumeLayout(false);
             this.DateLog.ResumeLayout(false);
             this.DateLog.PerformLayout();
             this.Test.ResumeLayout(false);
@@ -686,6 +872,25 @@
             this.ContentContainer.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.Project.ResumeLayout(false);
+            this.splitContainer2.Panel1.ResumeLayout(false);
+            this.splitContainer2.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
+            this.splitContainer2.ResumeLayout(false);
+            this.splitContainer3.Panel1.ResumeLayout(false);
+            this.splitContainer3.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).EndInit();
+            this.splitContainer3.ResumeLayout(false);
+            this.splitContainer4.Panel1.ResumeLayout(false);
+            this.splitContainer4.Panel1.PerformLayout();
+            this.splitContainer4.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer4)).EndInit();
+            this.splitContainer4.ResumeLayout(false);
+            this.splitContainer5.Panel1.ResumeLayout(false);
+            this.splitContainer5.Panel1.PerformLayout();
+            this.splitContainer5.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer5)).EndInit();
+            this.splitContainer5.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -711,7 +916,7 @@
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabControl MainTabControl;
         private System.Windows.Forms.TabPage DateLog;
         private System.Windows.Forms.TabPage Test;
         private System.Windows.Forms.Button button7;
@@ -743,6 +948,18 @@
         private System.Windows.Forms.Label lblDraft;
         private System.Windows.Forms.Label lblIdea;
         private System.Windows.Forms.ToolStripMenuItem 保存ToolStripMenuItem;
+        private System.Windows.Forms.TabPage Project;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Panel WorkProjectPanel;
+        private System.Windows.Forms.Panel PersonalProjectPanel;
+        private System.Windows.Forms.SplitContainer splitContainer2;
+        private System.Windows.Forms.SplitContainer splitContainer3;
+        private System.Windows.Forms.SplitContainer splitContainer4;
+        private System.Windows.Forms.SplitContainer splitContainer5;
+        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Button button12;
+        private System.Windows.Forms.Button button14;
     }
 }
 

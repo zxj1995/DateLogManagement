@@ -138,15 +138,15 @@ namespace FileContextSearch
             //fsh.GenerateFile();
             ContentChange();
             int index = 0;
-            for (int i = 0; i < tabControl1.TabPages.Count; i++)
+            for (int i = 0; i < MainTabControl.TabPages.Count; i++)
             {
-                if (tabControl1.TabPages[i].Name=="NewDateLog")
+                if (MainTabControl.TabPages[i].Name=="NewDateLog")
                 {
                     index = i;
                     break;
                 }
             }
-            tabControl1.SelectedIndex = index;
+            MainTabControl.SelectedIndex = index;
             //査小杰屏蔽于2019-3-8 16:08:18
             //OpenFileByTemplate();
             //Thread th = new Thread(new ThreadStart(OpenFileByTemplate));
@@ -212,6 +212,8 @@ namespace FileContextSearch
             form2.ShowDialog();
         }
         public static string ResearchPathDir="";
+        public static string ProjectPathDir = "";
+
         public System.Threading.Timer Tc;
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -224,6 +226,7 @@ namespace FileContextSearch
             //str = System.Configuration.ConfigurationManager.AppSettings["fileDirResearch"];
             FileSearchHelper.GetInstance().ResearchDir = str;
             ResearchPathDir = str;
+            ProjectPathDir = str;
             InitialDir();
             InitialUI();
             Tc = new System.Threading.Timer(new TimerCallback(autoSave), null, Timeout.Infinite, 3600000);
@@ -250,7 +253,9 @@ namespace FileContextSearch
         {
             var s = DateTime.Parse(DateTime.Now.Date.ToString());
             var ts = DateTime.Now.Subtract(s);
-            string[] fileNames = new string[] { "DailyMission.txt", "Idea.txt", "Draft.txt" };
+            string[] fileNames = new string[] { "DailyMission.txt" };
+            //string[] fileNames = new string[] { "DailyMission.txt", "Idea.txt", "Draft.txt" };
+
             RichTextBox[] RTXArr = new RichTextBox[] { DailyMission, Idea, Draft };
             if (ts.TotalMinutes <= 60)
             {
@@ -328,6 +333,11 @@ namespace FileContextSearch
                 {
                     Directory.CreateDirectory(FileSearchHelper.GetInstance().ResearchDir);
                     ResearchPathDir = FileSearchHelper.GetInstance().ResearchDir;
+                }
+                if (!Directory.Exists(FileSearchHelper.GetInstance().ProjectDir))
+                {
+                    Directory.CreateDirectory(FileSearchHelper.GetInstance().ProjectDir);
+                    ResearchPathDir = FileSearchHelper.GetInstance().ProjectDir;
                 }
             }
             catch (Exception ex)
@@ -463,7 +473,7 @@ namespace FileContextSearch
         public void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
             //添加两个TreeView控件
-            if (tabControl1.SelectedIndex==1)
+            if (MainTabControl.SelectedIndex==1)
             {
                 foreach (Control item in panel2.Controls)
                 {
@@ -554,16 +564,46 @@ namespace FileContextSearch
             }
             TN.Expand();
             TV.Nodes.Add(TN);
-            //foreach (var itemstr in Directory.GetDirectories(ResearchPathDir))
-            //{
-            //    var item = new DirectoryInfo(itemstr);
-            //    var TN = new TreeNode();
-            //    TN.Name = itemstr;
-            //    TN.Text = item.Name ;
-            //    TN=SearchSubItem(TN.Name,TN, state);
-            //    TV.Nodes.Add(TN);
-            //}
         }
+        private void LoadProjectNode(TreeView TV, string state)
+        {
+            TV.Nodes.Clear();
+            var DI = new DirectoryInfo(ProjectPathDir);
+            var TN = new TreeNode();
+            TN.Name = ProjectPathDir;
+            TN.Text = "ProjectList";
+            TN.Expand();
+            SearchProject(TN.Name,TN);
+            TV.Nodes.Add(TN);
+        }
+        public TreeNode SearchProject(string DirPath, TreeNode TN)
+        {
+            //var booltemp = false;
+            var strList = new List<string>();
+            if (Directory.Exists(DirPath))
+            {
+                var subItemArr = Directory.GetDirectories(DirPath);
+                foreach (var Diritem in subItemArr)
+                {
+                    var DI = new DirectoryInfo(Diritem);
+                    if (DI.Name == "Master" && DI.GetDirectories().Length > 0)
+                    {
+                        var tntemp = new TreeNode();
+                        tntemp.Name = DirPath;
+                        var dir = new DirectoryInfo(Diritem);
+                        tntemp.Text = dir.Parent.FullName;
+                        TN.Nodes.Add(tntemp);
+                        return TN;
+                    }
+                    else
+                    {
+                        SearchProject(Diritem, TN);
+                    }
+                }
+            }
+            return TN;
+        }
+
         public TreeNode SearchSubItem(string DirPath,TreeNode TN,string state)
         {
             var booltemp = false;
@@ -854,7 +894,34 @@ namespace FileContextSearch
         {
             autoSave(null);
         }
-        //2019-3-8 12:04:10
 
+
+        //2019-3-8 12:04:10
+        //2019年4月10日15:13:35
+        public TreeView PersonalProjectTW = new TreeView();
+        public TreeView WorkProjectTW = new TreeView();
+        private void button14_Click(object sender, EventArgs e)
+        {
+            LoadProjectNode(PersonalProjectTW, "");
+
+        }
+
+        private void button10_Click_1(object sender, EventArgs e)
+        {
+            Directory.CreateDirectory(Path.Combine(ProjectPathDir, ""));
+            //ResearchTreeView.Nodes.Add(itemstr, item.Name);
+            var strTemp = "";
+            if (PersonalProjectTW.SelectedNode is null)
+            {
+                strTemp = "";
+            }
+            else
+            {
+                strTemp = PersonalProjectTW.SelectedNode.Name;
+            }
+            var NodeSettingTemp = new NodeSetting(strTemp, this);
+            NodeSettingTemp.ShowDialog();
+        }
+        //2019年4月10日15:13:41
     }
 }
