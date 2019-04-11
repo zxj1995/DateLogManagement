@@ -507,7 +507,10 @@ namespace FileContextSearch
                 //LoadTreeView(ResearchTreeView, "");
                 //LoadTreeView(TV, "");
             }
-
+            ResearchTreeView.ExpandAll();
+            TV.ExpandAll();
+            PersonalProjectTW.ExpandAll();
+            WorkProjectTW.ExpandAll();
             //ContentChange();
         }
 
@@ -964,7 +967,7 @@ namespace FileContextSearch
             //然后删除原有文件
             string strPath = "";
             string strName = "";
-            if (!(PersonalProjectTW.SelectedNode is null) || !(WorkProjectTW.SelectedNode is null))
+            if ((!(PersonalProjectTW.SelectedNode is null)) || (!(WorkProjectTW.SelectedNode is null)))
             {
                 if (!(PersonalProjectTW.SelectedNode is null))
                 {
@@ -980,7 +983,7 @@ namespace FileContextSearch
                 }
                 else
                 {
-                    if (PersonalProjectTW.SelectedNode.Text == "ProjectList")
+                    if (WorkProjectTW.SelectedNode.Text == "ProjectList")
                     {
                             MessageBox.Show("请选择一个项目名称！", "Warning", MessageBoxButtons.OK);
                             return;                     
