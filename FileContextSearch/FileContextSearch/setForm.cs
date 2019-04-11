@@ -32,10 +32,10 @@ namespace FileContextSearch
 
         private void setForm_Load(object sender, EventArgs e)
         {
-            var config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.PerUserRoamingAndLocal);
+            //var config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.PerUserRoamingAndLocal);
             textBox4.Text = registryHelper.GetInstance().GetKeyValue("DateLogDirPath");// config.AppSettings.Settings["fileDir"].Value;
             textBox1.Text = registryHelper.GetInstance().GetKeyValue("ResearchDirPath");// config.AppSettings.Settings["fileDirResearch"].Value;
-            txtProjectPath.Text= registryHelper.GetInstance().GetKeyValue("fileDirProject");
+            txtProjectPath.Text= registryHelper.GetInstance().GetKeyValue("ProjectDirPath");
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -145,26 +145,14 @@ namespace FileContextSearch
 
         private void ProjectPathSave_Click(object sender, EventArgs e)
         {
-            System.Configuration.ConfigurationManager.AppSettings.Set("fileDirProject", txtProjectPath.Text);
+            System.Configuration.ConfigurationManager.AppSettings.Set("ProjectDirPath", txtProjectPath.Text);
             var config = ConfigurationManager.OpenExeConfiguration(Application.ExecutablePath);
-            config.AppSettings.Settings["fileDirProject"].Value = txtProjectPath.Text;
+            config.AppSettings.Settings["ProjectDirPath"].Value = txtProjectPath.Text;
             config.Save(ConfigurationSaveMode.Modified);
-            //var logPath = "DateLogDirPath";
             var ProjectPath = "ProjectDirPath";
             registryHelper.GetInstance().AddKey(ProjectPath, txtProjectPath.Text);
             FileSearchHelper.GetInstance().ProjectDir = txtProjectPath.Text;
             Form1.ProjectPathDir = txtProjectPath.Text;
-
-
-            //System.Configuration.ConfigurationManager.AppSettings.Set("fileDirResearch", textBox4.Text);
-            //var config = ConfigurationManager.OpenExeConfiguration(Application.ExecutablePath);
-            //config.AppSettings.Settings["fileDirResearch"].Value = textBox1.Text;
-            //config.Save(ConfigurationSaveMode.Modified);
-            ////var logPath = "DateLogDirPath";
-            //var ResearchPath = "ResearchDirPath";
-            //registryHelper.GetInstance().AddKey(ResearchPath, textBox1.Text);
-            //FileSearchHelper.GetInstance().ResearchDir = textBox1.Text;
-            //Form1.ResearchPathDir = textBox1.Text;
         }
 
         private void button11_Click(object sender, EventArgs e)

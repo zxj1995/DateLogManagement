@@ -199,7 +199,7 @@ namespace FileContextSearch
         {
             var logPath = "DateLogDirPath";
             var ResearchPath = "ResearchDirPath";
-            var ProjectPath = "fileDirProject";
+            var ProjectPath = "ProjectDirPath";
             //检查注册表中是否存在日志保存地址信息
             checkFilePath();
             //var str = System.Configuration.ConfigurationManager.AppSettings["fileDir"];
@@ -1052,7 +1052,7 @@ namespace FileContextSearch
         {
             var logPath = "DateLogDirPath";
             var ResearchPath = "ResearchDirPath";
-            var ProjectPath = "fileDirProject";
+            var ProjectPath = "ProjectDirPath";
 
 
             //logPath = "DateLogDirPath";
