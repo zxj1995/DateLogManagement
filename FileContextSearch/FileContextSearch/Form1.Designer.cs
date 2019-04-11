@@ -79,19 +79,26 @@
             this.DailyMission = new System.Windows.Forms.RichTextBox();
             this.Idea = new System.Windows.Forms.RichTextBox();
             this.Draft = new System.Windows.Forms.RichTextBox();
-            this.styleManager1 = new DevComponents.DotNetBar.StyleManager(this.components);
             this.Project = new System.Windows.Forms.TabPage();
-            this.PersonalProjectPanel = new System.Windows.Forms.Panel();
-            this.WorkProjectPanel = new System.Windows.Forms.Panel();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.button14 = new System.Windows.Forms.Button();
+            this.button12 = new System.Windows.Forms.Button();
+            this.button10 = new System.Windows.Forms.Button();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
             this.splitContainer4 = new System.Windows.Forms.SplitContainer();
+            this.label7 = new System.Windows.Forms.Label();
+            this.PersonalProjectPanel = new System.Windows.Forms.Panel();
             this.splitContainer5 = new System.Windows.Forms.SplitContainer();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button12 = new System.Windows.Forms.Button();
-            this.button14 = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.WorkProjectPanel = new System.Windows.Forms.Panel();
+            this.styleManager1 = new DevComponents.DotNetBar.StyleManager(this.components);
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.button16 = new System.Windows.Forms.Button();
+            this.button18 = new System.Windows.Forms.Button();
+            this.button19 = new System.Windows.Forms.Button();
+            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.textBox11 = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             this.MainTabControl.SuspendLayout();
             this.DateLog.SuspendLayout();
@@ -123,6 +130,7 @@
             this.splitContainer5.Panel1.SuspendLayout();
             this.splitContainer5.Panel2.SuspendLayout();
             this.splitContainer5.SuspendLayout();
+            this.tabPage1.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
@@ -322,6 +330,7 @@
             this.MainTabControl.Controls.Add(this.Research);
             this.MainTabControl.Controls.Add(this.NewDateLog);
             this.MainTabControl.Controls.Add(this.Project);
+            this.MainTabControl.Controls.Add(this.tabPage1);
             this.MainTabControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MainTabControl.Location = new System.Drawing.Point(0, 25);
             this.MainTabControl.Name = "MainTabControl";
@@ -675,11 +684,6 @@
             this.Draft.WordWrap = false;
             this.Draft.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.Draft_MouseDoubleClick);
             // 
-            // styleManager1
-            // 
-            this.styleManager1.ManagerStyle = DevComponents.DotNetBar.eStyle.Office2013;
-            this.styleManager1.MetroColorParameters = new DevComponents.DotNetBar.Metro.ColorTables.MetroColorGeneratorParameters(System.Drawing.Color.White, System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(87)))), ((int)(((byte)(154))))));
-            // 
             // Project
             // 
             this.Project.Controls.Add(this.splitContainer2);
@@ -691,47 +695,10 @@
             this.Project.Text = "Project";
             this.Project.UseVisualStyleBackColor = true;
             // 
-            // PersonalProjectPanel
-            // 
-            this.PersonalProjectPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.PersonalProjectPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PersonalProjectPanel.Location = new System.Drawing.Point(0, 0);
-            this.PersonalProjectPanel.Name = "PersonalProjectPanel";
-            this.PersonalProjectPanel.Size = new System.Drawing.Size(358, 402);
-            this.PersonalProjectPanel.TabIndex = 0;
-            // 
-            // WorkProjectPanel
-            // 
-            this.WorkProjectPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.WorkProjectPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.WorkProjectPanel.Location = new System.Drawing.Point(0, 0);
-            this.WorkProjectPanel.Name = "WorkProjectPanel";
-            this.WorkProjectPanel.Size = new System.Drawing.Size(366, 402);
-            this.WorkProjectPanel.TabIndex = 1;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Buxton Sketch", 18F, System.Drawing.FontStyle.Bold);
-            this.label7.Location = new System.Drawing.Point(39, 13);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(96, 29);
-            this.label7.TabIndex = 35;
-            this.label7.Text = "Personal";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Buxton Sketch", 18F, System.Drawing.FontStyle.Bold);
-            this.label8.Location = new System.Drawing.Point(34, 17);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(62, 29);
-            this.label8.TabIndex = 36;
-            this.label8.Text = "Work";
-            // 
             // splitContainer2
             // 
             this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer2.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
             this.splitContainer2.Location = new System.Drawing.Point(3, 3);
             this.splitContainer2.Name = "splitContainer2";
             // 
@@ -747,6 +714,42 @@
             this.splitContainer2.Size = new System.Drawing.Size(1098, 454);
             this.splitContainer2.SplitterDistance = 366;
             this.splitContainer2.TabIndex = 37;
+            // 
+            // button14
+            // 
+            this.button14.Font = new System.Drawing.Font("Buxton Sketch", 18F, System.Drawing.FontStyle.Bold);
+            this.button14.Location = new System.Drawing.Point(21, 95);
+            this.button14.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button14.Name = "button14";
+            this.button14.Size = new System.Drawing.Size(220, 35);
+            this.button14.TabIndex = 21;
+            this.button14.Text = "Project Show Test";
+            this.button14.UseVisualStyleBackColor = true;
+            this.button14.Click += new System.EventHandler(this.button14_Click);
+            // 
+            // button12
+            // 
+            this.button12.Font = new System.Drawing.Font("Buxton Sketch", 18F, System.Drawing.FontStyle.Bold);
+            this.button12.Location = new System.Drawing.Point(21, 56);
+            this.button12.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(220, 35);
+            this.button12.TabIndex = 20;
+            this.button12.Text = "Project Bakup";
+            this.button12.UseVisualStyleBackColor = true;
+            this.button12.Click += new System.EventHandler(this.button12_Click_1);
+            // 
+            // button10
+            // 
+            this.button10.Font = new System.Drawing.Font("Buxton Sketch", 18F, System.Drawing.FontStyle.Bold);
+            this.button10.Location = new System.Drawing.Point(21, 17);
+            this.button10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(220, 35);
+            this.button10.TabIndex = 19;
+            this.button10.Text = "Project Create";
+            this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.button10_Click_1);
             // 
             // splitContainer3
             // 
@@ -768,6 +771,7 @@
             // splitContainer4
             // 
             this.splitContainer4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer4.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
             this.splitContainer4.Location = new System.Drawing.Point(0, 0);
             this.splitContainer4.Name = "splitContainer4";
             this.splitContainer4.Orientation = System.Windows.Forms.Orientation.Horizontal;
@@ -783,9 +787,29 @@
             this.splitContainer4.SplitterDistance = 48;
             this.splitContainer4.TabIndex = 36;
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Buxton Sketch", 18F, System.Drawing.FontStyle.Bold);
+            this.label7.Location = new System.Drawing.Point(37, 17);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(96, 29);
+            this.label7.TabIndex = 35;
+            this.label7.Text = "Personal";
+            // 
+            // PersonalProjectPanel
+            // 
+            this.PersonalProjectPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.PersonalProjectPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PersonalProjectPanel.Location = new System.Drawing.Point(0, 0);
+            this.PersonalProjectPanel.Name = "PersonalProjectPanel";
+            this.PersonalProjectPanel.Size = new System.Drawing.Size(358, 402);
+            this.PersonalProjectPanel.TabIndex = 0;
+            // 
             // splitContainer5
             // 
             this.splitContainer5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer5.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
             this.splitContainer5.Location = new System.Drawing.Point(0, 0);
             this.splitContainer5.Name = "splitContainer5";
             this.splitContainer5.Orientation = System.Windows.Forms.Orientation.Horizontal;
@@ -801,40 +825,113 @@
             this.splitContainer5.SplitterDistance = 48;
             this.splitContainer5.TabIndex = 37;
             // 
-            // button10
+            // label8
             // 
-            this.button10.Font = new System.Drawing.Font("Buxton Sketch", 18F, System.Drawing.FontStyle.Bold);
-            this.button10.Location = new System.Drawing.Point(21, 17);
-            this.button10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(220, 35);
-            this.button10.TabIndex = 19;
-            this.button10.Text = "Project Create";
-            this.button10.UseVisualStyleBackColor = true;
-            this.button10.Click += new System.EventHandler(this.button10_Click_1);
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Buxton Sketch", 18F, System.Drawing.FontStyle.Bold);
+            this.label8.Location = new System.Drawing.Point(34, 17);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(62, 29);
+            this.label8.TabIndex = 36;
+            this.label8.Text = "Work";
             // 
-            // button12
+            // WorkProjectPanel
             // 
-            this.button12.Font = new System.Drawing.Font("Buxton Sketch", 18F, System.Drawing.FontStyle.Bold);
-            this.button12.Location = new System.Drawing.Point(21, 56);
-            this.button12.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(220, 35);
-            this.button12.TabIndex = 20;
-            this.button12.Text = "Project Bakup";
-            this.button12.UseVisualStyleBackColor = true;
+            this.WorkProjectPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.WorkProjectPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.WorkProjectPanel.Location = new System.Drawing.Point(0, 0);
+            this.WorkProjectPanel.Name = "WorkProjectPanel";
+            this.WorkProjectPanel.Size = new System.Drawing.Size(366, 402);
+            this.WorkProjectPanel.TabIndex = 1;
             // 
-            // button14
+            // styleManager1
             // 
-            this.button14.Font = new System.Drawing.Font("Buxton Sketch", 18F, System.Drawing.FontStyle.Bold);
-            this.button14.Location = new System.Drawing.Point(21, 95);
-            this.button14.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(220, 35);
-            this.button14.TabIndex = 21;
-            this.button14.Text = "Project Show Test";
-            this.button14.UseVisualStyleBackColor = true;
-            this.button14.Click += new System.EventHandler(this.button14_Click);
+            this.styleManager1.ManagerStyle = DevComponents.DotNetBar.eStyle.Office2013;
+            this.styleManager1.MetroColorParameters = new DevComponents.DotNetBar.Metro.ColorTables.MetroColorGeneratorParameters(System.Drawing.Color.White, System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(87)))), ((int)(((byte)(154))))));
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.textBox11);
+            this.tabPage1.Controls.Add(this.textBox10);
+            this.tabPage1.Controls.Add(this.button19);
+            this.tabPage1.Controls.Add(this.button18);
+            this.tabPage1.Controls.Add(this.button16);
+            this.tabPage1.Controls.Add(this.textBox9);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(1104, 460);
+            this.tabPage1.TabIndex = 5;
+            this.tabPage1.Text = "tabPage1";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // textBox9
+            // 
+            this.textBox9.Enabled = false;
+            this.textBox9.Location = new System.Drawing.Point(130, 121);
+            this.textBox9.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBox9.Name = "textBox9";
+            this.textBox9.Size = new System.Drawing.Size(596, 21);
+            this.textBox9.TabIndex = 21;
+            this.textBox9.Text = "C:\\ZXJ\\GitRepository\\DateLogManagement\\FileContextSearch\\FileContextSearch\\Test\\B" +
+    "";
+            // 
+            // button16
+            // 
+            this.button16.Font = new System.Drawing.Font("Buxton Sketch", 18F, System.Drawing.FontStyle.Bold);
+            this.button16.Location = new System.Drawing.Point(130, 196);
+            this.button16.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button16.Name = "button16";
+            this.button16.Size = new System.Drawing.Size(220, 35);
+            this.button16.TabIndex = 22;
+            this.button16.Text = "压缩文件夹";
+            this.button16.UseVisualStyleBackColor = true;
+            this.button16.Click += new System.EventHandler(this.button16_Click);
+            // 
+            // button18
+            // 
+            this.button18.Font = new System.Drawing.Font("Buxton Sketch", 18F, System.Drawing.FontStyle.Bold);
+            this.button18.Location = new System.Drawing.Point(130, 235);
+            this.button18.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button18.Name = "button18";
+            this.button18.Size = new System.Drawing.Size(220, 35);
+            this.button18.TabIndex = 23;
+            this.button18.Text = "复制文件夹";
+            this.button18.UseVisualStyleBackColor = true;
+            this.button18.Click += new System.EventHandler(this.button18_Click);
+            // 
+            // button19
+            // 
+            this.button19.Font = new System.Drawing.Font("Buxton Sketch", 18F, System.Drawing.FontStyle.Bold);
+            this.button19.Location = new System.Drawing.Point(130, 274);
+            this.button19.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button19.Name = "button19";
+            this.button19.Size = new System.Drawing.Size(335, 35);
+            this.button19.TabIndex = 24;
+            this.button19.Text = "删除被压缩的文件夹";
+            this.button19.UseVisualStyleBackColor = true;
+            this.button19.Click += new System.EventHandler(this.button19_Click);
+            // 
+            // textBox10
+            // 
+            this.textBox10.Enabled = false;
+            this.textBox10.Location = new System.Drawing.Point(130, 158);
+            this.textBox10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBox10.Name = "textBox10";
+            this.textBox10.Size = new System.Drawing.Size(596, 21);
+            this.textBox10.TabIndex = 25;
+            this.textBox10.Text = "C:\\ZXJ\\GitRepository\\DateLogManagement\\FileContextSearch\\FileContextSearch\\Test\\A" +
+    "";
+            // 
+            // textBox11
+            // 
+            this.textBox11.Enabled = false;
+            this.textBox11.Location = new System.Drawing.Point(130, 86);
+            this.textBox11.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBox11.Name = "textBox11";
+            this.textBox11.Size = new System.Drawing.Size(596, 21);
+            this.textBox11.TabIndex = 26;
+            this.textBox11.Text = "C:\\ZXJ\\GitRepository\\DateLogManagement\\FileContextSearch\\FileContextSearch\\Test";
             // 
             // Form1
             // 
@@ -891,6 +988,8 @@
             this.splitContainer5.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer5)).EndInit();
             this.splitContainer5.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -960,6 +1059,13 @@
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Button button12;
         private System.Windows.Forms.Button button14;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.Button button19;
+        private System.Windows.Forms.Button button18;
+        private System.Windows.Forms.Button button16;
+        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.TextBox textBox11;
     }
 }
 

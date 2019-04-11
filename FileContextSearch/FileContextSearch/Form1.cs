@@ -23,24 +23,10 @@ namespace FileContextSearch
         public Form1()
         {
             InitializeComponent();
-            //this.textBox3.Text = DateTime.Now.AddMonths(-1).ToString("yyyy-MM-dd");
-            //this.textBox2.Text = DateTime.Now.AddDays(-1).ToString("yyyy-MM-dd");
-            //this.button5.Visible = false;
             Test.Parent = null;
-
         }
         public static string startDate;
         public static string endDate;
-        //public delegate void ChangeTextBoxValue(TextBox TB, string strTemp);
-
-        //public void ChangeTextBoxMain()
-        //{
-        //    var deletemp = new ChangeTextBoxValue(ChangeTextBoxText);
-        //    deletemp(textBox1, "success");
-        //    deletemp(textBox2, "success");
-        //}
-
-
         public void ChangeTextBoxText( string TB,string strTemp)
         {
             foreach (var item in this.DateLog.Controls)
@@ -94,10 +80,6 @@ namespace FileContextSearch
                 var dArr = fsh.getDate(startTime, endTime);
                 foreach (var item in dArr)
                 {
-                    //if (item=="2018-09-03")
-                    //{
-                    //    string aa="";  
-                    //}
                     var strtemp1 = fsh.GetFileContent(DateTime.Parse(item));
                     if (strtemp1 != "null")
                     {
@@ -179,8 +161,6 @@ namespace FileContextSearch
                 int y1 = 0;
                 var temp = new TestFun();
                 temp.OpenAndSetFileSize(filePath, x1, y1, sw, sh);
-                //Thread.Sleep(1000);
-                //OpenAndSetWindow(filePath, 200 * i, 200 * i, 800 + 20 * i, 800 + 20 * i);
             }
         }
 
@@ -223,9 +203,11 @@ namespace FileContextSearch
             FileSearchHelper.GetInstance().DateLogDir = str;
             var ResearchPath = "ResearchDirPath";
             str = registryHelper.GetInstance().GetKeyValue(ResearchPath);
-            //str = System.Configuration.ConfigurationManager.AppSettings["fileDirResearch"];
             FileSearchHelper.GetInstance().ResearchDir = str;
             ResearchPathDir = str;
+            var ProjectPath = "fileDirProject";
+            str = registryHelper.GetInstance().GetKeyValue(ProjectPath);
+            FileSearchHelper.GetInstance().ProjectDir = str;
             ProjectPathDir = str;
             InitialDir();
             InitialUI();
@@ -253,13 +235,13 @@ namespace FileContextSearch
         {
             var s = DateTime.Parse(DateTime.Now.Date.ToString());
             var ts = DateTime.Now.Subtract(s);
-            string[] fileNames = new string[] { "DailyMission.txt" };
-            //string[] fileNames = new string[] { "DailyMission.txt", "Idea.txt", "Draft.txt" };
+            string[] fileNamesClear = new string[] { "DailyMission.txt" };
+            string[] fileNames = new string[] { "DailyMission.txt", "Idea.txt", "Draft.txt" };
 
             RichTextBox[] RTXArr = new RichTextBox[] { DailyMission, Idea, Draft };
             if (ts.TotalMinutes <= 60)
             {
-                for (int i = 0; i < RTXArr.Length; i++)
+                for (int i = 0; i < fileNamesClear.Length; i++)
                 {
                     RTXArr[i].Text = "";
                 }
@@ -288,25 +270,42 @@ namespace FileContextSearch
             }
             NodeState.SelectedIndex=0;
             {
-                TV = new TreeView();
-                TV.Name = "SearchTV";
-                TV.Nodes.Clear();
-                TV.Size = new Size(SearchName.Size.Width, SearchName.Size.Height - label6.Height);
-                TV.Dock = DockStyle.Bottom;
-                TV.DoubleClick += TreeNode_DoubleClick;
-                ResearchTreeView.Nodes.Clear();
-                ResearchTreeView.Name = "ResearchTreeView";
-                ResearchTreeView.DoubleClick += TreeNode_DoubleClick;
-                ResearchTreeView.Size = new Size(panel2.Size.Width, panel2.Size.Height - label1.Height);
-                ResearchTreeView.Dock = DockStyle.Bottom;
-                TV.Font = new Font("微软雅黑", 12, FontStyle.Bold);
-                ResearchTreeView.Font = new Font("微软雅黑", 12, FontStyle.Bold);
-                TV.MouseDown += MouseDown;
-                ResearchTreeView.MouseDown += MouseDown;
-                TV.BeforeCollapse += BeforeCollapse;
-                ResearchTreeView.BeforeCollapse += BeforeCollapse;
-                TV.BeforeExpand += BeforeExpand;
-                ResearchTreeView.BeforeExpand += BeforeExpand;
+                var tvList = new TreeView[] { TV, ResearchTreeView, WorkProjectTW, PersonalProjectTW };
+                var tvNameList = new string[] { "SearchTV", "ResearchTreeView", "Work", "Personal" };
+                for (int i = 0; i < tvList.Length; i++)
+                {
+                    //tvList[i] = new TreeView();
+                    tvList[i].Name = tvNameList[i];
+                    tvList[i].Nodes.Clear();
+                    tvList[i].Size = new Size(SearchName.Size.Width, SearchName.Size.Height - label6.Height);
+                    tvList[i].Dock = DockStyle.Bottom;
+                    tvList[i].DoubleClick += TreeNode_DoubleClick;
+                    tvList[i].Font = new Font("微软雅黑", 12, FontStyle.Bold);
+                    tvList[i].MouseDown += MouseDown;
+                    tvList[i].BeforeCollapse += BeforeCollapse;
+                    tvList[i].BeforeExpand += BeforeExpand;
+
+                }
+               
+                //TV = new TreeView();
+                //TV.Name = "SearchTV";
+                //TV.Nodes.Clear();
+                //TV.Size = new Size(SearchName.Size.Width, SearchName.Size.Height - label6.Height);
+                //TV.Dock = DockStyle.Bottom;
+                //TV.DoubleClick += TreeNode_DoubleClick;
+                //ResearchTreeView.Nodes.Clear();
+                //ResearchTreeView.Name = "ResearchTreeView";
+                //ResearchTreeView.DoubleClick += TreeNode_DoubleClick;
+                //ResearchTreeView.Size = new Size(panel2.Size.Width, panel2.Size.Height - label1.Height);
+                //ResearchTreeView.Dock = DockStyle.Bottom;
+                //TV.Font = new Font("微软雅黑", 12, FontStyle.Bold);
+                //ResearchTreeView.Font = new Font("微软雅黑", 12, FontStyle.Bold);
+                //TV.MouseDown += MouseDown;
+                //ResearchTreeView.MouseDown += MouseDown;
+                //TV.BeforeCollapse += BeforeCollapse;
+                //ResearchTreeView.BeforeCollapse += BeforeCollapse;
+                //TV.BeforeExpand += BeforeExpand;
+                //ResearchTreeView.BeforeExpand += BeforeExpand;
 
             }
 
@@ -337,7 +336,7 @@ namespace FileContextSearch
                 if (!Directory.Exists(FileSearchHelper.GetInstance().ProjectDir))
                 {
                     Directory.CreateDirectory(FileSearchHelper.GetInstance().ProjectDir);
-                    ResearchPathDir = FileSearchHelper.GetInstance().ProjectDir;
+                   ProjectPathDir = FileSearchHelper.GetInstance().ProjectDir;
                 }
             }
             catch (Exception ex)
@@ -469,11 +468,13 @@ namespace FileContextSearch
         //}
         public TreeView ResearchTreeView = new TreeView();
         public TreeView TV = new TreeView();
+        public TreeView PersonalProjectTW = new TreeView();
+        public TreeView WorkProjectTW = new TreeView();
 
         public void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
             //添加两个TreeView控件
-            if (MainTabControl.SelectedIndex==1)
+            if (MainTabControl.SelectedIndex == 1)
             {
                 foreach (Control item in panel2.Controls)
                 {
@@ -496,6 +497,27 @@ namespace FileContextSearch
                 LoadTreeView(ResearchTreeView, "");
                 LoadTreeView(TV, "");
             }
+            else if (MainTabControl.SelectedIndex == 3)
+            {
+                foreach (Control item in panel2.Controls)
+                {
+                    if (item.Name == "PersonalProjectTW" || item.Name == "WorkProjectTW")
+                    {
+                        PersonalProjectPanel.Controls.Remove(item);
+                        WorkProjectPanel.Controls.Remove(item);
+                        break;
+                    }
+                }
+                PersonalProjectTW.Dock = DockStyle.Fill;
+                WorkProjectTW.Dock = DockStyle.Fill;
+                PersonalProjectPanel.Controls.Add(PersonalProjectTW);
+                //WorkProjectPanel.Controls.Add(PersonalProjectTW);
+                WorkProjectPanel.Controls.Add(WorkProjectTW);
+                LoadTVForProject();
+                //LoadTreeView(ResearchTreeView, "");
+                //LoadTreeView(TV, "");
+            }
+
             //ContentChange();
         }
 
@@ -565,15 +587,15 @@ namespace FileContextSearch
             TN.Expand();
             TV.Nodes.Add(TN);
         }
-        private void LoadProjectNode(TreeView TV, string state)
+        public void LoadProjectNode(TreeView TV, string state)
         {
             TV.Nodes.Clear();
             var DI = new DirectoryInfo(ProjectPathDir);
             var TN = new TreeNode();
-            TN.Name = ProjectPathDir;
+            TN.Name = Path.Combine(ProjectPathDir,TV.Name);
             TN.Text = "ProjectList";
             TN.Expand();
-            SearchProject(TN.Name,TN);
+            TN= SearchProject(TN.Name,TN);
             TV.Nodes.Add(TN);
         }
         public TreeNode SearchProject(string DirPath, TreeNode TN)
@@ -583,28 +605,29 @@ namespace FileContextSearch
             if (Directory.Exists(DirPath))
             {
                 var subItemArr = Directory.GetDirectories(DirPath);
-                foreach (var Diritem in subItemArr)
+                foreach (var item in subItemArr)
                 {
-                    var DI = new DirectoryInfo(Diritem);
-                    if (DI.Name == "Master" && DI.GetDirectories().Length > 0)
+                    var fileArr = new string[] { "Master", "Bakup", "Readme.txt" };
+                    if (Directory.Exists(Path.Combine(item, fileArr[0])) && Directory.Exists(Path.Combine(item, fileArr[1])) && File.Exists(Path.Combine(item, fileArr[2])))
                     {
-                        var tntemp = new TreeNode();
-                        tntemp.Name = DirPath;
-                        var dir = new DirectoryInfo(Diritem);
-                        tntemp.Text = dir.Parent.FullName;
-                        TN.Nodes.Add(tntemp);
-                        return TN;
-                    }
-                    else
-                    {
-                        SearchProject(Diritem, TN);
+                        var subTN = new TreeNode();
+                        subTN.Name = item;
+                        subTN.Text = item.Split('\\')[item.Split('\\').Length - 1];
+                        TN.Nodes.Add(subTN);
+                        continue;
                     }
                 }
+            }
+            else
+            {
+                MessageBox.Show("文件夹目录不存在!","Warning",MessageBoxButtons.OK);
             }
             return TN;
         }
 
-        public TreeNode SearchSubItem(string DirPath,TreeNode TN,string state)
+    
+
+    public TreeNode SearchSubItem(string DirPath,TreeNode TN,string state)
         {
             var booltemp = false;
             var strList = new List<string>();
@@ -898,29 +921,132 @@ namespace FileContextSearch
 
         //2019-3-8 12:04:10
         //2019年4月10日15:13:35
-        public TreeView PersonalProjectTW = new TreeView();
-        public TreeView WorkProjectTW = new TreeView();
+
         private void button14_Click(object sender, EventArgs e)
         {
-            LoadProjectNode(PersonalProjectTW, "");
 
+            LoadTVForProject();
         }
-
+        private void LoadTVForProject()
+        {
+            PersonalProjectTW.Name = "Personal";
+            LoadProjectNode(PersonalProjectTW, "");
+            WorkProjectTW.Name = "Work";
+            LoadProjectNode(WorkProjectTW, "");
+        }
         private void button10_Click_1(object sender, EventArgs e)
         {
             Directory.CreateDirectory(Path.Combine(ProjectPathDir, ""));
             //ResearchTreeView.Nodes.Add(itemstr, item.Name);
             var strTemp = "";
-            if (PersonalProjectTW.SelectedNode is null)
+            if (!(PersonalProjectTW.SelectedNode is null)|| !(WorkProjectTW.SelectedNode is null))
             {
-                strTemp = "";
+                var strtemp ="";
+                if (!(PersonalProjectTW.SelectedNode is null))
+                {
+                    strtemp = Path.Combine(ProjectPathDir, "Personal");
+                }
+                else
+                {
+                    strtemp = Path.Combine(ProjectPathDir, "Work");
+
+                }
+                var NodeSettingTemp = new NodeSetting(strtemp, this,"Project");
+                NodeSettingTemp.ShowDialog();
             }
             else
             {
-                strTemp = PersonalProjectTW.SelectedNode.Name;
+                MessageBox.Show("请选择要创建的项目类型！","Warning", MessageBoxButtons.OK);
+                return;
+                //strTemp = PersonalProjectTW.SelectedNode.Name;
             }
-            var NodeSettingTemp = new NodeSetting(strTemp, this);
-            NodeSettingTemp.ShowDialog();
+         
+        }
+
+        private void button12_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+
+
+                        
+            //将master中所有文件压缩后复制到bakup文件夹中
+            //然后删除原有文件
+            string strPath = "";
+            string strName = "";
+            if (!(PersonalProjectTW.SelectedNode is null) || !(WorkProjectTW.SelectedNode is null))
+            {
+                if (!(PersonalProjectTW.SelectedNode is null))
+                {
+                    if (PersonalProjectTW.SelectedNode.Text== "ProjectList")
+                    {
+                            MessageBox.Show("请选择一个项目名称！", "Warning", MessageBoxButtons.OK);
+                            return;
+
+                    }
+                    //ProjectList
+                    strPath = PersonalProjectTW.SelectedNode.Name;
+                    strName = PersonalProjectTW.SelectedNode.Text;
+                }
+                else
+                {
+                    if (PersonalProjectTW.SelectedNode.Text == "ProjectList")
+                    {
+                            MessageBox.Show("请选择一个项目名称！", "Warning", MessageBoxButtons.OK);
+                            return;                     
+                    }
+                    strPath = WorkProjectTW.SelectedNode.Name;
+                    strName = WorkProjectTW.SelectedNode.Text;
+                }
+            }
+           else
+            {
+                MessageBox.Show("请选择一个项目名称！", "Warning", MessageBoxButtons.OK);
+                return;
+            }
+            SharpZiplibHelper.CompressDirectory(Path.Combine(strPath,"Master"), Path.Combine(strPath, strName+".rar"), 9, false);
+            FileInfo ii = new FileInfo(Path.Combine(strPath, strName + ".rar"));
+            ii.CopyTo(Path.Combine(strPath,"Bakup", strName+"-" +DateTime.Now.ToString("MM_dd_HH_mm_ss") + ".rar"), false);
+            File.Delete(Path.Combine(strPath, strName + ".rar"));
+            MessageBox.Show("项目备份成功！", "Successfully", MessageBoxButtons.OK);
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("项目备份失败！", "Error", MessageBoxButtons.OK);
+                throw;
+            }
+        }
+        string strName = "";
+        private void button16_Click(object sender, EventArgs e)
+        {
+            strName ="zxjtest.rar";
+            strName = Path.Combine(textBox11.Text, strName);
+            //textBox9.Text=Path.Combine(textBox9.Text);
+            SharpZiplibHelper.CompressDirectory(textBox9.Text, strName, 9,false);
+        }
+
+        private void button18_Click(object sender, EventArgs e)
+        {
+            if (File.Exists(Path.Combine(textBox11.Text,strName)))
+            {
+                //File.Copy(Path.Combine(textBox11.Text, strName), Path.Combine(textBox10.Text, strName));
+                FileInfo ii = new FileInfo(Path.Combine(textBox11.Text, strName));
+                ii.CopyTo(Path.Combine(textBox10.Text, "zxjtest.rar"), false);
+                //using (FileInfo ii = new FileInfo(Path.Combine(textBox11.Text, strName)))
+                //{
+
+                //}
+                //using (var fs = new FileStream(Path.Combine(textBox10.Text, strName), FileMode.Open))
+                //{
+                //    fs.Write(,)
+                //}
+            }
+        }
+
+        private void button19_Click(object sender, EventArgs e)
+        {
+            File.Delete(strName);
         }
         //2019年4月10日15:13:41
     }
