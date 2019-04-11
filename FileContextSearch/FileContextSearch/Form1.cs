@@ -65,7 +65,6 @@ namespace FileContextSearch
             throw new NotImplementedException();
         }
 
-        public string FileDireoryPath;
         public List<string> fileWithSearchContentList=new List<string>();
 
         private void button1_Click(object sender, EventArgs e)
@@ -193,19 +192,25 @@ namespace FileContextSearch
         }
         public static string ResearchPathDir="";
         public static string ProjectPathDir = "";
+        public static string DatelogPathDir = "";
 
         public System.Threading.Timer Tc;
         private void Form1_Load(object sender, EventArgs e)
         {
-            //var str = System.Configuration.ConfigurationManager.AppSettings["fileDir"];
             var logPath = "DateLogDirPath";
+            var ResearchPath = "ResearchDirPath";
+            var ProjectPath = "fileDirProject";
+            //检查注册表中是否存在日志保存地址信息
+            checkFilePath();
+            //var str = System.Configuration.ConfigurationManager.AppSettings["fileDir"];
             var str = registryHelper.GetInstance().GetKeyValue(logPath);
             FileSearchHelper.GetInstance().DateLogDir = str;
-            var ResearchPath = "ResearchDirPath";
+            DatelogPathDir = str;
+
             str = registryHelper.GetInstance().GetKeyValue(ResearchPath);
             FileSearchHelper.GetInstance().ResearchDir = str;
             ResearchPathDir = str;
-            var ProjectPath = "fileDirProject";
+
             str = registryHelper.GetInstance().GetKeyValue(ProjectPath);
             FileSearchHelper.GetInstance().ProjectDir = str;
             ProjectPathDir = str;
@@ -215,21 +220,6 @@ namespace FileContextSearch
             Tc.Change(3600000, 3600000);
             //加载treeview
             this.WindowState =FormWindowState.Maximized;
-            //检查注册表中是否存在日志保存地址信息
-             logPath = "DateLogDirPath";
-             ResearchPath = "ResearchDirPath";
-            if (! registryHelper.GetInstance().IsRegisted (logPath))
-            {
-                MessageBox.Show("请设置日志保存文件夹！", "Warning", MessageBoxButtons.OK);
-                var sf = new setForm();
-                sf.ShowDialog();
-            }
-            if (!registryHelper.GetInstance().IsRegisted(ResearchPath))
-            {
-                MessageBox.Show("请设置Research保存文件夹！", "Warning", MessageBoxButtons.OK);
-                var sf = new setForm();
-                sf.ShowDialog();
-            }
         }
         public void autoSave(object obj)
         {
@@ -1048,6 +1038,51 @@ namespace FileContextSearch
         {
             File.Delete(strName);
         }
+
+        private void button15_Click(object sender, EventArgs e)
+        {
+            
+            var NodeSettingTemp = new NodeSetting("", this);
+            NodeSettingTemp.ShowDialog();
+            var NodeSettingTemp1 = new NodeSetting("", this);
+            NodeSettingTemp1.ShowDialog();
+        }
         //2019年4月10日15:13:41
+        private Boolean checkFilePath()
+        {
+            var logPath = "DateLogDirPath";
+            var ResearchPath = "ResearchDirPath";
+            var ProjectPath = "fileDirProject";
+
+
+            //logPath = "DateLogDirPath";
+            //ResearchPath = "ResearchDirPath";
+            if (!registryHelper.GetInstance().IsRegisted(logPath))
+            {
+                MessageBox.Show("请设置日志保存文件夹！", "Warning", MessageBoxButtons.OK);
+                var sf = new setForm();
+                sf.ShowDialog();
+            }
+            if (!registryHelper.GetInstance().IsRegisted(ResearchPath))
+            {
+                MessageBox.Show("请设置Research保存文件夹！", "Warning", MessageBoxButtons.OK);
+                var sf = new setForm();
+                sf.ShowDialog();
+            }
+            if (!registryHelper.GetInstance().IsRegisted(ProjectPath))
+            {
+                MessageBox.Show("请设置项目保存文件夹！", "Warning", MessageBoxButtons.OK);
+                var sf = new setForm();
+                sf.ShowDialog();
+            }
+            if (registryHelper.GetInstance().IsRegisted(logPath) && registryHelper.GetInstance().IsRegisted(ResearchPath) && registryHelper.GetInstance().IsRegisted(ProjectPath))
+            {
+                return true;
+            }
+            else
+            {
+                return checkFilePath();
+            }
+        }
     }
 }
