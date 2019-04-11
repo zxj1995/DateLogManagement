@@ -46,7 +46,6 @@ D:\项目\PM\FileContextSearch\FileContextSearch\obj\Debug\FileContextSearch.csp
 D:\项目\PM\FileContextSearch\FileContextSearch\obj\Debug\FileContextSearch.exe
 D:\项目\PM\FileContextSearch\FileContextSearch\obj\Debug\FileContextSearch.pdb
 C:\ZXJ\GitRepository\DateLogManagement\FileContextSearch\FileContextSearch\bin\Debug\ICSharpCode.SharpZipLib.dll
-C:\ZXJ\GitRepository\DateLogManagement\FileContextSearch\FileContextSearch\obj\Debug\FileContextSearch.csprojAssemblyReference.cache
 C:\ZXJ\GitRepository\DateLogManagement\FileContextSearch\FileContextSearch\bin\Debug\FileContextSearch.exe.manifest
 C:\ZXJ\GitRepository\DateLogManagement\FileContextSearch\FileContextSearch\bin\Debug\FileContextSearch.application
 C:\ZXJ\GitRepository\DateLogManagement\FileContextSearch\FileContextSearch\obj\Debug\FileContextSearch.TrustInfo.xml
