@@ -54,6 +54,13 @@
             this.IsByDateTime = new System.Windows.Forms.CheckBox();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.Test = new System.Windows.Forms.TabPage();
+            this.button15 = new System.Windows.Forms.Button();
+            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.button19 = new System.Windows.Forms.Button();
+            this.button18 = new System.Windows.Forms.Button();
+            this.button16 = new System.Windows.Forms.Button();
+            this.textBox9 = new System.Windows.Forms.TextBox();
             this.button11 = new System.Windows.Forms.Button();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.textBox8 = new System.Windows.Forms.TextBox();
@@ -92,13 +99,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.WorkProjectPanel = new System.Windows.Forms.Panel();
             this.styleManager1 = new DevComponents.DotNetBar.StyleManager(this.components);
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.button19 = new System.Windows.Forms.Button();
-            this.button18 = new System.Windows.Forms.Button();
-            this.button16 = new System.Windows.Forms.Button();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.button15 = new System.Windows.Forms.Button();
+            this.button20 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.MainTabControl.SuspendLayout();
             this.DateLog.SuspendLayout();
@@ -389,6 +390,7 @@
             // 
             // Test
             // 
+            this.Test.Controls.Add(this.button20);
             this.Test.Controls.Add(this.button15);
             this.Test.Controls.Add(this.textBox11);
             this.Test.Controls.Add(this.textBox10);
@@ -410,6 +412,86 @@
             this.Test.TabIndex = 1;
             this.Test.Text = "测试";
             this.Test.UseVisualStyleBackColor = true;
+            // 
+            // button15
+            // 
+            this.button15.Font = new System.Drawing.Font("Buxton Sketch", 18F, System.Drawing.FontStyle.Bold);
+            this.button15.Location = new System.Drawing.Point(409, 282);
+            this.button15.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button15.Name = "button15";
+            this.button15.Size = new System.Drawing.Size(220, 35);
+            this.button15.TabIndex = 36;
+            this.button15.Text = "压缩文件夹";
+            this.button15.UseVisualStyleBackColor = true;
+            this.button15.Click += new System.EventHandler(this.button15_Click);
+            // 
+            // textBox11
+            // 
+            this.textBox11.Enabled = false;
+            this.textBox11.Location = new System.Drawing.Point(8, 172);
+            this.textBox11.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBox11.Name = "textBox11";
+            this.textBox11.Size = new System.Drawing.Size(596, 21);
+            this.textBox11.TabIndex = 35;
+            this.textBox11.Text = "C:\\ZXJ\\GitRepository\\DateLogManagement\\FileContextSearch\\FileContextSearch\\Test";
+            // 
+            // textBox10
+            // 
+            this.textBox10.Enabled = false;
+            this.textBox10.Location = new System.Drawing.Point(8, 244);
+            this.textBox10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBox10.Name = "textBox10";
+            this.textBox10.Size = new System.Drawing.Size(596, 21);
+            this.textBox10.TabIndex = 34;
+            this.textBox10.Text = "C:\\ZXJ\\GitRepository\\DateLogManagement\\FileContextSearch\\FileContextSearch\\Test\\A" +
+    "";
+            // 
+            // button19
+            // 
+            this.button19.Font = new System.Drawing.Font("Buxton Sketch", 18F, System.Drawing.FontStyle.Bold);
+            this.button19.Location = new System.Drawing.Point(8, 360);
+            this.button19.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button19.Name = "button19";
+            this.button19.Size = new System.Drawing.Size(335, 35);
+            this.button19.TabIndex = 33;
+            this.button19.Text = "删除被压缩的文件夹";
+            this.button19.UseVisualStyleBackColor = true;
+            this.button19.Click += new System.EventHandler(this.button19_Click);
+            // 
+            // button18
+            // 
+            this.button18.Font = new System.Drawing.Font("Buxton Sketch", 18F, System.Drawing.FontStyle.Bold);
+            this.button18.Location = new System.Drawing.Point(8, 321);
+            this.button18.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button18.Name = "button18";
+            this.button18.Size = new System.Drawing.Size(220, 35);
+            this.button18.TabIndex = 32;
+            this.button18.Text = "复制文件夹";
+            this.button18.UseVisualStyleBackColor = true;
+            this.button18.Click += new System.EventHandler(this.button18_Click);
+            // 
+            // button16
+            // 
+            this.button16.Font = new System.Drawing.Font("Buxton Sketch", 18F, System.Drawing.FontStyle.Bold);
+            this.button16.Location = new System.Drawing.Point(8, 282);
+            this.button16.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button16.Name = "button16";
+            this.button16.Size = new System.Drawing.Size(220, 35);
+            this.button16.TabIndex = 31;
+            this.button16.Text = "压缩文件夹";
+            this.button16.UseVisualStyleBackColor = true;
+            this.button16.Click += new System.EventHandler(this.button16_Click);
+            // 
+            // textBox9
+            // 
+            this.textBox9.Enabled = false;
+            this.textBox9.Location = new System.Drawing.Point(8, 207);
+            this.textBox9.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBox9.Name = "textBox9";
+            this.textBox9.Size = new System.Drawing.Size(596, 21);
+            this.textBox9.TabIndex = 30;
+            this.textBox9.Text = "C:\\ZXJ\\GitRepository\\DateLogManagement\\FileContextSearch\\FileContextSearch\\Test\\B" +
+    "";
             // 
             // button11
             // 
@@ -855,85 +937,15 @@
             this.styleManager1.ManagerStyle = DevComponents.DotNetBar.eStyle.Office2013;
             this.styleManager1.MetroColorParameters = new DevComponents.DotNetBar.Metro.ColorTables.MetroColorGeneratorParameters(System.Drawing.Color.White, System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(87)))), ((int)(((byte)(154))))));
             // 
-            // textBox11
+            // button20
             // 
-            this.textBox11.Enabled = false;
-            this.textBox11.Location = new System.Drawing.Point(8, 172);
-            this.textBox11.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(596, 21);
-            this.textBox11.TabIndex = 35;
-            this.textBox11.Text = "C:\\ZXJ\\GitRepository\\DateLogManagement\\FileContextSearch\\FileContextSearch\\Test";
-            // 
-            // textBox10
-            // 
-            this.textBox10.Enabled = false;
-            this.textBox10.Location = new System.Drawing.Point(8, 244);
-            this.textBox10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(596, 21);
-            this.textBox10.TabIndex = 34;
-            this.textBox10.Text = "C:\\ZXJ\\GitRepository\\DateLogManagement\\FileContextSearch\\FileContextSearch\\Test\\A" +
-    "";
-            // 
-            // button19
-            // 
-            this.button19.Font = new System.Drawing.Font("Buxton Sketch", 18F, System.Drawing.FontStyle.Bold);
-            this.button19.Location = new System.Drawing.Point(8, 360);
-            this.button19.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button19.Name = "button19";
-            this.button19.Size = new System.Drawing.Size(335, 35);
-            this.button19.TabIndex = 33;
-            this.button19.Text = "删除被压缩的文件夹";
-            this.button19.UseVisualStyleBackColor = true;
-            this.button19.Click += new System.EventHandler(this.button19_Click);
-            // 
-            // button18
-            // 
-            this.button18.Font = new System.Drawing.Font("Buxton Sketch", 18F, System.Drawing.FontStyle.Bold);
-            this.button18.Location = new System.Drawing.Point(8, 321);
-            this.button18.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button18.Name = "button18";
-            this.button18.Size = new System.Drawing.Size(220, 35);
-            this.button18.TabIndex = 32;
-            this.button18.Text = "复制文件夹";
-            this.button18.UseVisualStyleBackColor = true;
-            this.button18.Click += new System.EventHandler(this.button18_Click);
-            // 
-            // button16
-            // 
-            this.button16.Font = new System.Drawing.Font("Buxton Sketch", 18F, System.Drawing.FontStyle.Bold);
-            this.button16.Location = new System.Drawing.Point(8, 282);
-            this.button16.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button16.Name = "button16";
-            this.button16.Size = new System.Drawing.Size(220, 35);
-            this.button16.TabIndex = 31;
-            this.button16.Text = "压缩文件夹";
-            this.button16.UseVisualStyleBackColor = true;
-            this.button16.Click += new System.EventHandler(this.button16_Click);
-            // 
-            // textBox9
-            // 
-            this.textBox9.Enabled = false;
-            this.textBox9.Location = new System.Drawing.Point(8, 207);
-            this.textBox9.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(596, 21);
-            this.textBox9.TabIndex = 30;
-            this.textBox9.Text = "C:\\ZXJ\\GitRepository\\DateLogManagement\\FileContextSearch\\FileContextSearch\\Test\\B" +
-    "";
-            // 
-            // button15
-            // 
-            this.button15.Font = new System.Drawing.Font("Buxton Sketch", 18F, System.Drawing.FontStyle.Bold);
-            this.button15.Location = new System.Drawing.Point(409, 282);
-            this.button15.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(220, 35);
-            this.button15.TabIndex = 36;
-            this.button15.Text = "压缩文件夹";
-            this.button15.UseVisualStyleBackColor = true;
-            this.button15.Click += new System.EventHandler(this.button15_Click);
+            this.button20.Location = new System.Drawing.Point(424, 16);
+            this.button20.Name = "button20";
+            this.button20.Size = new System.Drawing.Size(82, 46);
+            this.button20.TabIndex = 37;
+            this.button20.Text = "刷新第一控件";
+            this.button20.UseVisualStyleBackColor = true;
+            this.button20.Click += new System.EventHandler(this.button20_Click);
             // 
             // Form1
             // 
@@ -1066,6 +1078,7 @@
         private System.Windows.Forms.Button button16;
         private System.Windows.Forms.TextBox textBox9;
         private System.Windows.Forms.Button button15;
+        private System.Windows.Forms.Button button20;
     }
 }
 

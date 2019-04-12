@@ -23,7 +23,7 @@ namespace FileContextSearch
         public Form1()
         {
             InitializeComponent();
-            Test.Parent = null;
+            //Test.Parent = null;
         }
         public static string startDate;
         public static string endDate;
@@ -234,6 +234,10 @@ namespace FileContextSearch
                 for (int i = 0; i < fileNamesClear.Length; i++)
                 {
                     RTXArr[i].Text = "";
+                    using (var fs = new FileStream(Path.Combine(FileSearchHelper.GetInstance().DateLogDir, "temp", "DailyMission.txt"), FileMode.Create))
+                    {
+
+                    }
                 }
             }
             for (int i = 0; i < RTXArr.Length; i++)
@@ -1085,6 +1089,15 @@ namespace FileContextSearch
             else
             {
                 return checkFilePath();
+            }
+        }
+
+        private void button20_Click(object sender, EventArgs e)
+        {
+            DailyMission.Text = "";
+            using (var fs = new FileStream(Path.Combine(FileSearchHelper.GetInstance().DateLogDir, "temp", "DailyMission.txt"), FileMode.Create))
+            {
+
             }
         }
     }
