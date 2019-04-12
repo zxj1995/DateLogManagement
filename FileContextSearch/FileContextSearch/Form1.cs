@@ -23,7 +23,7 @@ namespace FileContextSearch
         public Form1()
         {
             InitializeComponent();
-            //Test.Parent = null;
+            Test.Parent = null;
         }
         public static string startDate;
         public static string endDate;
