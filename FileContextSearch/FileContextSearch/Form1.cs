@@ -23,7 +23,7 @@ namespace FileContextSearch
         public Form1()
         {
             InitializeComponent();
-            Test.Parent = null;
+            //Test.Parent = null;
         }
         public static string startDate;
         public static string endDate;
@@ -229,7 +229,7 @@ namespace FileContextSearch
             string[] fileNames = new string[] { "DailyMission.txt", "Idea.txt", "Draft.txt" };
 
             RichTextBox[] RTXArr = new RichTextBox[] { DailyMission, Idea, Draft };
-            if (ts.TotalMinutes <= 60)
+            if (ts.TotalMinutes <= 61)
             {
                 for (int i = 0; i < fileNamesClear.Length; i++)
                 {
@@ -271,8 +271,8 @@ namespace FileContextSearch
                     //tvList[i] = new TreeView();
                     tvList[i].Name = tvNameList[i];
                     tvList[i].Nodes.Clear();
-                    tvList[i].Size = new Size(SearchName.Size.Width, SearchName.Size.Height - label6.Height);
-                    tvList[i].Dock = DockStyle.Bottom;
+                    //tvList[i].Size = new Size(SearchName.Size.Width, SearchName.Size.Height - label6.Height);
+                    tvList[i].Dock = DockStyle.Fill;
                     tvList[i].DoubleClick += TreeNode_DoubleClick;
                     tvList[i].Font = new Font("微软雅黑", 12, FontStyle.Bold);
                     tvList[i].MouseDown += MouseDown;
@@ -468,32 +468,33 @@ namespace FileContextSearch
         public void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
             //添加两个TreeView控件
-            if (MainTabControl.SelectedIndex == 1)
+            if (MainTabControl.TabPages[MainTabControl.SelectedIndex].Text == "Research")
             {
-                foreach (Control item in panel2.Controls)
+                //var a = MainTabControl.TabPages[1];
+                foreach (Control item in panel1.Controls)
                 {
                     if (item.Name == "ResearchTreeView")
                     {
-                        panel2.Controls.Remove(item);
+                        panel1.Controls.Remove(item);
                         break;
                     }
                 }
-                foreach (Control item in SearchName.Controls)
+                foreach (Control item in panel3.Controls)
                 {
                     if (item.Name == "SearchTV")
                     {
-                        SearchName.Controls.Remove(item);
+                        panel3.Controls.Remove(item);
                         break;
                     }
                 }
-                panel2.Controls.Add(ResearchTreeView);
-                SearchName.Controls.Add(TV);
+                panel1.Controls.Add(ResearchTreeView);
+                panel3.Controls.Add(TV);
                 LoadTreeView(ResearchTreeView, "");
                 LoadTreeView(TV, "");
             }
-            else if (MainTabControl.SelectedIndex == 3)
+            else if ( MainTabControl.TabPages[MainTabControl.SelectedIndex].Text == "Project")
             {
-                foreach (Control item in panel2.Controls)
+                foreach (Control item in splitContainer2.Panel2.Controls)
                 {
                     if (item.Name == "PersonalProjectTW" || item.Name == "WorkProjectTW")
                     {
@@ -502,8 +503,8 @@ namespace FileContextSearch
                         break;
                     }
                 }
-                PersonalProjectTW.Dock = DockStyle.Fill;
-                WorkProjectTW.Dock = DockStyle.Fill;
+                //PersonalProjectTW.Dock = DockStyle.Fill;
+                //WorkProjectTW.Dock = DockStyle.Fill;
                 PersonalProjectPanel.Controls.Add(PersonalProjectTW);
                 //WorkProjectPanel.Controls.Add(PersonalProjectTW);
                 WorkProjectPanel.Controls.Add(WorkProjectTW);
@@ -902,13 +903,13 @@ namespace FileContextSearch
             richTextBox1.Height = DateLog.Height - 198;
         }
 
-        private void splitContainer1_Panel2_SizeChanged(object sender, EventArgs e)
-        {
-            panel2.Height = splitContainer1.Panel2.Height-10;
-            SearchName.Height= splitContainer1.Panel2.Height-10;
-            TV.Size = new Size(SearchName.Size.Width, SearchName.Size.Height - label6.Height);
-            ResearchTreeView.Size = new Size(panel2.Size.Width, panel2.Size.Height - label1.Height);
-        }
+        //private void splitContainer1_Panel2_SizeChanged(object sender, EventArgs e)
+        //{
+        //    panel2.Height = splitContainer1.Panel2.Height-10;
+        //    SearchName.Height= splitContainer1.Panel2.Height-10;
+        //    TV.Size = new Size(SearchName.Size.Width, SearchName.Size.Height - label6.Height);
+        //    ResearchTreeView.Size = new Size(panel2.Size.Width, panel2.Size.Height - label1.Height);
+        //}
 
         private void 保存ToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -1096,6 +1097,32 @@ namespace FileContextSearch
         {
             DailyMission.Text = "";
             using (var fs = new FileStream(Path.Combine(FileSearchHelper.GetInstance().DateLogDir, "temp", "DailyMission.txt"), FileMode.Create))
+            {
+
+            }
+        }
+        private void showMes(object obj)
+        {
+            var tb = DateTime.Now.AddMinutes(-10);
+            var ts = DateTime.Now.Subtract(tb);
+            if (ts.TotalMinutes >= 10)
+            {
+                using (var fs = new FileStream(Path.Combine(FileSearchHelper.GetInstance().DateLogDir, "temp", "aaa.txt"), FileMode.Create))
+                {
+
+                }
+                //MessageBox.Show("hello world!");
+            }
+        }
+        private void button21_Click(object sender, EventArgs e)
+        {
+            Tc = new System.Threading.Timer(new TimerCallback(showMes), null, Timeout.Infinite, 5000);
+            Tc.Change(5000, 5000);
+        }
+
+        private void button22_Click(object sender, EventArgs e)
+        {
+            using (var fs = new FileStream(Path.Combine(FileSearchHelper.GetInstance().DateLogDir, "temp", "aaa.txt"), FileMode.Create))
             {
 
             }

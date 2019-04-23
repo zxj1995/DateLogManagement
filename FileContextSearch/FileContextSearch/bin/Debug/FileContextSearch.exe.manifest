@@ -54,14 +54,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="FileContextSearch.exe" size="102376">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="FileContextSearch.exe" size="103912">
       <assemblyIdentity name="FileContextSearch" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>YvWXngG+qBkCmNpz6i9DXGKD5hM=</dsig:DigestValue>
+        <dsig:DigestValue>gB/kH5Da2vEvdNA3GAvA/m3bK6k=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

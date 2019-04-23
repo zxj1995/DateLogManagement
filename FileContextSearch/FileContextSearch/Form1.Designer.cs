@@ -54,6 +54,9 @@
             this.IsByDateTime = new System.Windows.Forms.CheckBox();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.Test = new System.Windows.Forms.TabPage();
+            this.button22 = new System.Windows.Forms.Button();
+            this.button21 = new System.Windows.Forms.Button();
+            this.button20 = new System.Windows.Forms.Button();
             this.button15 = new System.Windows.Forms.Button();
             this.textBox11 = new System.Windows.Forms.TextBox();
             this.textBox10 = new System.Windows.Forms.TextBox();
@@ -68,15 +71,6 @@
             this.button7 = new System.Windows.Forms.Button();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
-            this.Research = new System.Windows.Forms.TabPage();
-            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.button13 = new System.Windows.Forms.Button();
-            this.NodeState = new System.Windows.Forms.ComboBox();
-            this.button17 = new System.Windows.Forms.Button();
-            this.SearchName = new System.Windows.Forms.Panel();
-            this.label6 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.NewDateLog = new System.Windows.Forms.TabPage();
             this.ContentContainer = new System.Windows.Forms.GroupBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -98,19 +92,23 @@
             this.splitContainer5 = new System.Windows.Forms.SplitContainer();
             this.label8 = new System.Windows.Forms.Label();
             this.WorkProjectPanel = new System.Windows.Forms.Panel();
+            this.Research = new System.Windows.Forms.TabPage();
+            this.splitContainer6 = new System.Windows.Forms.SplitContainer();
+            this.button13 = new System.Windows.Forms.Button();
+            this.NodeState = new System.Windows.Forms.ComboBox();
+            this.button17 = new System.Windows.Forms.Button();
+            this.splitContainer7 = new System.Windows.Forms.SplitContainer();
+            this.splitContainer8 = new System.Windows.Forms.SplitContainer();
+            this.label9 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.splitContainer9 = new System.Windows.Forms.SplitContainer();
+            this.label10 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.styleManager1 = new DevComponents.DotNetBar.StyleManager(this.components);
-            this.button20 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.MainTabControl.SuspendLayout();
             this.DateLog.SuspendLayout();
             this.Test.SuspendLayout();
-            this.Research.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
-            this.splitContainer1.Panel1.SuspendLayout();
-            this.splitContainer1.Panel2.SuspendLayout();
-            this.splitContainer1.SuspendLayout();
-            this.SearchName.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.NewDateLog.SuspendLayout();
             this.ContentContainer.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -131,6 +129,23 @@
             this.splitContainer5.Panel1.SuspendLayout();
             this.splitContainer5.Panel2.SuspendLayout();
             this.splitContainer5.SuspendLayout();
+            this.Research.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer6)).BeginInit();
+            this.splitContainer6.Panel1.SuspendLayout();
+            this.splitContainer6.Panel2.SuspendLayout();
+            this.splitContainer6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer7)).BeginInit();
+            this.splitContainer7.Panel1.SuspendLayout();
+            this.splitContainer7.Panel2.SuspendLayout();
+            this.splitContainer7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer8)).BeginInit();
+            this.splitContainer8.Panel1.SuspendLayout();
+            this.splitContainer8.Panel2.SuspendLayout();
+            this.splitContainer8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer9)).BeginInit();
+            this.splitContainer9.Panel1.SuspendLayout();
+            this.splitContainer9.Panel2.SuspendLayout();
+            this.splitContainer9.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
@@ -327,9 +342,9 @@
             // 
             this.MainTabControl.Controls.Add(this.DateLog);
             this.MainTabControl.Controls.Add(this.Test);
-            this.MainTabControl.Controls.Add(this.Research);
             this.MainTabControl.Controls.Add(this.NewDateLog);
             this.MainTabControl.Controls.Add(this.Project);
+            this.MainTabControl.Controls.Add(this.Research);
             this.MainTabControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MainTabControl.Location = new System.Drawing.Point(0, 25);
             this.MainTabControl.Name = "MainTabControl";
@@ -390,6 +405,8 @@
             // 
             // Test
             // 
+            this.Test.Controls.Add(this.button22);
+            this.Test.Controls.Add(this.button21);
             this.Test.Controls.Add(this.button20);
             this.Test.Controls.Add(this.button15);
             this.Test.Controls.Add(this.textBox11);
@@ -412,6 +429,36 @@
             this.Test.TabIndex = 1;
             this.Test.Text = "测试";
             this.Test.UseVisualStyleBackColor = true;
+            // 
+            // button22
+            // 
+            this.button22.Location = new System.Drawing.Point(600, 16);
+            this.button22.Name = "button22";
+            this.button22.Size = new System.Drawing.Size(82, 46);
+            this.button22.TabIndex = 39;
+            this.button22.Text = "创建新文件";
+            this.button22.UseVisualStyleBackColor = true;
+            this.button22.Click += new System.EventHandler(this.button22_Click);
+            // 
+            // button21
+            // 
+            this.button21.Location = new System.Drawing.Point(512, 16);
+            this.button21.Name = "button21";
+            this.button21.Size = new System.Drawing.Size(82, 46);
+            this.button21.TabIndex = 38;
+            this.button21.Text = "循环触发控件刷新";
+            this.button21.UseVisualStyleBackColor = true;
+            this.button21.Click += new System.EventHandler(this.button21_Click);
+            // 
+            // button20
+            // 
+            this.button20.Location = new System.Drawing.Point(424, 16);
+            this.button20.Name = "button20";
+            this.button20.Size = new System.Drawing.Size(82, 46);
+            this.button20.TabIndex = 37;
+            this.button20.Text = "刷新第一控件";
+            this.button20.UseVisualStyleBackColor = true;
+            this.button20.Click += new System.EventHandler(this.button20_Click);
             // 
             // button15
             // 
@@ -560,112 +607,6 @@
             this.textBox5.Size = new System.Drawing.Size(139, 21);
             this.textBox5.TabIndex = 23;
             this.textBox5.Text = "500";
-            // 
-            // Research
-            // 
-            this.Research.Controls.Add(this.splitContainer1);
-            this.Research.Location = new System.Drawing.Point(4, 22);
-            this.Research.Name = "Research";
-            this.Research.Padding = new System.Windows.Forms.Padding(3);
-            this.Research.Size = new System.Drawing.Size(1104, 460);
-            this.Research.TabIndex = 2;
-            this.Research.Text = "Research";
-            this.Research.UseVisualStyleBackColor = true;
-            // 
-            // splitContainer1
-            // 
-            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.Location = new System.Drawing.Point(3, 3);
-            this.splitContainer1.Name = "splitContainer1";
-            // 
-            // splitContainer1.Panel1
-            // 
-            this.splitContainer1.Panel1.Controls.Add(this.button13);
-            this.splitContainer1.Panel1.Controls.Add(this.NodeState);
-            this.splitContainer1.Panel1.Controls.Add(this.button17);
-            // 
-            // splitContainer1.Panel2
-            // 
-            this.splitContainer1.Panel2.Controls.Add(this.SearchName);
-            this.splitContainer1.Panel2.Controls.Add(this.panel2);
-            this.splitContainer1.Panel2.SizeChanged += new System.EventHandler(this.splitContainer1_Panel2_SizeChanged);
-            this.splitContainer1.Size = new System.Drawing.Size(1098, 454);
-            this.splitContainer1.SplitterDistance = 365;
-            this.splitContainer1.TabIndex = 17;
-            // 
-            // button13
-            // 
-            this.button13.Font = new System.Drawing.Font("Buxton Sketch", 18F, System.Drawing.FontStyle.Bold);
-            this.button13.Location = new System.Drawing.Point(16, 116);
-            this.button13.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(220, 35);
-            this.button13.TabIndex = 18;
-            this.button13.Text = "Node Create";
-            this.button13.UseVisualStyleBackColor = true;
-            this.button13.Click += new System.EventHandler(this.button13_Click);
-            // 
-            // NodeState
-            // 
-            this.NodeState.FormattingEnabled = true;
-            this.NodeState.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3"});
-            this.NodeState.Location = new System.Drawing.Point(16, 76);
-            this.NodeState.Name = "NodeState";
-            this.NodeState.Size = new System.Drawing.Size(196, 20);
-            this.NodeState.TabIndex = 24;
-            // 
-            // button17
-            // 
-            this.button17.Font = new System.Drawing.Font("Buxton Sketch", 18F, System.Drawing.FontStyle.Bold);
-            this.button17.Location = new System.Drawing.Point(16, 24);
-            this.button17.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button17.Name = "button17";
-            this.button17.Size = new System.Drawing.Size(196, 47);
-            this.button17.TabIndex = 22;
-            this.button17.Text = "Conquer now";
-            this.button17.UseVisualStyleBackColor = true;
-            this.button17.Click += new System.EventHandler(this.button17_Click);
-            // 
-            // SearchName
-            // 
-            this.SearchName.Controls.Add(this.label6);
-            this.SearchName.Location = new System.Drawing.Point(241, 3);
-            this.SearchName.Name = "SearchName";
-            this.SearchName.Size = new System.Drawing.Size(218, 451);
-            this.SearchName.TabIndex = 5;
-            // 
-            // label6
-            // 
-            this.label6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label6.Font = new System.Drawing.Font("Buxton Sketch", 18F, System.Drawing.FontStyle.Bold);
-            this.label6.Location = new System.Drawing.Point(0, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(218, 49);
-            this.label6.TabIndex = 4;
-            this.label6.Text = "Search Result";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Location = new System.Drawing.Point(3, 3);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(232, 451);
-            this.panel2.TabIndex = 4;
-            // 
-            // label1
-            // 
-            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label1.Font = new System.Drawing.Font("Buxton Sketch", 18F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(232, 49);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Research List";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // NewDateLog
             // 
@@ -877,13 +818,14 @@
             // 
             // label7
             // 
-            this.label7.AutoSize = true;
+            this.label7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label7.Font = new System.Drawing.Font("Buxton Sketch", 18F, System.Drawing.FontStyle.Bold);
-            this.label7.Location = new System.Drawing.Point(37, 17);
+            this.label7.Location = new System.Drawing.Point(0, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(96, 29);
+            this.label7.Size = new System.Drawing.Size(358, 48);
             this.label7.TabIndex = 35;
             this.label7.Text = "Personal";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // PersonalProjectPanel
             // 
@@ -915,13 +857,14 @@
             // 
             // label8
             // 
-            this.label8.AutoSize = true;
+            this.label8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label8.Font = new System.Drawing.Font("Buxton Sketch", 18F, System.Drawing.FontStyle.Bold);
-            this.label8.Location = new System.Drawing.Point(34, 17);
+            this.label8.Location = new System.Drawing.Point(0, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(62, 29);
+            this.label8.Size = new System.Drawing.Size(366, 48);
             this.label8.TabIndex = 36;
             this.label8.Text = "Work";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // WorkProjectPanel
             // 
@@ -932,20 +875,172 @@
             this.WorkProjectPanel.Size = new System.Drawing.Size(366, 402);
             this.WorkProjectPanel.TabIndex = 1;
             // 
+            // Research
+            // 
+            this.Research.Controls.Add(this.splitContainer6);
+            this.Research.Location = new System.Drawing.Point(4, 22);
+            this.Research.Name = "Research";
+            this.Research.Padding = new System.Windows.Forms.Padding(3);
+            this.Research.Size = new System.Drawing.Size(1104, 460);
+            this.Research.TabIndex = 5;
+            this.Research.Text = "Research";
+            this.Research.UseVisualStyleBackColor = true;
+            // 
+            // splitContainer6
+            // 
+            this.splitContainer6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer6.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
+            this.splitContainer6.Location = new System.Drawing.Point(3, 3);
+            this.splitContainer6.Name = "splitContainer6";
+            // 
+            // splitContainer6.Panel1
+            // 
+            this.splitContainer6.Panel1.Controls.Add(this.button13);
+            this.splitContainer6.Panel1.Controls.Add(this.NodeState);
+            this.splitContainer6.Panel1.Controls.Add(this.button17);
+            // 
+            // splitContainer6.Panel2
+            // 
+            this.splitContainer6.Panel2.Controls.Add(this.splitContainer7);
+            this.splitContainer6.Size = new System.Drawing.Size(1098, 454);
+            this.splitContainer6.SplitterDistance = 366;
+            this.splitContainer6.TabIndex = 38;
+            // 
+            // button13
+            // 
+            this.button13.Font = new System.Drawing.Font("Buxton Sketch", 18F, System.Drawing.FontStyle.Bold);
+            this.button13.Location = new System.Drawing.Point(31, 139);
+            this.button13.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button13.Name = "button13";
+            this.button13.Size = new System.Drawing.Size(220, 35);
+            this.button13.TabIndex = 25;
+            this.button13.Text = "Node Create";
+            this.button13.UseVisualStyleBackColor = true;
+            this.button13.Click += new System.EventHandler(this.button13_Click);
+            // 
+            // NodeState
+            // 
+            this.NodeState.FormattingEnabled = true;
+            this.NodeState.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3"});
+            this.NodeState.Location = new System.Drawing.Point(22, 114);
+            this.NodeState.Name = "NodeState";
+            this.NodeState.Size = new System.Drawing.Size(196, 20);
+            this.NodeState.TabIndex = 27;
+            // 
+            // button17
+            // 
+            this.button17.Font = new System.Drawing.Font("Buxton Sketch", 18F, System.Drawing.FontStyle.Bold);
+            this.button17.Location = new System.Drawing.Point(22, 62);
+            this.button17.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button17.Name = "button17";
+            this.button17.Size = new System.Drawing.Size(196, 47);
+            this.button17.TabIndex = 26;
+            this.button17.Text = "Conquer now";
+            this.button17.UseVisualStyleBackColor = true;
+            this.button17.Click += new System.EventHandler(this.button17_Click);
+            // 
+            // splitContainer7
+            // 
+            this.splitContainer7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer7.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer7.Name = "splitContainer7";
+            // 
+            // splitContainer7.Panel1
+            // 
+            this.splitContainer7.Panel1.Controls.Add(this.splitContainer8);
+            // 
+            // splitContainer7.Panel2
+            // 
+            this.splitContainer7.Panel2.Controls.Add(this.splitContainer9);
+            this.splitContainer7.Size = new System.Drawing.Size(728, 454);
+            this.splitContainer7.SplitterDistance = 358;
+            this.splitContainer7.TabIndex = 37;
+            // 
+            // splitContainer8
+            // 
+            this.splitContainer8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer8.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
+            this.splitContainer8.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer8.Name = "splitContainer8";
+            this.splitContainer8.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer8.Panel1
+            // 
+            this.splitContainer8.Panel1.Controls.Add(this.label9);
+            // 
+            // splitContainer8.Panel2
+            // 
+            this.splitContainer8.Panel2.Controls.Add(this.panel1);
+            this.splitContainer8.Size = new System.Drawing.Size(358, 454);
+            this.splitContainer8.SplitterDistance = 48;
+            this.splitContainer8.TabIndex = 36;
+            // 
+            // label9
+            // 
+            this.label9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label9.Font = new System.Drawing.Font("Buxton Sketch", 18F, System.Drawing.FontStyle.Bold);
+            this.label9.Location = new System.Drawing.Point(0, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(358, 48);
+            this.label9.TabIndex = 35;
+            this.label9.Text = "Research";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panel1
+            // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(358, 402);
+            this.panel1.TabIndex = 0;
+            // 
+            // splitContainer9
+            // 
+            this.splitContainer9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer9.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
+            this.splitContainer9.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer9.Name = "splitContainer9";
+            this.splitContainer9.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer9.Panel1
+            // 
+            this.splitContainer9.Panel1.Controls.Add(this.label10);
+            // 
+            // splitContainer9.Panel2
+            // 
+            this.splitContainer9.Panel2.Controls.Add(this.panel3);
+            this.splitContainer9.Size = new System.Drawing.Size(366, 454);
+            this.splitContainer9.SplitterDistance = 48;
+            this.splitContainer9.TabIndex = 37;
+            // 
+            // label10
+            // 
+            this.label10.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label10.Font = new System.Drawing.Font("Buxton Sketch", 18F, System.Drawing.FontStyle.Bold);
+            this.label10.Location = new System.Drawing.Point(0, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(366, 48);
+            this.label10.TabIndex = 36;
+            this.label10.Text = "Search";
+            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panel3
+            // 
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(366, 402);
+            this.panel3.TabIndex = 1;
+            // 
             // styleManager1
             // 
             this.styleManager1.ManagerStyle = DevComponents.DotNetBar.eStyle.Office2013;
             this.styleManager1.MetroColorParameters = new DevComponents.DotNetBar.Metro.ColorTables.MetroColorGeneratorParameters(System.Drawing.Color.White, System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(87)))), ((int)(((byte)(154))))));
-            // 
-            // button20
-            // 
-            this.button20.Location = new System.Drawing.Point(424, 16);
-            this.button20.Name = "button20";
-            this.button20.Size = new System.Drawing.Size(82, 46);
-            this.button20.TabIndex = 37;
-            this.button20.Text = "刷新第一控件";
-            this.button20.UseVisualStyleBackColor = true;
-            this.button20.Click += new System.EventHandler(this.button20_Click);
             // 
             // Form1
             // 
@@ -972,13 +1067,6 @@
             this.DateLog.PerformLayout();
             this.Test.ResumeLayout(false);
             this.Test.PerformLayout();
-            this.Research.ResumeLayout(false);
-            this.splitContainer1.Panel1.ResumeLayout(false);
-            this.splitContainer1.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
-            this.splitContainer1.ResumeLayout(false);
-            this.SearchName.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
             this.NewDateLog.ResumeLayout(false);
             this.ContentContainer.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
@@ -993,15 +1081,30 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).EndInit();
             this.splitContainer3.ResumeLayout(false);
             this.splitContainer4.Panel1.ResumeLayout(false);
-            this.splitContainer4.Panel1.PerformLayout();
             this.splitContainer4.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer4)).EndInit();
             this.splitContainer4.ResumeLayout(false);
             this.splitContainer5.Panel1.ResumeLayout(false);
-            this.splitContainer5.Panel1.PerformLayout();
             this.splitContainer5.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer5)).EndInit();
             this.splitContainer5.ResumeLayout(false);
+            this.Research.ResumeLayout(false);
+            this.splitContainer6.Panel1.ResumeLayout(false);
+            this.splitContainer6.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer6)).EndInit();
+            this.splitContainer6.ResumeLayout(false);
+            this.splitContainer7.Panel1.ResumeLayout(false);
+            this.splitContainer7.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer7)).EndInit();
+            this.splitContainer7.ResumeLayout(false);
+            this.splitContainer8.Panel1.ResumeLayout(false);
+            this.splitContainer8.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer8)).EndInit();
+            this.splitContainer8.ResumeLayout(false);
+            this.splitContainer9.Panel1.ResumeLayout(false);
+            this.splitContainer9.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer9)).EndInit();
+            this.splitContainer9.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1036,18 +1139,9 @@
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.TabPage Research;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Button button11;
         private DevComponents.DotNetBar.StyleManager styleManager1;
-        private System.Windows.Forms.SplitContainer splitContainer1;
-        private System.Windows.Forms.Button button13;
-        private System.Windows.Forms.Button button17;
-        public System.Windows.Forms.ComboBox NodeState;
-        private System.Windows.Forms.Panel SearchName;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.CheckBox IsByDateTime;
         private System.Windows.Forms.TabPage NewDateLog;
         private System.Windows.Forms.GroupBox ContentContainer;
@@ -1079,6 +1173,20 @@
         private System.Windows.Forms.TextBox textBox9;
         private System.Windows.Forms.Button button15;
         private System.Windows.Forms.Button button20;
+        private System.Windows.Forms.Button button21;
+        private System.Windows.Forms.TabPage Research;
+        private System.Windows.Forms.SplitContainer splitContainer6;
+        private System.Windows.Forms.SplitContainer splitContainer7;
+        private System.Windows.Forms.SplitContainer splitContainer8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.SplitContainer splitContainer9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Button button13;
+        public System.Windows.Forms.ComboBox NodeState;
+        private System.Windows.Forms.Button button17;
+        private System.Windows.Forms.Button button22;
     }
 }
 
