@@ -104,6 +104,8 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Helper\SharpZiplibHelper.cs" />
+    <Compile Include="Helper\单例模式.cs" />
+    <Compile Include="Helper\单例模式2.cs" />
     <Compile Include="NodeSetting.cs">
       <SubType>Form</SubType>
     </Compile>

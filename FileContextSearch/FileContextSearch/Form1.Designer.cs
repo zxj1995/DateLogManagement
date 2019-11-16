@@ -54,6 +54,8 @@
             this.IsByDateTime = new System.Windows.Forms.CheckBox();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.Test = new System.Windows.Forms.TabPage();
+            this.button24 = new System.Windows.Forms.Button();
+            this.button23 = new System.Windows.Forms.Button();
             this.button22 = new System.Windows.Forms.Button();
             this.button21 = new System.Windows.Forms.Button();
             this.button20 = new System.Windows.Forms.Button();
@@ -164,7 +166,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(78, 76);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(17, 12);
+            this.label2.Size = new System.Drawing.Size(23, 15);
             this.label2.TabIndex = 2;
             this.label2.Text = "to";
             // 
@@ -173,7 +175,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(78, 49);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(29, 12);
+            this.label3.Size = new System.Drawing.Size(39, 15);
             this.label3.TabIndex = 3;
             this.label3.Text = "from";
             // 
@@ -182,7 +184,7 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(78, 133);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(53, 12);
+            this.label4.Size = new System.Drawing.Size(67, 15);
             this.label4.TabIndex = 4;
             this.label4.Text = "查找内容";
             // 
@@ -191,7 +193,7 @@
             this.textBox1.Location = new System.Drawing.Point(174, 133);
             this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(139, 21);
+            this.textBox1.Size = new System.Drawing.Size(139, 25);
             this.textBox1.TabIndex = 5;
             this.textBox1.Text = "第三方控件";
             // 
@@ -201,7 +203,7 @@
             this.textBox2.Location = new System.Drawing.Point(174, 73);
             this.textBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(139, 21);
+            this.textBox2.Size = new System.Drawing.Size(139, 25);
             this.textBox2.TabIndex = 7;
             this.textBox2.Text = "2018-12-31";
             // 
@@ -211,7 +213,7 @@
             this.textBox3.Location = new System.Drawing.Point(174, 49);
             this.textBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(139, 21);
+            this.textBox3.Size = new System.Drawing.Size(139, 25);
             this.textBox3.TabIndex = 8;
             this.textBox3.Text = "2018-08-01";
             // 
@@ -243,7 +245,7 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(78, 25);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(53, 12);
+            this.label5.Size = new System.Drawing.Size(67, 15);
             this.label5.TabIndex = 12;
             this.label5.Text = "查找范围";
             // 
@@ -253,7 +255,7 @@
             this.checkBox1.Location = new System.Drawing.Point(80, 105);
             this.checkBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(96, 16);
+            this.checkBox1.Size = new System.Drawing.Size(119, 19);
             this.checkBox1.TabIndex = 14;
             this.checkBox1.Text = "文件直接打开";
             this.checkBox1.UseVisualStyleBackColor = true;
@@ -272,26 +274,28 @@
             // 
             // menuStrip1
             // 
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.设置ToolStripMenuItem,
             this.保存ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1112, 25);
+            this.menuStrip1.Size = new System.Drawing.Size(1112, 28);
             this.menuStrip1.TabIndex = 16;
             this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
             // 设置ToolStripMenuItem
             // 
             this.设置ToolStripMenuItem.Name = "设置ToolStripMenuItem";
-            this.设置ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
+            this.设置ToolStripMenuItem.Size = new System.Drawing.Size(51, 24);
             this.设置ToolStripMenuItem.Text = "设置";
             this.设置ToolStripMenuItem.Click += new System.EventHandler(this.设置ToolStripMenuItem_Click);
             // 
             // 保存ToolStripMenuItem
             // 
             this.保存ToolStripMenuItem.Name = "保存ToolStripMenuItem";
-            this.保存ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
+            this.保存ToolStripMenuItem.Size = new System.Drawing.Size(51, 24);
             this.保存ToolStripMenuItem.Text = "保存";
             this.保存ToolStripMenuItem.Click += new System.EventHandler(this.保存ToolStripMenuItem_Click);
             // 
@@ -313,7 +317,7 @@
             this.textBox4.Location = new System.Drawing.Point(401, 50);
             this.textBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(139, 21);
+            this.textBox4.Size = new System.Drawing.Size(139, 25);
             this.textBox4.TabIndex = 17;
             // 
             // button6
@@ -346,10 +350,10 @@
             this.MainTabControl.Controls.Add(this.Project);
             this.MainTabControl.Controls.Add(this.Research);
             this.MainTabControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.MainTabControl.Location = new System.Drawing.Point(0, 25);
+            this.MainTabControl.Location = new System.Drawing.Point(0, 28);
             this.MainTabControl.Name = "MainTabControl";
             this.MainTabControl.SelectedIndex = 0;
-            this.MainTabControl.Size = new System.Drawing.Size(1112, 486);
+            this.MainTabControl.Size = new System.Drawing.Size(1112, 483);
             this.MainTabControl.TabIndex = 24;
             this.MainTabControl.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
@@ -373,10 +377,10 @@
             this.DateLog.Controls.Add(this.button2);
             this.DateLog.Controls.Add(this.checkBox1);
             this.DateLog.Controls.Add(this.button3);
-            this.DateLog.Location = new System.Drawing.Point(4, 22);
+            this.DateLog.Location = new System.Drawing.Point(4, 25);
             this.DateLog.Name = "DateLog";
             this.DateLog.Padding = new System.Windows.Forms.Padding(3);
-            this.DateLog.Size = new System.Drawing.Size(1104, 460);
+            this.DateLog.Size = new System.Drawing.Size(1104, 454);
             this.DateLog.TabIndex = 0;
             this.DateLog.Text = "日志";
             this.DateLog.UseVisualStyleBackColor = true;
@@ -388,7 +392,7 @@
             this.IsByDateTime.Location = new System.Drawing.Point(368, 24);
             this.IsByDateTime.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.IsByDateTime.Name = "IsByDateTime";
-            this.IsByDateTime.Size = new System.Drawing.Size(96, 16);
+            this.IsByDateTime.Size = new System.Drawing.Size(119, 19);
             this.IsByDateTime.TabIndex = 25;
             this.IsByDateTime.Text = "生成日志日期";
             this.IsByDateTime.UseVisualStyleBackColor = true;
@@ -396,7 +400,7 @@
             // richTextBox1
             // 
             this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.richTextBox1.Location = new System.Drawing.Point(3, 214);
+            this.richTextBox1.Location = new System.Drawing.Point(3, 208);
             this.richTextBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(1098, 243);
@@ -405,6 +409,8 @@
             // 
             // Test
             // 
+            this.Test.Controls.Add(this.button24);
+            this.Test.Controls.Add(this.button23);
             this.Test.Controls.Add(this.button22);
             this.Test.Controls.Add(this.button21);
             this.Test.Controls.Add(this.button20);
@@ -422,13 +428,37 @@
             this.Test.Controls.Add(this.button7);
             this.Test.Controls.Add(this.textBox6);
             this.Test.Controls.Add(this.textBox5);
-            this.Test.Location = new System.Drawing.Point(4, 22);
+            this.Test.Location = new System.Drawing.Point(4, 25);
             this.Test.Name = "Test";
             this.Test.Padding = new System.Windows.Forms.Padding(3);
-            this.Test.Size = new System.Drawing.Size(1104, 460);
+            this.Test.Size = new System.Drawing.Size(1104, 454);
             this.Test.TabIndex = 1;
             this.Test.Text = "测试";
             this.Test.UseVisualStyleBackColor = true;
+            // 
+            // button24
+            // 
+            this.button24.Font = new System.Drawing.Font("Buxton Sketch", 18F, System.Drawing.FontStyle.Bold);
+            this.button24.Location = new System.Drawing.Point(147, 409);
+            this.button24.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button24.Name = "button24";
+            this.button24.Size = new System.Drawing.Size(129, 35);
+            this.button24.TabIndex = 41;
+            this.button24.Text = "单例模式";
+            this.button24.UseVisualStyleBackColor = true;
+            this.button24.Click += new System.EventHandler(this.button24_Click);
+            // 
+            // button23
+            // 
+            this.button23.Font = new System.Drawing.Font("Buxton Sketch", 18F, System.Drawing.FontStyle.Bold);
+            this.button23.Location = new System.Drawing.Point(8, 409);
+            this.button23.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button23.Name = "button23";
+            this.button23.Size = new System.Drawing.Size(129, 35);
+            this.button23.TabIndex = 40;
+            this.button23.Text = "单例模式";
+            this.button23.UseVisualStyleBackColor = true;
+            this.button23.Click += new System.EventHandler(this.button23_Click);
             // 
             // button22
             // 
@@ -478,7 +508,7 @@
             this.textBox11.Location = new System.Drawing.Point(8, 172);
             this.textBox11.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(596, 21);
+            this.textBox11.Size = new System.Drawing.Size(596, 25);
             this.textBox11.TabIndex = 35;
             this.textBox11.Text = "C:\\ZXJ\\GitRepository\\DateLogManagement\\FileContextSearch\\FileContextSearch\\Test";
             // 
@@ -488,7 +518,7 @@
             this.textBox10.Location = new System.Drawing.Point(8, 244);
             this.textBox10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(596, 21);
+            this.textBox10.Size = new System.Drawing.Size(596, 25);
             this.textBox10.TabIndex = 34;
             this.textBox10.Text = "C:\\ZXJ\\GitRepository\\DateLogManagement\\FileContextSearch\\FileContextSearch\\Test\\A" +
     "";
@@ -535,7 +565,7 @@
             this.textBox9.Location = new System.Drawing.Point(8, 207);
             this.textBox9.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(596, 21);
+            this.textBox9.Size = new System.Drawing.Size(596, 25);
             this.textBox9.TabIndex = 30;
             this.textBox9.Text = "C:\\ZXJ\\GitRepository\\DateLogManagement\\FileContextSearch\\FileContextSearch\\Test\\B" +
     "";
@@ -555,7 +585,7 @@
             this.textBox7.Location = new System.Drawing.Point(137, 66);
             this.textBox7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(139, 21);
+            this.textBox7.Size = new System.Drawing.Size(139, 25);
             this.textBox7.TabIndex = 28;
             this.textBox7.Text = "1000";
             // 
@@ -564,7 +594,7 @@
             this.textBox8.Location = new System.Drawing.Point(137, 91);
             this.textBox8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(139, 21);
+            this.textBox8.Size = new System.Drawing.Size(139, 25);
             this.textBox8.TabIndex = 27;
             this.textBox8.Text = "500";
             // 
@@ -595,7 +625,7 @@
             this.textBox6.Location = new System.Drawing.Point(137, 41);
             this.textBox6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(139, 21);
+            this.textBox6.Size = new System.Drawing.Size(139, 25);
             this.textBox6.TabIndex = 24;
             this.textBox6.Text = "600";
             // 
@@ -604,17 +634,17 @@
             this.textBox5.Location = new System.Drawing.Point(137, 16);
             this.textBox5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(139, 21);
+            this.textBox5.Size = new System.Drawing.Size(139, 25);
             this.textBox5.TabIndex = 23;
             this.textBox5.Text = "500";
             // 
             // NewDateLog
             // 
             this.NewDateLog.Controls.Add(this.ContentContainer);
-            this.NewDateLog.Location = new System.Drawing.Point(4, 22);
+            this.NewDateLog.Location = new System.Drawing.Point(4, 25);
             this.NewDateLog.Name = "NewDateLog";
             this.NewDateLog.Padding = new System.Windows.Forms.Padding(3);
-            this.NewDateLog.Size = new System.Drawing.Size(1104, 460);
+            this.NewDateLog.Size = new System.Drawing.Size(1104, 454);
             this.NewDateLog.TabIndex = 3;
             this.NewDateLog.Text = "NewDateLog";
             this.NewDateLog.UseVisualStyleBackColor = true;
@@ -629,7 +659,7 @@
             this.ContentContainer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ContentContainer.Location = new System.Drawing.Point(3, 3);
             this.ContentContainer.Name = "ContentContainer";
-            this.ContentContainer.Size = new System.Drawing.Size(1098, 454);
+            this.ContentContainer.Size = new System.Drawing.Size(1098, 448);
             this.ContentContainer.TabIndex = 32;
             this.ContentContainer.TabStop = false;
             this.ContentContainer.SizeChanged += new System.EventHandler(this.ContentContainer_SizeChanged);
@@ -640,7 +670,7 @@
             this.groupBox1.Controls.Add(this.lblDraft);
             this.groupBox1.Controls.Add(this.lblIdea);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupBox1.Location = new System.Drawing.Point(3, 17);
+            this.groupBox1.Location = new System.Drawing.Point(3, 21);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(1092, 65);
             this.groupBox1.TabIndex = 36;
@@ -652,7 +682,7 @@
             this.lblDailyMission.Font = new System.Drawing.Font("Buxton Sketch", 18F, System.Drawing.FontStyle.Bold);
             this.lblDailyMission.Location = new System.Drawing.Point(20, 24);
             this.lblDailyMission.Name = "lblDailyMission";
-            this.lblDailyMission.Size = new System.Drawing.Size(136, 29);
+            this.lblDailyMission.Size = new System.Drawing.Size(166, 38);
             this.lblDailyMission.TabIndex = 33;
             this.lblDailyMission.Text = "DailyMission";
             // 
@@ -662,7 +692,7 @@
             this.lblDraft.Font = new System.Drawing.Font("Buxton Sketch", 18F, System.Drawing.FontStyle.Bold);
             this.lblDraft.Location = new System.Drawing.Point(619, 17);
             this.lblDraft.Name = "lblDraft";
-            this.lblDraft.Size = new System.Drawing.Size(65, 29);
+            this.lblDraft.Size = new System.Drawing.Size(80, 38);
             this.lblDraft.TabIndex = 35;
             this.lblDraft.Text = "Draft";
             // 
@@ -672,7 +702,7 @@
             this.lblIdea.Font = new System.Drawing.Font("Buxton Sketch", 18F, System.Drawing.FontStyle.Bold);
             this.lblIdea.Location = new System.Drawing.Point(354, 17);
             this.lblIdea.Name = "lblIdea";
-            this.lblIdea.Size = new System.Drawing.Size(50, 29);
+            this.lblIdea.Size = new System.Drawing.Size(61, 38);
             this.lblIdea.TabIndex = 34;
             this.lblIdea.Text = "Idea";
             // 
@@ -715,10 +745,10 @@
             // Project
             // 
             this.Project.Controls.Add(this.splitContainer2);
-            this.Project.Location = new System.Drawing.Point(4, 22);
+            this.Project.Location = new System.Drawing.Point(4, 25);
             this.Project.Name = "Project";
             this.Project.Padding = new System.Windows.Forms.Padding(3);
-            this.Project.Size = new System.Drawing.Size(1104, 460);
+            this.Project.Size = new System.Drawing.Size(1104, 454);
             this.Project.TabIndex = 4;
             this.Project.Text = "Project";
             this.Project.UseVisualStyleBackColor = true;
@@ -739,14 +769,14 @@
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.splitContainer3);
-            this.splitContainer2.Size = new System.Drawing.Size(1098, 454);
+            this.splitContainer2.Size = new System.Drawing.Size(1098, 448);
             this.splitContainer2.SplitterDistance = 366;
             this.splitContainer2.TabIndex = 37;
             // 
             // button14
             // 
             this.button14.Font = new System.Drawing.Font("Buxton Sketch", 18F, System.Drawing.FontStyle.Bold);
-            this.button14.Location = new System.Drawing.Point(58, 153);
+            this.button14.Location = new System.Drawing.Point(48, 130);
             this.button14.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button14.Name = "button14";
             this.button14.Size = new System.Drawing.Size(220, 35);
@@ -759,7 +789,7 @@
             // button12
             // 
             this.button12.Font = new System.Drawing.Font("Buxton Sketch", 18F, System.Drawing.FontStyle.Bold);
-            this.button12.Location = new System.Drawing.Point(58, 114);
+            this.button12.Location = new System.Drawing.Point(48, 91);
             this.button12.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button12.Name = "button12";
             this.button12.Size = new System.Drawing.Size(220, 35);
@@ -771,7 +801,7 @@
             // button10
             // 
             this.button10.Font = new System.Drawing.Font("Buxton Sketch", 18F, System.Drawing.FontStyle.Bold);
-            this.button10.Location = new System.Drawing.Point(58, 75);
+            this.button10.Location = new System.Drawing.Point(48, 52);
             this.button10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(220, 35);
@@ -793,7 +823,7 @@
             // splitContainer3.Panel2
             // 
             this.splitContainer3.Panel2.Controls.Add(this.splitContainer5);
-            this.splitContainer3.Size = new System.Drawing.Size(728, 454);
+            this.splitContainer3.Size = new System.Drawing.Size(728, 448);
             this.splitContainer3.SplitterDistance = 358;
             this.splitContainer3.TabIndex = 37;
             // 
@@ -812,7 +842,7 @@
             // splitContainer4.Panel2
             // 
             this.splitContainer4.Panel2.Controls.Add(this.PersonalProjectPanel);
-            this.splitContainer4.Size = new System.Drawing.Size(358, 454);
+            this.splitContainer4.Size = new System.Drawing.Size(358, 448);
             this.splitContainer4.SplitterDistance = 48;
             this.splitContainer4.TabIndex = 36;
             // 
@@ -833,7 +863,7 @@
             this.PersonalProjectPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PersonalProjectPanel.Location = new System.Drawing.Point(0, 0);
             this.PersonalProjectPanel.Name = "PersonalProjectPanel";
-            this.PersonalProjectPanel.Size = new System.Drawing.Size(358, 402);
+            this.PersonalProjectPanel.Size = new System.Drawing.Size(358, 396);
             this.PersonalProjectPanel.TabIndex = 0;
             // 
             // splitContainer5
@@ -851,7 +881,7 @@
             // splitContainer5.Panel2
             // 
             this.splitContainer5.Panel2.Controls.Add(this.WorkProjectPanel);
-            this.splitContainer5.Size = new System.Drawing.Size(366, 454);
+            this.splitContainer5.Size = new System.Drawing.Size(366, 448);
             this.splitContainer5.SplitterDistance = 48;
             this.splitContainer5.TabIndex = 37;
             // 
@@ -872,16 +902,16 @@
             this.WorkProjectPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.WorkProjectPanel.Location = new System.Drawing.Point(0, 0);
             this.WorkProjectPanel.Name = "WorkProjectPanel";
-            this.WorkProjectPanel.Size = new System.Drawing.Size(366, 402);
+            this.WorkProjectPanel.Size = new System.Drawing.Size(366, 396);
             this.WorkProjectPanel.TabIndex = 1;
             // 
             // Research
             // 
             this.Research.Controls.Add(this.splitContainer6);
-            this.Research.Location = new System.Drawing.Point(4, 22);
+            this.Research.Location = new System.Drawing.Point(4, 25);
             this.Research.Name = "Research";
             this.Research.Padding = new System.Windows.Forms.Padding(3);
-            this.Research.Size = new System.Drawing.Size(1104, 460);
+            this.Research.Size = new System.Drawing.Size(1104, 454);
             this.Research.TabIndex = 5;
             this.Research.Text = "Research";
             this.Research.UseVisualStyleBackColor = true;
@@ -902,7 +932,7 @@
             // splitContainer6.Panel2
             // 
             this.splitContainer6.Panel2.Controls.Add(this.splitContainer7);
-            this.splitContainer6.Size = new System.Drawing.Size(1098, 454);
+            this.splitContainer6.Size = new System.Drawing.Size(1098, 448);
             this.splitContainer6.SplitterDistance = 366;
             this.splitContainer6.TabIndex = 38;
             // 
@@ -927,7 +957,7 @@
             "3"});
             this.NodeState.Location = new System.Drawing.Point(22, 114);
             this.NodeState.Name = "NodeState";
-            this.NodeState.Size = new System.Drawing.Size(196, 20);
+            this.NodeState.Size = new System.Drawing.Size(196, 23);
             this.NodeState.TabIndex = 27;
             // 
             // button17
@@ -955,7 +985,7 @@
             // splitContainer7.Panel2
             // 
             this.splitContainer7.Panel2.Controls.Add(this.splitContainer9);
-            this.splitContainer7.Size = new System.Drawing.Size(728, 454);
+            this.splitContainer7.Size = new System.Drawing.Size(728, 448);
             this.splitContainer7.SplitterDistance = 358;
             this.splitContainer7.TabIndex = 37;
             // 
@@ -974,7 +1004,7 @@
             // splitContainer8.Panel2
             // 
             this.splitContainer8.Panel2.Controls.Add(this.panel1);
-            this.splitContainer8.Size = new System.Drawing.Size(358, 454);
+            this.splitContainer8.Size = new System.Drawing.Size(358, 448);
             this.splitContainer8.SplitterDistance = 48;
             this.splitContainer8.TabIndex = 36;
             // 
@@ -995,7 +1025,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(358, 402);
+            this.panel1.Size = new System.Drawing.Size(358, 396);
             this.panel1.TabIndex = 0;
             // 
             // splitContainer9
@@ -1013,7 +1043,7 @@
             // splitContainer9.Panel2
             // 
             this.splitContainer9.Panel2.Controls.Add(this.panel3);
-            this.splitContainer9.Size = new System.Drawing.Size(366, 454);
+            this.splitContainer9.Size = new System.Drawing.Size(366, 448);
             this.splitContainer9.SplitterDistance = 48;
             this.splitContainer9.TabIndex = 37;
             // 
@@ -1034,7 +1064,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(366, 402);
+            this.panel3.Size = new System.Drawing.Size(366, 396);
             this.panel3.TabIndex = 1;
             // 
             // styleManager1
@@ -1044,7 +1074,7 @@
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1112, 511);
             this.Controls.Add(this.MainTabControl);
@@ -1187,6 +1217,8 @@
         public System.Windows.Forms.ComboBox NodeState;
         private System.Windows.Forms.Button button17;
         private System.Windows.Forms.Button button22;
+        private System.Windows.Forms.Button button23;
+        private System.Windows.Forms.Button button24;
     }
 }
 

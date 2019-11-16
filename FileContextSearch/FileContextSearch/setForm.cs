@@ -98,8 +98,8 @@ namespace FileContextSearch
                 FolderBrowserDialog myFolderBrowserDialog = new FolderBrowserDialog();
                 string settingpath="";
                 // 设定 OpenFileDialog 对象的各个属性
-                    var withBlock = myFolderBrowserDialog;
-                withBlock.Description = "请选择一个文件夹";
+                var withBlock = myFolderBrowserDialog;
+                withBlock.Description = "请选择一个文件";
 
             //是否显示对话框左下角 新建文件夹 按钮，默认为 true
             //dialog.ShowNewFolderButton = false;

@@ -14,6 +14,7 @@ using System.Threading;
 using FileOperator;
 using FileContextSearch.ResearchList;
 using Newtonsoft.Json;
+using FileContextSearch.Helper;
 
 
 namespace FileContextSearch
@@ -23,7 +24,7 @@ namespace FileContextSearch
         public Form1()
         {
             InitializeComponent();
-            Test.Parent = null;
+            //Test.Parent = null;
         }
         public static string startDate;
         public static string endDate;
@@ -195,6 +196,7 @@ namespace FileContextSearch
         public static string DatelogPathDir = "";
 
         public System.Threading.Timer Tc;
+        public System.Threading.Timer Tc2;
         private void Form1_Load(object sender, EventArgs e)
         {
             var logPath = "DateLogDirPath";
@@ -217,10 +219,17 @@ namespace FileContextSearch
             InitialDir();
             InitialUI();
             Tc = new System.Threading.Timer(new TimerCallback(autoSave), null, Timeout.Infinite, 3600000);
-            Tc.Change(3600000, 3600000);
+            Tc.Change(5000, 3600000);
+            //Tc2 = new System.Threading.Timer(new TimerCallback(autoSave1), null, Timeout.Infinite, 10000);
+            //Tc2.Change(10000, 10000);
             //加载treeview
             this.WindowState =FormWindowState.Maximized;
         }
+        public void autoSave1(object obj)
+        {
+            GC.Collect();
+        }
+
         public void autoSave(object obj)
         {
             var s = DateTime.Parse(DateTime.Now.Date.ToString());
@@ -245,6 +254,7 @@ namespace FileContextSearch
                 FileSearchHelper.GetInstance().ReadTxtandWriteFile(RTXArr[i], fileNames[i]);
             }
             FileSearchHelper.GetInstance().GenerateFile(DateTime.Now);
+            //GC.Collect();
         }
         private void InitialUI()
         {
@@ -695,7 +705,7 @@ namespace FileContextSearch
             //ResearchTreeView.Nodes.Add(itemstr, item.Name);
             var strTemp = "";
             
-            if (ResearchTreeView.SelectedNode is null)
+            if (ResearchTreeView.SelectedNode == null)
             {
                 strTemp = "";
             }
@@ -711,7 +721,7 @@ namespace FileContextSearch
         private void TreeNode_DoubleClick(object sender, EventArgs e)
         {
             TreeView TV = (TreeView)sender;
-            if (!(TV.SelectedNode is null))
+            if (!(TV.SelectedNode == null))
             {
                 if (Directory.Exists(TV.SelectedNode.Name))
                 {
@@ -937,10 +947,10 @@ namespace FileContextSearch
             Directory.CreateDirectory(Path.Combine(ProjectPathDir, ""));
             //ResearchTreeView.Nodes.Add(itemstr, item.Name);
             var strTemp = "";
-            if (!(PersonalProjectTW.SelectedNode is null)|| !(WorkProjectTW.SelectedNode is null))
+            if (!(PersonalProjectTW.SelectedNode == null)|| !(WorkProjectTW.SelectedNode == null))
             {
                 var strtemp ="";
-                if (!(PersonalProjectTW.SelectedNode is null))
+                if (!(PersonalProjectTW.SelectedNode == null))
                 {
                     strtemp = Path.Combine(ProjectPathDir, "Personal");
                 }
@@ -972,9 +982,9 @@ namespace FileContextSearch
             //然后删除原有文件
             string strPath = "";
             string strName = "";
-            if ((!(PersonalProjectTW.SelectedNode is null)) || (!(WorkProjectTW.SelectedNode is null)))
+            if ((!(PersonalProjectTW.SelectedNode == null)) || (!(WorkProjectTW.SelectedNode == null)))
             {
-                if (!(PersonalProjectTW.SelectedNode is null))
+                if (!(PersonalProjectTW.SelectedNode == null))
                 {
                     if (PersonalProjectTW.SelectedNode.Text== "ProjectList")
                     {
@@ -1126,6 +1136,29 @@ namespace FileContextSearch
             {
 
             }
+        }
+
+        private void button23_Click(object sender, EventArgs e)
+        {
+            var a = SingletonSecond.CreateInstance();
+            var b = "";
+            var a1 = SingletonSecond.CreateInstance2();
+            var b1 = "";
+            //var a1 = SingletonSecond.CreateInstance2();
+            //var b1 = "";
+
+        }
+
+        private void button24_Click(object sender, EventArgs e)
+        {
+            //var a1 =new SingletonSecond1();
+            //var a2=SingletonSecond1 .CreateInstance ()
+            //var b1 = a1.;
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
         }
     }
 }
