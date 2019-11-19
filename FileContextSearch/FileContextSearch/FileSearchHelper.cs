@@ -258,11 +258,26 @@ namespace FileContextSearch
             }
 
         }
+        public string getrtbText(RichTextBox rtb)
+        {
+            return rtb.Text;
+        }
         public void ReadTxtandWriteFile(RichTextBox RTB, string strFilePath)
         {
-            var txt = RTB.Text;
-            var txtarr = txt.Split(new string[] { "\n" }, StringSplitOptions.None);
+            //var txt =RTB.BeginInvoke(new Func<this,string>aa=()=> { return })
+            string txt = "";
+            var txtdel = RTB.BeginInvoke(new Func< string>(() =>
+            {
+                return RTB.Text;
+            }));
+         
+            if (txtdel.IsCompleted)
+            {
+                
+            }
+            txt = (string)RTB.EndInvoke(txtdel);
 
+            var txtarr = txt.Split(new string[] { "\n" }, StringSplitOptions.None);
             var booltemp = false;
             var filePathTemp = Path.Combine(FileSearchHelper.GetInstance().DateLogDir, "temp", strFilePath);
             if (File.Exists(filePathTemp))
@@ -315,9 +330,22 @@ namespace FileContextSearch
                     //var fi= new FileInfo(filePathTemp);
                     var fn = Path.GetFileNameWithoutExtension(filePathTemp);
                     var fileContentTemp = File.ReadAllLines(filePathTemp, Encoding.UTF8);
-                    foreach (var subitem in fileContentTemp)
+                    //sb.Append(fileContentTemp);
+                    //foreach (var subitem in fileContentTemp)
+                    //{
+                    //    sb.AppendLine(subitem);
+                    //    //sb.Append(subitem);
+                    //}
+                    for (int j = 0; j < fileContentTemp.Length; j++)
                     {
-                        sb.AppendLine(subitem);
+                        if (j == fileContentTemp.Length - 1)
+                        {
+                            sb.Append(fileContentTemp[j]);
+                        }
+                        else
+                        {
+                            sb.AppendLine(fileContentTemp[j]);
+                        }
                     }
                     result[i] = sb.ToString();
                     i++;
