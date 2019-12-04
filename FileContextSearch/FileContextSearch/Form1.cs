@@ -1160,5 +1160,61 @@ namespace FileContextSearch
         {
 
         }
+
+        private void button25_Click(object sender, EventArgs e)
+        {
+            string strPath, strName;
+
+            if ((!(PersonalProjectTW.SelectedNode == null)) || (!(WorkProjectTW.SelectedNode == null)))
+            {
+                if (!(PersonalProjectTW.SelectedNode == null))
+                {
+                    if (PersonalProjectTW.SelectedNode.Text == "ProjectList")
+                    {
+                        MessageBox.Show("请选择一个项目名称！", "Warning", MessageBoxButtons.OK);
+                        return;
+
+                    }
+                    //ProjectList
+                    strPath = PersonalProjectTW.SelectedNode.Name;
+                    strName = PersonalProjectTW.SelectedNode.Text;
+                }
+                else
+                {
+                    if (WorkProjectTW.SelectedNode.Text == "ProjectList")
+                    {
+                        MessageBox.Show("请选择一个项目名称！", "Warning", MessageBoxButtons.OK);
+                        return;
+                    }
+                    strPath = WorkProjectTW.SelectedNode.Name;
+                    strName = WorkProjectTW.SelectedNode.Text;
+                }
+            }
+            else
+            {
+
+                MessageBox.Show("请选择一个项目名称！", "Warning", MessageBoxButtons.OK);
+                return;
+            }
+
+            if (!string.IsNullOrEmpty(strPath))
+            {
+                registryHelper.GetInstance().AddKey("CurrentProjectPath", strPath);
+            }
+        }
+
+        private void button26_Click(object sender, EventArgs e)
+        {
+            //判断当前文件夹是否存在
+            var strPath = registryHelper.GetInstance().GetKeyValue("CurrentProjectPath");
+            if (Directory.Exists(strPath))
+            {
+                System.Diagnostics.Process.Start(strPath);
+            }
+            else
+            {
+                MessageBox.Show("项目文件夹不存在！");
+            }
+        }
     }
 }

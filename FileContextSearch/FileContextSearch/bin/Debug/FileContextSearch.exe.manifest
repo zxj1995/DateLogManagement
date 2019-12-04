@@ -54,14 +54,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="FileContextSearch.exe" size="105416">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="FileContextSearch.exe" size="106440">
       <assemblyIdentity name="FileContextSearch" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>Ey8jj2uxfIsDMc71MXRgcSaNAmI=</dsig:DigestValue>
+        <dsig:DigestValue>NDvAdwznKgWBfXTchrh2nlaubNM=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -98,13 +98,13 @@
       <dsig:DigestValue>wmSuwVsrFuU2li6lzjI3fwAu4fQ=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="FileContextSearch.exe.config" size="1152">
+  <file name="FileContextSearch.exe.config" size="1199">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>4ytPi3xo22CxmjhAl0DX0LL4WAE=</dsig:DigestValue>
+      <dsig:DigestValue>VNlIoW9iaOuGUpTa247upWgsw4I=</dsig:DigestValue>
     </hash>
   </file>
   <compatibility xmlns="urn:schemas-microsoft-com:compatibility.v1">

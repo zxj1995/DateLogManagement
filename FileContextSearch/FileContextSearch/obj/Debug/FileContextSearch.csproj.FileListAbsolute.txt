@@ -74,4 +74,3 @@ C:\ZXJ\Project\Personal\日志项目\Master\GitRepository\DateLogManagement\File
 C:\ZXJ\Project\Personal\日志项目\Master\GitRepository\DateLogManagement\FileContextSearch\FileContextSearch\obj\Debug\FileContextSearch.TrustInfo.xml
 C:\ZXJ\Project\Personal\日志项目\Master\GitRepository\DateLogManagement\FileContextSearch\FileContextSearch\obj\Debug\FileContextSearch.exe.manifest
 C:\ZXJ\Project\Personal\日志项目\Master\GitRepository\DateLogManagement\FileContextSearch\FileContextSearch\obj\Debug\FileContextSearch.application
-C:\ZXJ\Project\Personal\日志项目\Master\GitRepository\DateLogManagement\FileContextSearch\FileContextSearch\obj\Debug\FileContextSearch.csprojResolveAssemblyReference.cache
